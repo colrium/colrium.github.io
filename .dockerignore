@@ -1,0 +1,14 @@
+.dockerignore
+.gtignore
+node_modules
+*Dockerfile*
+*.md*
+*docker-compose*
+npm-debug.log
+.next
+docker
+.git
+*.bash_history*
+*.log*
+*.code-workspace
+**/vscode/*
