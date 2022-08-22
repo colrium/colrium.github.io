@@ -12,6 +12,5 @@
 *.env*
 .editorconfig
 *.log*
-*.lock
 # Next.js
 /.next
