@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 import SummarySection from "@app/sections/Summary";
-import SkillsSection from "@app/sections/Skills";
+import ProficienciesSection from "@app/sections/Proficiencies";
+import RepositoriesSection from "@app/sections/Repositories";
 import styles from "@app/styles/Home.module.css";
 
-export default function Home() {
+const Home = (props) => {
+	console.log("Home Props", props);
 	return (
 		<Grid
 			component="div"
@@ -14,9 +16,17 @@ export default function Home() {
 			<Grid item xs={12}>
 				<SummarySection />
 			</Grid>
+
 			<Grid item xs={12}>
-				<SkillsSection />
+				<ProficienciesSection />
 			</Grid>
+
+			{/* <Grid item xs={12}>
+				<RepositoriesSection />
+			</Grid> */}
 		</Grid>
 	);
 }
+
+
+export default Home;

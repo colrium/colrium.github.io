@@ -58,4 +58,6 @@ NextApp.propTypes = {
 	emotionCache: PropTypes.object,
 	pageProps: PropTypes.object.isRequired,
 };
+
+
 export default NextApp;

@@ -1,6 +1,5 @@
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
 import Link from "@app/components/Link";
 import Image from "next/image";
@@ -15,80 +14,66 @@ import {
 	mdiEmailVariant,
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import { email, socialMedias } from "@app/config";
+import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
+
+const MotionGrid = motion(Grid);
 
 export default function SummarySection() {
-	const variants = {
-		hidden: { opacity: 0, x: 0, y: -10 },
-		enter: { opacity: 1, x: 0, y: 0 },
-		exit: { opacity: 0, x: 0, y: -100 },
-	};
+	const { scrollYProgress } = useScroll();
 	const theme = useTheme();
 	return (
-		<motion.div
-			variants={variants} // Pass the variant object into Framer Motion
-			initial="hidden" // Set the initial state to variants.hidden
-			animate="enter" // Animated state to variants.enter
-			exit="exit" // Exit state (used later) to variants.exit
-			transition={{ type: "linear" }}
-			className="flex flex-col items-center min-h-full"
-		>
-			<Grid component="div" container spacing={1}>
-				<Grid
-					item
-					xs={12}
-					className="text-center flex flex-row items-center justify-center "
-				>
-					<Link
-						component={IconButton}
-						className="m-4"
-						href="https://github.com/colrium"
+		<LazyMotion features={domAnimation}>
+			<MotionGrid
+				initial={{
+					scale: 0.5,
+					opacity: 0,
+					x: 0,
+					y: -40,
+				}}
+				whileInView={{ scale: 1, opacity: 1, y: 0 }}
+				exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
+				transition={{
+					type: "spring",
+					damping: 30,
+					mass: 0.75,
+					stiffness: 400,
+					delay: 0.03,
+					duration: 0.25,
+				}}
+				component="div"
+				container
+				spacing={1}
+			>
+				{socialMedias?.length > 0 && (
+					<Grid
+						item
+						xs={12}
+						className="text-center flex flex-row flex-wrap items-center justify-center "
 					>
-						<Icon
-							path={mdiGithub}
-							title="Github"
-							color={theme.palette.text.primary}
-							size={1}
-						/>
-					</Link>
-					<Link
-						component={IconButton}
-						className="m-4"
-						href="https://twitter.com/mutugiriungu"
-					>
-						<Icon
-							path={mdiTwitter}
-							title="Twitter"
-							color={"#1DA1F2"}
-							size={1}
-						/>
-					</Link>
-
-					<Link
-						component={IconButton}
-						className="m-4"
-						href="https://www.linkedin.com/in/mutugiriungu/"
-					>
-						<Icon
-							path={mdiLinkedin}
-							title="LinkedIn"
-							color={"#0077B5"}
-							size={1}
-						/>
-					</Link>
-
-					<Link
-						component={IconButton}
-						className="m-4"
-						href="https://api.whatsapp.com/send/?phone=254724146857&text=Hey+Mutugi"
-					>
-						<Icon
-							path={mdiWhatsapp}
-							title="Whatsapp"
-							color={"#25D366"}
-							size={1}
-						/>
-					</Link>
-				</Grid>
+						{socialMedias.map((socialMedia) => (
+							<Link
+								component={IconButton}
+								className="m-4"
+								href={socialMedia.url}
+								sx={{
+									"&.MuiIconButton-root": {
+										color: theme.palette.text.secondary,
+										fill: theme.palette.text.secondary,
+									},
+								}}
+								key={socialMedia.name}
+							>
+								<Icon
+									path={socialMedia.mdiIcon}
+									title={socialMedia.name}
+									color={socialMedia.color}
+									size={1}
+								/>
+							</Link>
+						))}
+					</Grid>
+				)}
 
 				<Grid
 					item
@@ -158,7 +143,7 @@ export default function SummarySection() {
 						colrium@gmail.com
 					</Link>
 				</Grid>
-			</Grid>
-		</motion.div>
+			</MotionGrid>
+		</LazyMotion>
 	);
 }

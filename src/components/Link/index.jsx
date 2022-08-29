@@ -63,7 +63,7 @@ const Link = React.forwardRef(function Link(props, ref) {
 	const {
 		activeClassName = "active",
 		as,
-		className: classNameProps,
+		className: classNameProp,
 		href,
 		linkAs: linkAsProp,
 		locale,
@@ -79,7 +79,8 @@ const Link = React.forwardRef(function Link(props, ref) {
 
 	const router = useRouter();
 	const pathname = typeof href === "string" ? href : href.pathname;
-	const className = clsx(classNameProps, {
+	const className = clsx("cursor-pointer", {
+		[classNameProp]: !!classNameProp,
 		[activeClassName]: router.pathname === pathname && activeClassName,
 	});
 
@@ -126,22 +127,22 @@ const Link = React.forwardRef(function Link(props, ref) {
 		locale,
 	};
 
-	if (noLinkStyle) {
-		return (
-			<NextLinkComposed
-				component={component}
-				className={className}
-				ref={ref}
-				{...nextjsProps}
-				{...other}
-			/>
-		);
-	}
+	// if (noLinkStyle) {
+	// 	return (
+	// 		<NextLinkComposed
+	// 			component={component}
+	// 			className={className}
+	// 			ref={ref}
+	// 			{...nextjsProps}
+	// 			{...other}
+	// 		/>
+	// 	);
+	// }
 
 	return (
 		<NextLinkComposed
 			component={component}
-			className={`${className}`}
+			className={`${className || ""}`}
 			ref={ref}
 			{...nextjsProps}
 			{...other}

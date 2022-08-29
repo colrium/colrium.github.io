@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-
+import { colors } from "@app/config";
 const lightTheme = createTheme({
 	palette: {
 		mode: "light",
@@ -9,13 +9,11 @@ const lightTheme = createTheme({
 		primary: {
 			contrastText: "#FFFFFF",
 			// main: "#aa0000",
-			main: "#005522",
-			light: "#df0000",
-			dark: "#700000",
+			main: colors.primary || "#005522",
 		},
 		secondary: {
 			contrastText: "#FFFFFF",
-			main: "#2e2e2e",
+			main: colors.secondary || "#2e2e2e",
 			light: "#5c5c5c",
 			dark: "#000000",
 		},

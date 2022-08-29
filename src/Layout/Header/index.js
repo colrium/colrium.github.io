@@ -23,6 +23,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
 import SettingsBrightnessRoundedIcon from "@mui/icons-material/SettingsBrightnessRounded";
 import Checkbox from "@mui/material/Checkbox";
+import Avatar from "@mui/material/Avatar";
+import LinearProgress from "@mui/material/LinearProgress";
 import Icon from "@mdi/react";
 import {
 	mdiGithub,
@@ -31,6 +33,8 @@ import {
 	mdiWhatsapp,
 	mdiEmailVariant,
 } from "@mdi/js";
+import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
+
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 	alignItems: "flex-start",
 	paddingTop: theme.spacing(1),
@@ -40,64 +44,107 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 		minHeight: 128,
 	},
 }));
+
+const MotionTypography = motion(Typography);
+const MotionAvatar = motion(Avatar);
+const MotionBox = motion(Box);
+
 const Header = (props) => {
 	const { onToggleThemeMode, themeMode } = props;
 	const theme = useTheme();
 	const router = useRouter();
+	const { scrollYProgress } = useScroll();
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar
-				position="static"
-				sx={{
-					backgroundColor: theme.palette.background.paper,
-					color: theme.palette.text.primary,
-				}}
-				enableColorOnDark
-				elevation={0}
-			>
-				<StyledToolbar>
-					<Box
-						spacing={1}
-						className="flex flex-1 flex-col items-center justify-center"
-					>
+			<LazyMotion features={domAnimation}>
+				<MotionBox
+					className="fixed top-0 left-0 right-0 z-10 origin-left"
+					style={{ scaleX: scrollYProgress }}
+					sx={{
+						backgroundColor: theme.palette.primary.main,
+						height: theme => theme.spacing(0.3),
+					}}
+				/>
+				<AppBar
+					position="static"
+					sx={{
+						backgroundColor: theme.palette.background.paper,
+						color: theme.palette.text.primary,
+					}}
+					enableColorOnDark
+					elevation={0}
+				>
+					<StyledToolbar>
 						<Box
-							className="rounded-full w-32 h-32 flex flex-col items-center justify-center rounded-full cursor-pointer duration-500 ease-in-out transition-colors "
-							sx={{
-								backgroundColor: (theme) =>
-									theme.palette.action.hover,
-								":hover": {
-									backgroundColor: (theme) =>
-										theme.palette.action.selected,
-								},
-							}}
-							onClick={onToggleThemeMode}
+							spacing={1}
+							className="flex flex-1 flex-col items-center justify-center"
 						>
-							<Image
-								src="/img/logo.svg"
+							<MotionAvatar
+								className="w-32 h-32 my-8 cursor-pointer"
+								initial={{
+									scale: 0.5,
+									opacity: 0,
+									x: 0,
+									y: -40,
+								}}
+								whileInView={{ scale: 1, opacity: 1, y: 0 }}
+								whileHover={{ scale: 1.05 }}
+								exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
+								transition={{
+									type: "spring",
+									damping: 30,
+									mass: 0.75,
+									stiffness: 400,
+									delay: 0.03,
+									duration: 0.25,
+								}}
+								onClick={onToggleThemeMode}
+								src="/img/avatar.jpg"
 								alt="Mutugi Riungu"
-								width={64}
-								height={64}
 							/>
-						</Box>
-						<Box
-							sx={{
-								display: "flex",
-								flexDirection: "row",
-								alignItems: "center",
-								justifyContent: "space-between",
-							}}
-						>
 							<Box
 								sx={{
-									alignSelf: "center",
 									display: "flex",
 									flexDirection: "row",
 									alignItems: "center",
-									justifyContent: "center",
+									justifyContent: "space-between",
 								}}
-								className="my-2"
 							>
-								<Link
+								<Box
+									sx={{
+										alignSelf: "center",
+										display: "flex",
+										flexDirection: "row",
+										alignItems: "center",
+										justifyContent: "center",
+									}}
+									className="my-2"
+								>
+									<Link
+										component={MotionTypography}
+										href="/"
+										color="textSecondary"
+										variant="h5"
+										className="capitalize"
+										activeClassName="font-extrabold "
+										initial={{
+											scale: 0,
+											opacity: 0,
+											y: -20,
+										}}
+										whileInView={{
+											scale: 1,
+											opacity: 1,
+											y: 0,
+										}}
+										transition={{
+											type: "anticipate",
+										}}
+										onClick={onToggleThemeMode}
+									>
+										Mutugi Riungu
+									</Link>
+									{/* <Link
 									component={Typography}
 									href="/"
 									color="textSecondary"
@@ -106,9 +153,9 @@ const Header = (props) => {
 									activeClassName="font-extrabold "
 								>
 									Mutugi Riungu
-								</Link>
+								</Link> */}
 
-								{/* <FormGroup sx={{ alignSelf: "flex-end" }}>
+									{/* <FormGroup sx={{ alignSelf: "flex-end" }}>
 									<FormControlLabel
 										control={
 											<Checkbox
@@ -128,19 +175,20 @@ const Header = (props) => {
 										}
 									/>
 								</FormGroup> */}
+								</Box>
+								<Box
+									sx={{
+										display: "flex",
+										flexDirection: "row",
+										alignItems: "center",
+										justifyContent: "flex-end",
+									}}
+								></Box>
 							</Box>
-							<Box
-								sx={{
-									display: "flex",
-									flexDirection: "row",
-									alignItems: "center",
-									justifyContent: "flex-end",
-								}}
-							></Box>
 						</Box>
-					</Box>
-				</StyledToolbar>
-			</AppBar>
+					</StyledToolbar>
+				</AppBar>
+			</LazyMotion>
 		</Box>
 	);
 };
