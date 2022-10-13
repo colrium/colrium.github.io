@@ -107,7 +107,7 @@ export default function SummarySection() {
 					<Typography
 						variant="body1"
 						gutterBottom
-						sx={{ width: "50vw", textAlign: "center" }}
+						className="text-center  max-w-max"
 					>
 						Passionate Developer with 6+ years of experience in
 						design, development, testing, deployment and maintenance
