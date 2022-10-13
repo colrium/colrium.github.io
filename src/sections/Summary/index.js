@@ -147,7 +147,7 @@ export default function SummarySection() {
 
 					<Link
 						component={Button}
-						className="lowercase px-8 mx-4 mb-4 rounded-full"
+						className="lowercase px-8 mx-4 mb-8 rounded-full"
 						variant="text"
 						href="tel:+254724146857"
 						sx={{
