@@ -39,20 +39,21 @@ const GithubRepos = (props) => {
 	const { scrollYProgress } = useScroll();
 
 	useDidMount(() => {
-		fetch(`https://api.github.com/users/colrium/repos`).then(res => res.json()).then(data => {
-			console.log("data", data);
-			setState({
-				repos: data,
-				loading: false,
-				error: null,
+		fetch(`https://api.github.com/users/colrium/repos`)
+			.then((res) => res.json())
+			.then((data) => {
+				setState({
+					repos: data,
+					loading: false,
+					error: null,
+				});
+			})
+			.catch((error) => {
+				setState({
+					loading: false,
+					error: error,
+				});
 			});
-		}).catch(error => {
-			console.log("error", error);
-			setState({
-				loading: false,
-				error: error,
-			});
-		});
 	});
 	return (
 		<LazyMotion features={domAnimation}>

@@ -21,9 +21,9 @@ const Home = (props) => {
 				<ProficienciesSection />
 			</Grid>
 
-			{/* <Grid item xs={12}>
+			<Grid item xs={12}>
 				<RepositoriesSection />
-			</Grid> */}
+			</Grid>
 		</Grid>
 	);
 }
