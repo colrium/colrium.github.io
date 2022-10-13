@@ -107,7 +107,7 @@ export default function SummarySection() {
 					<Typography
 						variant="body1"
 						gutterBottom
-						className="text-center  max-w-max"
+						className="text-center  max-w-max lg:w-6/12"
 					>
 						Passionate Developer with 6+ years of experience in
 						design, development, testing, deployment and maintenance
