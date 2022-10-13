@@ -12,6 +12,7 @@ import {
 	mdiLinkedin,
 	mdiWhatsapp,
 	mdiEmailVariant,
+	mdiPhone,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import { email, socialMedias } from "@app/config";
@@ -108,8 +109,8 @@ export default function SummarySection() {
 						gutterBottom
 						sx={{ width: "50vw", textAlign: "center" }}
 					>
-						Passionate Developer with 7+ years of experience in
-						design, developent, testing, deployment and maintenance
+						Passionate Developer with 6+ years of experience in
+						design, development, testing, deployment and maintenance
 						of software systems. Equipped with a diverse and
 						up-to-date skill-set. Proficient in various platforms,
 						languages, and embedded systems. Experienced with the
@@ -123,24 +124,40 @@ export default function SummarySection() {
 				<Grid
 					item
 					xs={12}
-					className="text-center flex flex-row items-center justify-center "
+					className="text-center flex  flex-col lg:flex-row mt-8 items-center justify-center "
 				>
 					<Link
 						component={Button}
-						className="lowercase px-4 rounded-full"
-						color={"#BB001B"}
-						variant="contained"
+						className="lowercase px-8 mx-4 mb-8 rounded-full"
+						variant="text"
 						href="mailto:colrium@gmail.com"
+						sx={{
+							backgroundColor: theme.palette.contrast.main,
+						}}
 						startIcon={
 							<Icon
 								path={mdiEmailVariant}
 								title="Gmail"
-								color={"#BB001B"}
 								size={0.7}
 							/>
 						}
 					>
 						colrium@gmail.com
+					</Link>
+
+					<Link
+						component={Button}
+						className="lowercase px-8 mx-4 mb-4 rounded-full"
+						variant="text"
+						href="tel:+254724146857"
+						sx={{
+							backgroundColor: theme.palette.contrast.main,
+						}}
+						startIcon={
+							<Icon path={mdiPhone} title="Phone" size={0.7} />
+						}
+					>
+						+254 724 146 857
 					</Link>
 				</Grid>
 			</MotionGrid>
