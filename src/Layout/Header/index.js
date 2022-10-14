@@ -26,6 +26,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
 import LinearProgress from "@mui/material/LinearProgress";
 import Icon from "@mdi/react";
+import { useTranslation } from "next-i18next";
 import {
 	mdiGithub,
 	mdiTwitter,
@@ -54,6 +55,7 @@ const Header = (props) => {
 	const theme = useTheme();
 	const router = useRouter();
 	const { scrollYProgress } = useScroll();
+	const { t } = useTranslation();
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<LazyMotion features={domAnimation}>
@@ -62,7 +64,7 @@ const Header = (props) => {
 					style={{ scaleX: scrollYProgress }}
 					sx={{
 						backgroundColor: theme.palette.primary.main,
-						height: theme => theme.spacing(0.3),
+						height: (theme) => theme.spacing(0.3),
 					}}
 				/>
 				<AppBar
@@ -142,7 +144,7 @@ const Header = (props) => {
 										}}
 										onClick={onToggleThemeMode}
 									>
-										Mutugi Riungu
+										{t("tagline")}
 									</Link>
 									{/* <Link
 									component={Typography}

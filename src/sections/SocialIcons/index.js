@@ -20,8 +20,7 @@ import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
 
 const MotionGrid = motion(Grid);
 
-export default function SummarySection() {
-	const { scrollYProgress } = useScroll();
+export default function SocialIconsSection() {
 	const theme = useTheme();
 	return (
 		<LazyMotion features={domAnimation}>
@@ -43,24 +42,38 @@ export default function SummarySection() {
 					duration: 0.25,
 				}}
 				component="div"
-				className="flex flex-col items-center"
 				container
 				spacing={1}
 			>
-				<Typography
-					variant="body1"
-					gutterBottom
-					className="text-center  max-w-max lg:w-6/12"
-				>
-					Passionate Developer with 6+ years of experience in design,
-					development, testing, deployment and maintenance of software
-					systems. Equipped with a diverse and up-to-date skill-set.
-					Proficient in various platforms, languages, and embedded
-					systems. Experienced with the latest development tools,
-					paradigms and technologies. Able to effectively produce
-					solutions for complex problems independently, as well as
-					collaborate as part ofa productive team.
-				</Typography>
+				{socialMedias?.length > 0 && (
+					<Grid
+						item
+						xs={12}
+						className="text-center flex flex-row flex-wrap items-center justify-center "
+					>
+						{socialMedias.map((socialMedia) => (
+							<Link
+								component={IconButton}
+								className="m-4"
+								href={socialMedia.url}
+								sx={{
+									"&.MuiIconButton-root": {
+										color: theme.palette.text.secondary,
+										fill: theme.palette.text.secondary,
+									},
+								}}
+								key={socialMedia.name}
+							>
+								<Icon
+									path={socialMedia.mdiIcon}
+									title={socialMedia.name}
+									color={socialMedia.color}
+									size={1}
+								/>
+							</Link>
+						))}
+					</Grid>
+				)}
 			</MotionGrid>
 		</LazyMotion>
 	);

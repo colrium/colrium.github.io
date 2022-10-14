@@ -11,7 +11,7 @@ import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
 import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
 import JavascriptRoundedIcon from "@mui/icons-material/JavascriptRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
-
+import { useTranslation } from "next-i18next";
 import Icon from "@mdi/react";
 import {
 	mdiServerSecurity,
@@ -23,14 +23,14 @@ import {
 	mdiMonitorDashboard,
 } from "@mdi/js";
 
-
 const MotionBox = motion(Box);
 const MotionIcon = motion(Icon);
-
 
 export default function ProficienciesSection() {
 	const theme = useTheme();
 	const { scrollYProgress } = useScroll();
+	const { t } = useTranslation();
+
 	return (
 		<LazyMotion features={domAnimation}>
 			<Grid
@@ -48,13 +48,23 @@ export default function ProficienciesSection() {
 						flexDirection: "column",
 					}}
 				>
-					{/* <Typography
-						variant="h6"
-						component="span"
-						color="textSecondary"
+					<Grid
+						item
+						xs={12}
+						className="text-center flex  flex-col my-4 items-center justify-center "
 					>
-						Skills
-					</Typography> */}
+						<Typography
+							variant="h5"
+							color="textSecondary"
+							className="mb-4"
+						>
+							{t("skills.title")}
+						</Typography>
+
+						<Typography variant="body2">
+							{t("skills.description")}
+						</Typography>
+					</Grid>
 				</Grid>
 
 				<Grid

@@ -1,12 +1,11 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import theme from "@app/styles/theme/light";
 import createEmotionCache from "@app/utility/createEmotionCache";
 
 export default class AppDocument extends Document {
-
-
 	render() {
 		return (
 			<Html lang="en">
@@ -62,7 +61,6 @@ AppDocument.getInitialProps = async (ctx) => {
 	// 4. page.render
 
 	const originalRenderPage = ctx.renderPage;
-
 	// You can consider sharing the same Emotion cache between all the SSR requests to speed up performance.
 	// However, be aware that it can have global side effects.
 	const cache = createEmotionCache();
@@ -77,6 +75,7 @@ AppDocument.getInitialProps = async (ctx) => {
 		});
 
 	const initialProps = await Document.getInitialProps(ctx);
+	const ssT = await serverSideTranslations(ctx.locale ?? "en", ["common"]);
 	// This is important. It prevents Emotion to render invalid HTML.
 	// See https://github.com/mui/material-ui/issues/26561#issuecomment-855286153
 	const emotionStyles = extractCriticalToChunks(initialProps.html);
@@ -91,6 +90,7 @@ AppDocument.getInitialProps = async (ctx) => {
 
 	return {
 		...initialProps,
+		...ssT,
 		emotionStyleTags,
 	};
 };

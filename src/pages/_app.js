@@ -6,8 +6,11 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import PropTypes from "prop-types";
 import Router from "next/router";
 import createEmotionCache from "@app/utility/createEmotionCache";
+import { appWithTranslation } from "next-i18next";
+import { DefaultSeo } from "next-seo";
 import "@app/styles/globals.css";
 import Layout from "@app/Layout";
+import SEO from "../../next-seo.config";
 import { useDidMount, useSetState, useColorModeAwareTheme } from "@app/hooks";
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,9 +27,9 @@ const NextApp = (props) => {
 		loading: false,
 	});
 
-
 	useDidMount(() => {
-		Router.onRouteChangeStart = (url) => setState({ error: false, loading: true });
+		Router.onRouteChangeStart = (url) =>
+			setState({ error: false, loading: true });
 
 		Router.onRouteChangeComplete = () =>
 			setState({ error: false, loading: false });
@@ -35,10 +38,10 @@ const NextApp = (props) => {
 			setState({ error: true, loading: false });
 	});
 
-
 	return (
 		<CacheProvider value={emotionCache}>
 			<ThemeProvider theme={modeTheme}>
+				<DefaultSeo {...SEO} />
 				<CssBaseline />
 				<LocalizationProvider dateAdapter={AdapterDateFns}>
 					<Layout
@@ -59,5 +62,4 @@ NextApp.propTypes = {
 	pageProps: PropTypes.object.isRequired,
 };
 
-
-export default NextApp;
+export default appWithTranslation(NextApp);

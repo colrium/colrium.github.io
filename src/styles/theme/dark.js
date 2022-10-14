@@ -1,19 +1,18 @@
 import { createTheme } from "@mui/material/styles";
-
+import { colors } from "@app/config";
 const darkTheme = createTheme({
 	palette: {
 		mode: "dark",
 		primary: {
-			contrastText: "#000000",
-			main: "#005522",
-			light: "#df0000",
-			dark: "#700000",
+			contrastText: "#FFFFFF",
+			// main: "#aa0000",
+			main: colors.primary || "#005522",
 		},
 		secondary: {
-			contrastText: "#aa0000",
-			main: "#dddddd",
-			light: "#ffffff",
-			dark: "#7a7a7a",
+			contrastText: "#FFFFFF",
+			main: colors.secondary || "#2e2e2e",
+			light: "#5c5c5c",
+			dark: "#000000",
 		},
 		inverse: {
 			main: "#FFFFFF",
