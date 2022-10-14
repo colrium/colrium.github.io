@@ -67,7 +67,7 @@ const CitationOverlay = ({ citation }) => {
 						</motion.div>
 					)}
 					<motion.p
-						className="mt-4 mb-2 text-xl font-medium leading-none text-2xl dark:text-white-900 text-black-900 md:my-0"
+						className="mt-4 mb-2 text-xl font-medium leading-none text-2xl text-black-900 my-0"
 						variants={textVariants}
 						initial="initial"
 						animate="visible"
@@ -79,7 +79,7 @@ const CitationOverlay = ({ citation }) => {
 						{t("citation.title")}
 					</motion.p>
 					<motion.p
-						className="text-base md:text-center text-red-700"
+						className="text-base text-center text-red-700"
 						initial="initial"
 						animate="visible"
 						variants={textVariants}
