@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Headline from "@app/sections/Headline";
 import PrimaryContacts from "@app/sections/PrimaryContacts";
 import SocialIcons from "@app/sections/SocialIcons";
@@ -41,13 +40,6 @@ const Home = (props) => {
 			</Grid> */}
 		</Grid>
 	);
-};
-export const getStaticProps = async ({ locale }) => {
-	return {
-		props: {
-			...(await serverSideTranslations(locale ?? "en", ["common"])),
-		},
-	};
 };
 
 export default Home;

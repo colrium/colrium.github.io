@@ -15,7 +15,7 @@ import {
 	mdiPhone,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import { email, socialMedias } from "@app/config";
 import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
 

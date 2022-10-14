@@ -26,7 +26,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Avatar from "@mui/material/Avatar";
 import LinearProgress from "@mui/material/LinearProgress";
 import Icon from "@mdi/react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import {
 	mdiGithub,
 	mdiTwitter,

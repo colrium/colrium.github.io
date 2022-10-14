@@ -6,7 +6,7 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import {
 	mdiGithub,
 	mdiTwitter,

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import React from "react";
 
 import Container from "../Container";

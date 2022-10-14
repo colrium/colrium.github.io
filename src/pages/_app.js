@@ -6,7 +6,6 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import PropTypes from "prop-types";
 import Router from "next/router";
 import createEmotionCache from "@app/utility/createEmotionCache";
-import { appWithTranslation } from "next-i18next";
 import { DefaultSeo } from "next-seo";
 import "@app/styles/globals.css";
 import Layout from "@app/Layout";
@@ -62,4 +61,4 @@ NextApp.propTypes = {
 	pageProps: PropTypes.object.isRequired,
 };
 
-export default appWithTranslation(NextApp);
+export default NextApp;

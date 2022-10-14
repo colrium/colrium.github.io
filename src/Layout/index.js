@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import { motion } from "framer-motion";
 
 import { CitationOverlay, Footer } from "@app/components";

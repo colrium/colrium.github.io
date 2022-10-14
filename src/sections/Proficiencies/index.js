@@ -11,7 +11,7 @@ import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
 import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
 import JavascriptRoundedIcon from "@mui/icons-material/JavascriptRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import Icon from "@mdi/react";
 import {
 	mdiServerSecurity,

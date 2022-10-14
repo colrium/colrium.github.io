@@ -1,0 +1,42 @@
+{
+	"headTitle": "Home | Mutugi Riungu",
+	"tagline": "Full Stack Developer",
+	"hero": {
+		"title": "Hi, I'm",
+		"summary": "A passionate Full Stack Developer with 6+ years of experience in design, development, testing, deployment and maintenance of software systems. Equipped with a diverse and up-to-date skill-set. Proficient in various platforms, languages, and embedded systems. Experienced with the latest development tools, paradigms and technologies. Able to effectively produce solutions for complex problems independently, as well as collaborate as part ofa productive team.",
+		"p0": "Full-stack ninja, web and mobile develope. I'm a self-taught developer who loves to build things for the web.",
+		"p1": "Currently SWE at Chalkstone Ltd",
+		"p2": "Previously",
+		"des0": "I am a rising senior at Nazarbayev University majoring in CS.",
+		"des1": "I enjoy creating high-quality software products with a complex logic behind it.",
+		"des2": "My technology stack includes NodeJs, TypeScript, React, React-Native, Java, MongoDB, Swift and Kotlin.",
+		"des3": "I am also currently learning more about AI security and cybersecurity."
+	},
+	"projects": {
+		"title": "Projects",
+		"description": "Here are some of my most favourite projects that I enjoyed coding and designing from scratch, both in a team and alone."
+	},
+	"skills": {
+		"title": "What I do",
+		"description": "I am passionate about using cutting-edge technologies. This is what I do."
+	},
+	"repos": {
+		"title": "What I do",
+		"description": "I am passionate about using cutting-edge technologies. This is what am good at."
+	},
+	"experience": {
+		"title": "Experience",
+		"description": "Here are some great companies I had the honour to join for working on various interesting projects."
+	},
+	"contact": {
+		"title": "Wanna reach out?",
+		"description": "Feel free to drop me a message if you have some interesting offer or you want to hang out."
+	},
+	"currently": "Currently",
+	"citation": {
+		"title": "Mutugi Riungu",
+		"subtitle": "A FullStack Ninja "
+	},
+	"covid19": "Postponed due to Covid-19",
+	"and": "and"
+}
