@@ -3,8 +3,8 @@ import Grid from "@mui/material/Grid";
 import Headline from "@app/sections/Headline";
 import PrimaryContacts from "@app/sections/PrimaryContacts";
 import SocialIcons from "@app/sections/SocialIcons";
-import Summary from "@app/sections/Summary";
-
+import SummarySection from "@app/sections/Summary";
+import ResumeSection from "@app/sections/Resume";
 import ProficienciesSection from "@app/sections/Proficiencies";
 import RepositoriesSection from "@app/sections/Repositories";
 import styles from "@app/styles/Home.module.css";
@@ -22,7 +22,7 @@ const Home = (props) => {
 			</Grid>
 
 			<Grid item xs={12}>
-				<Summary />
+				<SummarySection />
 			</Grid>
 
 			<Grid item xs={12}>
@@ -32,9 +32,11 @@ const Home = (props) => {
 				<SocialIcons />
 			</Grid>
 			<Grid item xs={12}>
-				<ProficienciesSection />
+				<ResumeSection />
 			</Grid>
-
+			{/* <Grid item xs={12}>
+				<ProficienciesSection />
+			</Grid> */}
 			{/* <Grid item xs={12}>
 				<RepositoriesSection />
 			</Grid> */}

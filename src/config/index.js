@@ -40,4 +40,4 @@ export const socialMedias = [
 		color: "#25D366",
 	},
 ];
-export const colors = { primary: "#aa0000", secondary: "#25D366" };
+export const colors = { primary: "#aa0000", secondary: "#25D366", accent: "#FF0000" };

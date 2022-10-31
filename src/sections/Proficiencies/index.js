@@ -153,10 +153,10 @@ export default function ProficienciesSection() {
 								size={1.5}
 							/>
 							<Typography variant="body1" color="primary">
-								Cloud computing
+								Cloud
 							</Typography>
 							<Typography variant="body2" className="text-center">
-								AWS, Azure, GCP, Digital Ocean, Linode, etc.
+								AWS, Azure, GCP, Digital Ocean, etc.
 							</Typography>
 						</MotionBox>
 					</Grid>

@@ -14,6 +14,10 @@ const darkTheme = createTheme({
 			light: "#5c5c5c",
 			dark: "#000000",
 		},
+		accent: {
+			contrastText: "#FFFFFF",
+			main: colors.accent || "#ff0000",
+		},
 		inverse: {
 			main: "#FFFFFF",
 			contrastText: "#000000",
