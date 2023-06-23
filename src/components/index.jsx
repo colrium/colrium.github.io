@@ -6,4 +6,5 @@ export { default as Link } from "./Link";
 export { default as Logo } from "./Logo";
 export { default as MediaIcon } from "./MediaIcon";
 export { default as NinjaIcon } from "./NinjaIcon";
+export { default as Section } from "./Section";
 export { default as TitleMask } from "./TitleMask";

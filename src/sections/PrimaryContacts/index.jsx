@@ -20,7 +20,6 @@ import { email, socialMedias } from "@app/config";
 import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
 
 const MotionGrid = motion(Grid);
-
 export default function PrimaryContacts() {
 	const { scrollYProgress } = useScroll();
 	const theme = useTheme();
@@ -58,11 +57,11 @@ export default function PrimaryContacts() {
 						color="textSecondary"
 						className="mb-4"
 					>
-						{t("contact.title")}
+						{t("sections.contact.title")}
 					</Typography>
 
 					<Typography variant="body2">
-						{t("contact.description")}
+						{t("sections.contact.description")}
 					</Typography>
 				</Grid>
 				<Grid
@@ -72,7 +71,7 @@ export default function PrimaryContacts() {
 				>
 					<Link
 						component={Button}
-						className="lowercase px-8 mx-4 mb-8 rounded-full"
+						className="lowercase px-8 mx-4 mb-8 rounded-full backlight "
 						variant="text"
 						href="mailto:colrium@gmail.com"
 						sx={{
@@ -85,6 +84,7 @@ export default function PrimaryContacts() {
 								size={0.7}
 							/>
 						}
+						disableRipple
 					>
 						colrium@gmail.com
 					</Link>

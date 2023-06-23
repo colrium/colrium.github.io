@@ -9,7 +9,7 @@ import { CitationOverlay, Footer } from "@app/components";
 import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
-import Header from "./Header";
+import Navbar from "./Navbar";
 
 const Layout = React.forwardRef(
 	({ children, sx, themeMode, onToggleThemeMode, ...rest }, ref) => {
@@ -25,6 +25,7 @@ const Layout = React.forwardRef(
 
 			return () => ids.forEach((id) => clearTimeout(id));
 		}, [setCitation]);
+
 		return (
 			<>
 				<CitationOverlay citation={citation} />
@@ -57,7 +58,7 @@ const Layout = React.forwardRef(
 						{...rest}
 						ref={ref}
 					>
-						<Header
+						<Navbar
 							themeMode={themeMode}
 							onToggleThemeMode={onToggleThemeMode}
 						/>

@@ -16,12 +16,13 @@ import {
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import { email, socialMedias } from "@app/config";
-import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
+import { LazyMotion, domAnimation, motion } from "framer-motion";
+import { useTranslation } from "next-export-i18n";
 
 const MotionGrid = motion(Grid);
 
 export default function SummarySection() {
-	const { scrollYProgress } = useScroll();
+	const { t } = useTranslation();
 	const theme = useTheme();
 	return (
 		<LazyMotion features={domAnimation}>
@@ -52,14 +53,7 @@ export default function SummarySection() {
 					gutterBottom
 					className="text-center  max-w-max lg:w-6/12"
 				>
-					Passionate Developer with 6+ years of experience in design,
-					development, testing, deployment and maintenance of software
-					systems. Equipped with a diverse and up-to-date skill-set.
-					Proficient in various platforms, languages, and embedded
-					systems. Experienced with the latest development tools,
-					paradigms and technologies. Able to effectively produce
-					solutions for complex problems independently, as well as
-					collaborate as part ofa productive team.
+					{t("sections.hero.summary")}
 				</Typography>
 			</MotionGrid>
 		</LazyMotion>

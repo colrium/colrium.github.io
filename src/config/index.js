@@ -40,4 +40,39 @@ export const socialMedias = [
 		color: "#25D366",
 	},
 ];
+
+export const experience = [
+	[
+		{
+			title: "React Native Participant",
+			place: "N17R Incubator, Almaty",
+			date: "Jun 2018 - Aug 2018",
+		},
+		{
+			title: "SWE Intern",
+			place: "Yandex, Moscow",
+			date: "Jun 2019 - Aug 2019",
+		},
+		{
+			title: "Ethereum Foundation",
+			place: "Blockchain Intern, Remote",
+			date: "Jun 2020 - Aug 2020",
+		},
+		{
+			title: "Frontend Engineer",
+			place: "alabs.team, Almaty",
+			date: `Jan 2021 - May 2021`,
+		},
+		{
+			title: "SWE Intern",
+			place: "Citadel, Hong Kong",
+			date: "May 2021 - Aug 2021",
+		},
+		{
+			title: "SWE Intern",
+			place: "Jump Crypto, Singapore",
+			date: "May 2022 - Current",
+		},
+	],
+];
 export const colors = { primary: "#aa0000", secondary: "#25D366" };

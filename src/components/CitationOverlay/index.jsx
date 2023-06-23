@@ -46,12 +46,12 @@ const CitationOverlay = ({ citation }) => {
 						<motion.div
 							variants={{
 								initial: {
-									opacity: 0,
-									scale: 0,
+									// opacity: 0,
+									scale: 0.1,
 								},
 								visible: {
-									opacity: 1,
-									scale: 1,
+									// opacity: 1,
+									scale: [1, 0.5, 1],
 								},
 							}}
 							initial="initial"
@@ -61,9 +61,9 @@ const CitationOverlay = ({ citation }) => {
 								duration: 0.2,
 							}}
 							exit={{ opacity: 0, y: -200 }}
-							className="flex flex-col items-center justify-center w-full h-full"
+							className="flex flex-col items-center justify-center"
 						>
-							<NinjaIcon className="w-10 mb-2  dark:text-white-900 text-black-900" />
+							<NinjaIcon className="w-10" />
 						</motion.div>
 					)}
 					<motion.p

@@ -4,3 +4,4 @@ export { default as useUpdate } from "./useUpdate";
 export { default as useBoolean } from "./useBoolean";
 export { default as usePrefereredColorScheme } from "./usePrefereredColorScheme";
 export { default as useColorModeAwareTheme } from "./useColorModeAwareTheme";
+export * from "./useSignal";

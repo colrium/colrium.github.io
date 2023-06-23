@@ -14,11 +14,7 @@ export default class AppDocument extends Document {
 						name="theme-color"
 						content={theme.palette.primary.main}
 					/>
-					<title>Mutugi Riungu</title>
-					<meta
-						name="description"
-						content="Experienced Software Developer adept in bringing forth expertise in design, installation, testing and maintenance of software systems"
-					/>
+
 					<link rel="shortcut icon" href="/img/favicon.ico" />
 					<link rel="stylesheet" href="/fonts/style.css" />
 					<meta name="emotion-insertion-point" content="" />

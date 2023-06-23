@@ -1,11 +1,11 @@
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { LazyMotion, domAnimation, useScroll,  motion } from "framer-motion";
+import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import CircleRoundedIcon from "@mui/icons-material/CircleRounded";
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
+import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import TerminalRoundedIcon from "@mui/icons-material/TerminalRounded";
 import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
 import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
@@ -28,7 +28,6 @@ const MotionIcon = motion(Icon);
 
 export default function ProficienciesSection() {
 	const theme = useTheme();
-	const { scrollYProgress } = useScroll();
 	const { t } = useTranslation();
 
 	return (
@@ -58,11 +57,11 @@ export default function ProficienciesSection() {
 							color="textSecondary"
 							className="mb-4"
 						>
-							{t("skills.title")}
+							{t("sections.skills.title")}
 						</Typography>
 
 						<Typography variant="body2">
-							{t("skills.description")}
+							{t("sections.skills.description")}
 						</Typography>
 					</Grid>
 				</Grid>
