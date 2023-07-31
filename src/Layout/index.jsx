@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 
 
 import React from "react";
@@ -12,26 +13,29 @@ import Grid from "@mui/material/Grid";
 import Navbar from "./Navbar";
 
 const Layout = React.forwardRef(
-	({ children, sx, themeMode, onToggleThemeMode, ...rest }, ref) => {
+	({ children, sx, themeMode, onToggleThemeMode, showCitation, ...rest }, ref) => {
 		const [citation, setCitation] = useState(true);
 		const [main, setMain] = useState(false);
-		const { t } = useTranslation("common");
+		useTranslation("common");
 
-		useEffect(() => {
-			const ids = [
-				setTimeout(() => setCitation(false), 1500),
-				setTimeout(() => setMain(true), 1700),
-			];
+		// useEffect(() => {
+		// 	const ids = [
+		// 		setTimeout(() => setCitation(false), 1500),
+		// 		setTimeout(() => setMain(true), 1700),
+		// 	];
 
-			return () => ids.forEach((id) => clearTimeout(id));
-		}, [setCitation]);
+		// 	return () => ids.forEach((id) => clearTimeout(id));
+		// }, [setCitation]);
 
 		return (
 			<>
-				<CitationOverlay citation={citation} />
+				<CitationOverlay
+					// citation={citation}
+					citation={showCitation}
+				/>
 				<motion.div
 					variants={{
-						initial: {
+						hidden: {
 							opacity: 0,
 							display: "none",
 						},
@@ -40,8 +44,9 @@ const Layout = React.forwardRef(
 							display: "block",
 						},
 					}}
-					initial="initial"
-					animate={main ? "visible" : "initial"}
+					initial="hidden"
+					//animate={main ? "visible" : "hidden"}
+					animate={showCitation ? "hidden" : "visible"}
 					transition={{
 						duration: 1.0,
 					}}

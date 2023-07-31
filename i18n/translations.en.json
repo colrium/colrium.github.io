@@ -38,6 +38,9 @@
 		"contact": {
 			"title": "Wanna reach out?",
 			"description": "Feel free to drop me a message if you have some interesting offer or you want to hang out."
+		},
+		"schedule": {
+			"title": "Schedule a meet"
 		}
 	}
 }

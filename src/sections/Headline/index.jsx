@@ -27,8 +27,8 @@ export default function Headline() {
 	const { scrollYProgress } = useScroll();
 	const theme = useTheme();
 	
-	const [count, setCount] = useSignal(0);
-	const startDate = new Date();
+	// const [count, setCount] = useSignal(0);
+	// const startDate = new Date();
 	/* const counter = useAuto(() => {
 		const lowerNumber = parseInt(1);
 		const higherNumber = parseInt(100);
@@ -64,7 +64,7 @@ export default function Headline() {
 	}); */
 
 
-	const rerendersRef = useRef(0)
+	/* const rerendersRef = useRef(0)
 	useEffect(() => {
 		rerendersRef.current++;
 	})
@@ -77,10 +77,9 @@ export default function Headline() {
 		}, 1000);
 		return () => clearInterval(updateInterval);
 	}, []);
-	
+	 */
 	const { t } = useTranslation();
 
-	console.log('count', count)
 	return (
 		<LazyMotion features={domAnimation}>
 			<MotionGrid
@@ -122,16 +121,7 @@ export default function Headline() {
 						{t("sections.hero.title")}
 					</Typography>
 
-					<Typography variant="h5" color="accent">
-						Updates
-					</Typography>
-					<Typography variant="h5" color="accent">
-						{count}
-					</Typography>
 					
-					<Typography variant="h5" color="accent">
-						{`Rerenders ${rerendersRef.current}`}
-					</Typography>
 
 					<TitleMask />
 				</Grid>

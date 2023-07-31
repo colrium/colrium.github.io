@@ -10,7 +10,7 @@ import RepositoriesSection from "@app/sections/Repositories";
 import styles from "@app/styles/Home.module.css";
 import { CalendarBooking } from "@app/components";
 
-const Home = (props) => {
+const Calendar = (props) => {
 	return (
 		<Grid
 			component="div"
@@ -19,32 +19,10 @@ const Home = (props) => {
 			sx={{ padding: (theme) => theme.spacing(5) }}
 		>
 			<Grid item xs={12}>
-				<Headline />
-			</Grid>
-
-			<Grid item xs={12}>
-				<Summary />
-			</Grid>
-
-			<Grid item xs={12}>
-				<PrimaryContacts />
-			</Grid>
-
-			<Grid item xs={12}>
-				<SocialIcons />
-			</Grid>
-			<Grid item xs={12}>
 				<CalendarBooking />
 			</Grid>
-			{/* <Grid item xs={12}>
-				<ProficienciesSection />
-			</Grid> */}
-
-			{/* <Grid item xs={12}>
-				<RepositoriesSection />
-			</Grid> */}
 		</Grid>
 	);
 };
 
-export default Home;
+export default Calendar;

@@ -1,3 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --magic-card-rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --magic-card-height: 300px;
+  --magic-card-width: 300px;
+  
+  
+}
+.magic-card {
+  padding: 3px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  
+  cursor: pointer;
+  font-family: cursive;
+}
+
+
+
+.magic-card::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  bottom: 0px;
+  border-radius: 8px;
+  filter: blur(1px);
+  background-image: linear-gradient(
+    var(--magic-card-rotate)
+    , #5ddcff, #3c67e3 50%, #4e00c2);
+    position: absolute;
+    z-index: 1;
+    /* top: 0; */
+    left: 0;
+	animation-direction: alternate-reverse;
+    animation: magic-card-bottom 30s linear infinite;
+}
+
+.magic-card::after {
+  position: absolute;
+  content: "";
+  /* top: calc(var(--magic-card-height) / 6); */
+  bottom: 5px;
+  left: 0;
+  /* right: 0; */
+  z-index: -1;
+  height: 5px;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* transform: scale(0.8); */
+  filter: blur(10px);
+  background-image: linear-gradient(
+    var(--magic-card-rotate)
+    , #5ddcff, #3c67e3 50%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation-direction: alternate-reverse;
+  animation: magic-card-bottom 30s linear infinite;
+}
+
+@keyframes magic-card-spin {
+  0% {
+    /* --magic-card-rotate: 0deg; */
+	left: 100%;
+		 width: 10%;
+  }
+  100% {
+    /* --magic-card-rotate: 360deg; */
+	width: 5%;
+		 left: 0%;
+  }
+}
+@keyframes magic-card-bottom {
+	0% {
+		 left: 100%;
+		 width: 0%;
+		 opacity: 0;
+	}
+	33% {
+		 left: 66%;
+		 width: 2%;
+		 opacity: 0.5;
+	}
+	66% {
+		 left: 33%;
+		 width: 5%;
+		 opacity: 1;
+	}
+	 100% {
+		 width: 0%;
+		 left: 0%;
+		 opacity: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .under-glow {
 	 position: relative;
 	 box-sizing: border-box;
@@ -111,4 +230,57 @@
     left: 0;
     background: inherit;
     border-radius: inherit;
+}
+.animated-border-box, .animated-border-box-glow{
+  /* max-height: 200px;
+  max-width: 250px; */
+  /* height: 100%; */
+  width: 100%;
+  position: absolute;
+  overflow: hidden; 
+  z-index: 0;
+}
+
+.animated-border-box-glow{
+  overflow: hidden;
+  /* Glow Blur */
+  filter: blur(20px);
+}
+
+.animated-border-box:before, .animated-border-box-glow:before {
+  content: '';
+  z-index: -2;
+  text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+	width: 99999px;
+	height: 99999px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+  /*border color, change middle color*/
+	background-image: conic-gradient(rgba(0,0,0,0), #aa0000, rgba(0,0,0,0) 25%);
+  /* change speed here */
+	animation: rotate 10s linear infinite;
+}
+
+.animated-border-box:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+  /* border width */
+	left: 0px;
+	top: 0px;
+  /* double the px from the border width left */
+	width: 100% ;
+	height: calc(100% - 3px);
+  /*bg color*/
+/* background: #292a2e; */
+}
+
+@keyframes rotate {
+	100% {
+		transform: translate(-50%, -50%) rotate(1turn);
+	}
 }

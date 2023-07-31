@@ -20,18 +20,18 @@ export const socialMedias = [
 		mdiIcon: mdiLinkedin,
 		color: "#0077B5",
 	},
-	{
-		name: "Instagram",
-		url: "https://www.instagram.com/mutugimiriti",
-		mdiIcon: mdiInstagram,
-		color: "#dd2a7b",
-	},
-	{
-		name: "Twitter",
-		url: "https://twitter.com/mutugiringu",
-		mdiIcon: mdiTwitter,
-		color: "#1DA1F2",
-	},
+	// {
+	// 	name: "Instagram",
+	// 	url: "https://www.instagram.com/mutugimiriti",
+	// 	mdiIcon: mdiInstagram,
+	// 	color: "#dd2a7b",
+	// },
+	// {
+	// 	name: "Twitter",
+	// 	url: "https://twitter.com/mutugiringu",
+	// 	mdiIcon: mdiTwitter,
+	// 	color: "#1DA1F2",
+	// },
 
 	{
 		name: "Whatsapp",
@@ -75,4 +75,4 @@ export const experience = [
 		},
 	],
 ];
-export const colors = { primary: "#aa0000", secondary: "#25D366" };
+export const colors = { primary: "#3c67e3", secondary: "#25D366" };

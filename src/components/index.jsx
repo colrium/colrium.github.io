@@ -8,3 +8,4 @@ export { default as MediaIcon } from "./MediaIcon";
 export { default as NinjaIcon } from "./NinjaIcon";
 export { default as Section } from "./Section";
 export { default as TitleMask } from "./TitleMask";
+export { default as CalendarBooking } from "./CalendarBooking";

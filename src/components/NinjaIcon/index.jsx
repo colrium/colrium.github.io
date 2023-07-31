@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/display-name */
+import React, { forwardRef } from "react";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
 const leftEyeVariants = {
@@ -9,7 +10,7 @@ const leftEyeVariants = {
 		scale: 0,
 	},
 };
-const NinjaIcon = (props) => {
+const NinjaIcon =(props) => {
 	const theme = useTheme();
 	return (
 		<div className="relative ">
@@ -17,6 +18,7 @@ const NinjaIcon = (props) => {
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 512 512"
+			
 				{...props}
 			>
 				<motion.path
@@ -85,7 +87,7 @@ const NinjaIcon = (props) => {
 					transition={{
 						delay: 0.35,
 						duration: 0.1,
-						// repeat: Infinity,
+						//repeat: Infinity,
 					}}
 					d="m 211.04175,287.19512 a 27.669254,26.382313 0 0 1 -32.32537,14.31535 27.669254,26.382313 0 0 1 -20.30084,-27.93274 27.669254,26.382313 0 0 1 25.40887,-23.83204"
 				/>
@@ -107,7 +109,7 @@ const NinjaIcon = (props) => {
 					transition={{
 						delay: 0.35,
 						duration: 0.1,
-						// repeat: Infinity,
+						//repeat: Infinity,
 					}}
 					d="m 290.2138,287.15567 c 7.90697,17.3154 33.99634,20.43237 46.13451,5.96998 11.7255,-12.01853 6.88964,-33.94515 -8.34604,-40.55028 l -5.13464,-1.94009 -5.43648,-0.92905 v 0"
 					// transform="scale(-1,1)"

@@ -81,6 +81,7 @@ const Header = (props) => {
 						}}
 						enableColorOnDark
 						elevation={0}
+						className="magic-card"
 					>
 						<StyledToolbar>
 							<Box

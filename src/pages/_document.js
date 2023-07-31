@@ -18,7 +18,7 @@ export default class AppDocument extends Document {
 					<link rel="shortcut icon" href="/img/favicon.ico" />
 					<link rel="stylesheet" href="/fonts/style.css" />
 					<meta name="emotion-insertion-point" content="" />
-					<script src="/js/tailwindcss.js"></script>
+
 					{this.props.emotionStyleTags}
 				</Head>
 				<body>
