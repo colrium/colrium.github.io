@@ -4,43 +4,32 @@
 	"meta": {
 		"description": "Experienced Software Developer adept in bringing forth expertise in design, installation, testing and maintenance of software systems"
 	},
+	"projects": {
+		"title": "Projects",
+		"description": "Here are some of my most favourite projects that I enjoyed coding and designing from scratch, both in a team and alone."
+	},
+	"skills": {
+		"title": "What I do",
+		"description": "I am passionate about using cutting-edge technologies. This is what I do."
+	},
+	"repos": {
+		"title": "What I do",
+		"description": "I am passionate about using cutting-edge technologies. This is what am good at."
+	},
+	"experience": {
+		"title": "Experience",
+		"description": "Here are some great companies I had the honour to join for working on various interesting projects."
+	},
+	"contact": {
+		"title": "Wanna reach out?",
+		"description": "Feel free to drop me a message if you have some interesting offer or you want to hang out."
+	},
+	"resume": {
+		"title": "Resume",
+		"titleAlt": "Curriculum Vitae"
+	},
 	"citation": {
 		"title": "Mutugi Riungu",
 		"subtitle": "A FullStack Ninja "
-	},
-	"pages": {
-		"home": {
-			"title": "Home",
-			"subtitle": "Full Stack Developer"
-		}
-	},
-	"sections": {
-		"hero": {
-			"title": "Hi, I'm",
-			"summary": "A passionate Full Stack Developer with 6+ years of experience in design, development, testing, deployment and maintenance of software systems. Equipped with a diverse and up-to-date skill-set. Proficient in various platforms, languages, and embedded systems. Experienced with the latest development tools, paradigms and technologies. Able to effectively produce solutions for complex problems independently, as well as collaborate as part of a productive team."
-		},
-		"projects": {
-			"title": "Projects",
-			"description": "Here are some of my most favorite projects that I enjoyed coding and designing from scratch, both in a team and alone."
-		},
-		"skills": {
-			"title": "What I do",
-			"description": "I am passionate about using cutting-edge technologies. This is what I do."
-		},
-		"repos": {
-			"title": "What I do",
-			"description": "I am passionate about using cutting-edge technologies. This is what am good at."
-		},
-		"experience": {
-			"title": "Experience",
-			"description": "Here are some great companies I had the honour to join and work on various interesting projects."
-		},
-		"contact": {
-			"title": "Wanna reach out?",
-			"description": "Feel free to drop me a message if you have some interesting offer or you want to hang out."
-		},
-		"schedule": {
-			"title": "Schedule a meet"
-		}
 	}
 }

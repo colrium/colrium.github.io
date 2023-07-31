@@ -8,14 +8,15 @@ const lightTheme = createTheme({
 		},
 		primary: {
 			contrastText: "#FFFFFF",
-			// main: "#aa0000",
 			main: colors.primary || "#005522",
 		},
 		secondary: {
 			contrastText: "#FFFFFF",
 			main: colors.secondary || "#2e2e2e",
-			light: "#5c5c5c",
-			dark: "#000000",
+		},
+		accent: {
+			contrastText: "#FFFFFF",
+			main: colors.accent || "#ff0000",
 		},
 		contrast: {
 			main: "#FFFFFF",
