@@ -1,10 +1,7 @@
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/material/styles";
 import Link from "@app/components/Link";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
+import Grid from "@mui/material/Grid";
+import { useTheme } from "@mui/material/styles";
+import { LazyMotion, domAnimation, motion } from "framer-motion";
 import { useTranslation } from "next-export-i18n";
 const MotionGrid = motion(Grid);
 
@@ -40,10 +37,11 @@ export default function ResumeSection() {
 					target="_blank"
     				rel="noopener noreferrer"
 					sx={{
-						color: theme.palette.background.paper,
+						color: theme.palette.primary.contrastText,
 						background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
 						backgroundSize: "400%",
-						animation: "glow 15s linear infinite"
+						animation: "glow 15s linear infinite",
+
 					}}
 					href={"/docs/cv.pdf"}
 				>

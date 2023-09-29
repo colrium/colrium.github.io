@@ -19,8 +19,8 @@ const Experience = () => {
 	return (
 		<Section
 			className="mt-20 mb-16 md:mt-28"
-			title={t("sections.experience.title")}
-			description={t("sections.experience.description")}
+			title={t("experience.title")}
+			description={t("experience.description")}
 		>
 			<Container className="mt-14">
 				<div className="flex justify-between max-w-screen-sm">

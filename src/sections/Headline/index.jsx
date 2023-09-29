@@ -1,25 +1,9 @@
+import { HandWave, TitleMask } from "@app/components";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
-import { Link, TitleMask, HandWave, NinjaIcon } from "@app/components";
-import Image from "next/image";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
+import { LazyMotion, domAnimation, motion, useScroll } from "framer-motion";
 import { useTranslation } from "next-export-i18n";
-import {
-	mdiGithub,
-	mdiTwitter,
-	mdiLinkedin,
-	mdiWhatsapp,
-	mdiEmailVariant,
-	mdiPhone,
-} from "@mdi/js";
-import Icon from "@mdi/react";
-import { email, socialMedias } from "@app/config";
-import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
-import { useSignal, useAuto } from "@app/hooks";
-import { useEffect, useRef } from "react";
 
 const MotionGrid = motion(Grid);
 
@@ -118,10 +102,8 @@ export default function Headline() {
 						gutterBottom
 						className="text-center"
 					>
-						{t("sections.hero.title")}
+						{t("meta.greeting")}
 					</Typography>
-
-					
 
 					<TitleMask />
 				</Grid>

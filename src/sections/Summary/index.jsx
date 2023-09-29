@@ -1,21 +1,6 @@
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
-import Link from "@app/components/Link";
-import Image from "next/image";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
-import {
-	mdiGithub,
-	mdiTwitter,
-	mdiLinkedin,
-	mdiWhatsapp,
-	mdiEmailVariant,
-	mdiPhone,
-} from "@mdi/js";
-import Icon from "@mdi/react";
-import { email, socialMedias } from "@app/config";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
 import { useTranslation } from "next-export-i18n";
 
@@ -53,7 +38,7 @@ export default function SummarySection() {
 					gutterBottom
 					className="text-center  max-w-max lg:w-6/12"
 				>
-					{t("sections.hero.summary")}
+					{t("meta.description")}
 				</Typography>
 			</MotionGrid>
 		</LazyMotion>

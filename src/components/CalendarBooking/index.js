@@ -1,45 +1,21 @@
 import { useDidMount } from "@app/hooks";
-import { Grid, Typography } from "@mui/icons-material";
+import { Grid, Typography, Box } from "@mui/material";
 import { useTheme } from "@mui/styles";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
 import { InlineWidget } from "react-calendly";
-// import { useTranslation } from "next-export-i18n";
-const CalendarBooking = ({ className }) => {
+import { useTranslation } from "next-export-i18n";
+const CalendarBooking = () => {
     const theme = useTheme();
-    // const { t } = useTranslation();
-    useDidMount(() => {
-        const head = document.querySelector('head');
-        const current = head.querySelector('#calendly-script')
-        const script = document.createElement('script');
-        script.setAttribute('src', 'https://assets.calendly.com/assets/external/widget.js');
-        script.setAttribute("id", "calendly-script");
-        head.appendChild(script);
-        console.log("current calendly-script", current);
-    })
-	return (
-		<motion.div
-			whileHover="hover"
-			initial="initial"
-			className={clsx("relative z-50", className)}
-		>
-			<motion.div
-				variants={{
-					initial: {
-						rotate: 0,
-						scale: 1,
-					},
-					hover: {
-						// scale: 1.1,
-					},
-				}}
-				className="text-black-900 dark:text-white-900"
-			>
-				<Grid container>
-					<Grid item xs={12}>
-						{/* <Typography>{t("sections.schedule.title")}</Typography> */}
+    const { t } = useTranslation();
 
+	return (
+		<Box className={"relative z-50"}>
+			<Box className="text-black-900 dark:text-white-900">
+				<Grid container>
+					<Grid item xs={12} sx={{display:'flex', alignItems: 'center', justifyContent: 'center'}}>
+						<Typography>{t("schedule.title")}</Typography>
 					</Grid>
 					<Grid item xs={12}>
 						<InlineWidget
@@ -61,11 +37,11 @@ const CalendarBooking = ({ className }) => {
 
 				{/* <Box
 					className="calendly-inline-widget"
-					data-url="https://calendly.com/username/15min"
+					data-url="https://calendly.com/colrium/30min"
 					style={{ minWidth: "320px", height: "580px" }}
 				/> */}
-			</motion.div>
-		</motion.div>
+			</Box>
+		</Box>
 	);
 };
 export default CalendarBooking;

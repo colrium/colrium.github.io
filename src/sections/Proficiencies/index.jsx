@@ -1,27 +1,18 @@
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Rating from "@mui/material/Rating";
-import CircleRoundedIcon from "@mui/icons-material/CircleRounded";
-import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import TerminalRoundedIcon from "@mui/icons-material/TerminalRounded";
-import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
-import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
-import JavascriptRoundedIcon from "@mui/icons-material/JavascriptRounded";
-import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
-import { useTranslation } from "next-export-i18n";
-import Icon from "@mdi/react";
 import {
-	mdiServerSecurity,
+	mdiApplicationBraces,
 	mdiCloud,
 	mdiDatabase,
-	mdiApplication,
-	mdiApplicationBraces,
-	mdiTabletCellphone,
 	mdiMonitorDashboard,
+	mdiServerSecurity,
+	mdiTabletCellphone
 } from "@mdi/js";
+import Icon from "@mdi/react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
+import { LazyMotion, domAnimation, motion } from "framer-motion";
+import { useTranslation } from "next-export-i18n";
 
 const MotionBox = motion(Box);
 const MotionIcon = motion(Icon);
@@ -57,12 +48,12 @@ export default function ProficienciesSection() {
 							color="textSecondary"
 							className="mb-4"
 						>
-							{t("sections.skills.title")}
+							{t("skills.title")}
 						</Typography>
 
-						<Typography variant="body2">
-							{t("sections.skills.description")}
-						</Typography>
+						{/* <Typography variant="body2">
+							{t("skills.description")}
+						</Typography> */}
 					</Grid>
 				</Grid>
 
@@ -184,7 +175,7 @@ export default function ProficienciesSection() {
 								Databases
 							</Typography>
 							<Typography variant="body2" className="text-center">
-								SQL, MySQL, SQLite, MongoDB & Realm, Room
+								PostgreSQL, MySQL, SQLite, MongoDB & Realm, ES
 							</Typography>
 						</MotionBox>
 					</Grid>

@@ -57,11 +57,11 @@ export default function PrimaryContacts() {
 						color="textSecondary"
 						className="mb-4"
 					>
-						{t("sections.contact.title")}
+						{t("contact.title")}
 					</Typography>
 
 					<Typography variant="body2">
-						{t("sections.contact.description")}
+						{t("contact.description")}
 					</Typography>
 				</Grid>
 				<Grid

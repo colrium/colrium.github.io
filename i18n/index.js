@@ -1,11 +1,11 @@
-var en = require("./translations.en.json");
+var en = require("./en.json");
 
 const i18n = {
 	translations: {
 		en,
 	},
 	defaultLang: "en",
-	useBrowserDefault: true,
+	useBrowserDefault: false,
 };
 
 module.exports = i18n;

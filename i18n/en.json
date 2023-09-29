@@ -2,15 +2,16 @@
 	"title": "Mutugi Riungu",
 	"tagline": "Full Stack Developer",
 	"meta": {
-		"description": "Experienced Software Developer adept in bringing forth expertise in design, installation, testing and maintenance of software systems"
+		"title": "Mutugi Riungu",
+		"greeting": "Hey there, I'm",
+		"description": "A Passionate and skilled Full Stack Software Developer with 7+ years professional experience building web and mobile applications. Equipped with a diverse and promising skill-set. Proficient in various platforms, languages, and embedded systems with expertise in the MERN stack. Experienced with several development tools and procedures."
 	},
 	"projects": {
 		"title": "Projects",
 		"description": "Here are some of my most favourite projects that I enjoyed coding and designing from scratch, both in a team and alone."
 	},
 	"skills": {
-		"title": "What I do",
-		"description": "I am passionate about using cutting-edge technologies. This is what I do."
+		"title": "Here's What I do"
 	},
 	"repos": {
 		"title": "What I do",
@@ -25,8 +26,12 @@
 		"description": "Feel free to drop me a message if you have some interesting offer or you want to hang out."
 	},
 	"resume": {
-		"title": "Resume",
+		"title": "CV/Resume",
 		"titleAlt": "Curriculum Vitae"
+	},
+	"schedule": {
+		"title": "Shedule a meet",
+		"titleAlt": ""
 	},
 	"citation": {
 		"title": "Mutugi Riungu",
