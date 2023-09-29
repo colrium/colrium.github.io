@@ -62,7 +62,7 @@ const Header = (props) => {
 								spacing={1}
 								className="flex flex-1 flex-col items-center justify-center"
 							>
-								<MotionAvatar
+								<motion.img
 									className="w-32 h-32 my-8 cursor-pointer"
 									initial={{
 										scale: 0.5,
@@ -87,8 +87,8 @@ const Header = (props) => {
 										duration: 0.25,
 									}}
 									onClick={onToggleThemeMode}
-									src="/img/avatar.png"
-									alt="Mutugi Riungu"
+									src="/img/logo.svg"
+									alt="logo"
 								/>
 								<Box
 									sx={{
