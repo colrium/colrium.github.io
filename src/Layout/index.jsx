@@ -1,15 +1,13 @@
 /* eslint-disable react/display-name */
 
 
-import React from "react";
-import { useEffect, useState } from "react";
-import { useTranslation } from "next-export-i18n";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-export-i18n";
+import React, { useState } from "react";
 
-import { CitationOverlay, Footer } from "@app/components";
-import Divider from "@mui/material/Divider";
-import Stack from "@mui/material/Stack";
+import { CitationOverlay } from "@app/components";
 import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
 import Navbar from "./Navbar";
 
 const Layout = React.forwardRef(
