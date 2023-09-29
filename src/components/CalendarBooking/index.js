@@ -1,11 +1,7 @@
-import { useDidMount } from "@app/hooks";
-import { Grid, Typography, Box } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/styles";
-import clsx from "clsx";
-import { motion } from "framer-motion";
-import React from "react";
-import { InlineWidget } from "react-calendly";
 import { useTranslation } from "next-export-i18n";
+import { InlineWidget } from "react-calendly";
 const CalendarBooking = () => {
     const theme = useTheme();
     const { t } = useTranslation();
@@ -14,7 +10,15 @@ const CalendarBooking = () => {
 		<Box className={"relative z-50"}>
 			<Box className="text-black-900 dark:text-white-900">
 				<Grid container>
-					<Grid item xs={12} sx={{display:'flex', alignItems: 'center', justifyContent: 'center'}}>
+					<Grid
+						item
+						xs={12}
+						sx={{
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
 						<Typography>{t("schedule.title")}</Typography>
 					</Grid>
 					<Grid item xs={12}>
@@ -31,6 +35,7 @@ const CalendarBooking = () => {
 							styles={{
 								height: "1000px",
 							}}
+							backgroundColor={theme.palette.primary.main}
 						/>
 					</Grid>
 				</Grid>

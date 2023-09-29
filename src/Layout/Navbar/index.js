@@ -1,41 +1,15 @@
-import Grid from "@mui/material/Grid";
-import React from "react";
-import Head from "next/head";
-import { useTheme } from "@mui/material/styles";
 import Link from "@app/components/Link";
-import Image from "next/image";
-import Button from "@mui/material/Button";
-import { useRouter } from "next/router";
-import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
-import SettingsBrightnessRoundedIcon from "@mui/icons-material/SettingsBrightnessRounded";
-import Checkbox from "@mui/material/Checkbox";
-import Avatar from "@mui/material/Avatar";
-import LinearProgress from "@mui/material/LinearProgress";
-import Icon from "@mdi/react";
+import { styled, useTheme } from "@mui/material/styles";
+import { LazyMotion, domAnimation, motion, useScroll } from "framer-motion";
 import { useTranslation } from "next-export-i18n";
-import {
-	mdiGithub,
-	mdiTwitter,
-	mdiLinkedin,
-	mdiWhatsapp,
-	mdiEmailVariant,
-} from "@mdi/js";
-import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React from "react";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 	alignItems: "flex-start",
@@ -113,7 +87,7 @@ const Header = (props) => {
 										duration: 0.25,
 									}}
 									onClick={onToggleThemeMode}
-									src="/img/avatar.jpg"
+									src="/img/avatar.png"
 									alt="Mutugi Riungu"
 								/>
 								<Box
