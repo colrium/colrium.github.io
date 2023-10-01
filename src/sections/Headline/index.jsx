@@ -94,7 +94,7 @@ export default function Headline() {
 						flexDirection: "column",
 					}}
 				>
-					<HandWave className="text-2xl" />
+					{/* <HandWave className="text-2xl" /> */}
 					{/*<NinjaIcon width="50px" height="50px" /> */}
 					<Typography
 						variant="h5"

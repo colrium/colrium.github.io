@@ -6,7 +6,7 @@ import { useTranslation } from "next-export-i18n";
 import React, { useState } from "react";
 
 import { CitationOverlay } from "@app/components";
-import Grid from "@mui/material/Grid";
+import { Box, Grid } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Navbar from "./Navbar";
 
@@ -26,7 +26,13 @@ const Layout = React.forwardRef(
 		// }, [setCitation]);
 
 		return (
-			<>
+			<Box
+				sx={{
+					background: (theme) => theme.palette.background.default,
+					// background: (theme) =>
+					// 	`radial-gradient(to bottom,  ${theme.palette.background.paper} 0%, ${theme.palette.background.default} 100%)`,
+				}}
+			>
 				<CitationOverlay
 					// citation={citation}
 					citation={showCitation}
@@ -53,8 +59,8 @@ const Layout = React.forwardRef(
 						className="relative"
 						sx={{
 							color: (theme) => theme.palette.text.primary,
-							backgroundColor: (theme) =>
-								theme.palette.background.default,
+							// backgroundColor: (theme) =>
+							// 	theme.palette.background.default,
 							...sx,
 						}}
 						direction="column"
@@ -75,7 +81,7 @@ const Layout = React.forwardRef(
 						</Grid>
 					</Stack>
 				</motion.div>
-			</>
+			</Box>
 		);
 	}
 );

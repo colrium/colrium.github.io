@@ -1,6 +1,21 @@
 {
 	"title": "Mutugi Riungu",
-	"tagline": "Full Stack Developer",
+	"tagline": "Full Stack Developer",	
+	
+	"profile": {
+		"availability": "Available for remote opportunities",
+		"current-position": "Currently at Stream4Tech as a mid-senior Software Engineer, and Design consultant to Anthropodata",
+		"former-position": "Formerly at Realfield as Lead/Senior FullStack developer."
+	},
+	"common": {
+		"timezone": "Timezone",
+		"location": "Based in"
+	},
+	"locale": {
+		"location": "Nairobi, Kenya, Africa",
+		"timezone": "UTC/GMT+3 hours",
+		"localtime": "Local Time"
+	},
 	"meta": {
 		"title": "Mutugi Riungu",
 		"greeting": "Hey there, I'm",

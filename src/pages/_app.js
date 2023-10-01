@@ -28,7 +28,7 @@ const NextApp = (props) => {
 	const [state, setState] = useSetState({
 		loading: true,
 	});
-	
+	console.log("modeTheme", modeTheme);
 	useEffect(() => {
 		const init = () => {
 			loaderTimeoutRef.current = setTimeout(() => {

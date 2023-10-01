@@ -1,6 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "next-export-i18n";
-import React from "react";
 
 import Container from "../Container";
 import NinjaIcon from "../NinjaIcon";

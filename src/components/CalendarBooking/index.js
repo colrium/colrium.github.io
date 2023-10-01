@@ -33,7 +33,7 @@ const CalendarBooking = () => {
 							}}
 							text="Click here to schedule!"
 							styles={{
-								height: "1000px",
+								height: "70vh",
 							}}
 							backgroundColor={theme.palette.primary.main}
 						/>

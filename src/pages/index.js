@@ -21,11 +21,9 @@ const Home = (props) => {
 			<Grid item xs={12}>
 				<SummarySection />
 			</Grid>
-
 			<Grid item xs={12}>
 				<ProficienciesSection />
 			</Grid>
-
 			{/* <Grid item xs={12}>
 				<ResumeSection />
 			</Grid> */}
