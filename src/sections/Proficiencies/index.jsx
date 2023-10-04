@@ -205,7 +205,7 @@ export default function ProficienciesSection() {
 								Backend
 							</Typography>
 							<Typography variant="body2" className="text-center">
-								PHP, Node.js & Python.
+								Node, ExpressJS, NextJS, PHP & JAVA.
 							</Typography>
 						</MotionBox>
 					</Grid>
@@ -235,7 +235,7 @@ export default function ProficienciesSection() {
 								Frontend
 							</Typography>
 							<Typography variant="body2" className="text-center">
-								HTML, CSS, Angular JS, React JS
+								Angular JS, React JS, Next JS
 							</Typography>
 						</MotionBox>
 					</Grid>
@@ -262,10 +262,10 @@ export default function ProficienciesSection() {
 								size={1.5}
 							/>
 							<Typography variant="body1" color="primary">
-								Mobile
+								TV & Mobile
 							</Typography>
 							<Typography variant="body2" className="text-center">
-								Java, Kotlin, Swift & React Native
+								Kotlin, Swift & React Native & WebOs
 							</Typography>
 						</MotionBox>
 					</Grid>

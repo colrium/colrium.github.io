@@ -37,23 +37,7 @@ const Layout = React.forwardRef(
 					// citation={citation}
 					citation={showCitation}
 				/>
-				<motion.div
-					variants={{
-						hidden: {
-							opacity: 0,
-							display: "none",
-						},
-						visible: {
-							opacity: 1,
-							display: "block",
-						},
-					}}
-					initial="hidden"
-					//animate={main ? "visible" : "hidden"}
-					animate={showCitation ? "hidden" : "visible"}
-					transition={{
-						duration: 1.0,
-					}}
+				{!showCitation && <Box
 				>
 					<Stack
 						className="relative"
@@ -80,7 +64,7 @@ const Layout = React.forwardRef(
 							</Grid>
 						</Grid>
 					</Stack>
-				</motion.div>
+				</Box>}
 			</Box>
 		);
 	}

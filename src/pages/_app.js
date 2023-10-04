@@ -13,8 +13,15 @@ import Router from "next/router";
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 import SEO from "../../next-seo.config";
+import { createContext } from "react";
+import { useContext } from "react";
 const clientSideEmotionCache = createEmotionCache();
 
+const AppContext = createContext({
+	citationOpen: true,
+	themeMode: 'dark'
+});
+export const useApp = () => useContext(AppContext);
 const NextApp = (props) => {
 	const {
 		Component,
@@ -22,26 +29,25 @@ const NextApp = (props) => {
 		pageProps,
 	} = props;
 
-	const [modeTheme, toggleModeTheme] = usePrefereredColorScheme();
+	const [themeMode, toggleThemeMode] = usePrefereredColorScheme();
 	const loaderTimeoutRef = useRef(null);
 
 	const [state, setState] = useSetState({
-		loading: true,
+		citationOpen: true,
 	});
-	console.log("modeTheme", modeTheme);
 	useEffect(() => {
 		const init = () => {
 			loaderTimeoutRef.current = setTimeout(() => {
-				setState({ loading: false });
+				setState({ citationOpen: false });
 			}, 1500);
 		};
 		// Used for page transition
 		const start = () => {
-			setState({ loading: true });
+			//setState({ citationOpen: true });
 		};
 		const end = (err) => {
 			loaderTimeoutRef.current = setTimeout(() => {
-				setState({ loading: false });
+				//setState({ citationOpen: false });
 			}, 500);
 			
 		};
@@ -62,21 +68,25 @@ const NextApp = (props) => {
 	}, []);
 	return (
 		<CacheProvider value={emotionCache}>
-			<ThemeProvider theme={modeTheme === "dark" ? darkTheme : darkTheme}>
-				<DefaultSeo {...SEO} />
-				<CssBaseline />
-				<LocalizationProvider dateAdapter={AdapterDateFns}>
-					<Layout
-						onToggleThemeMode={toggleModeTheme}
-						themeMode={modeTheme.palette?.mode}
-						showCitation={state.loading}
-					>
-						<AnimatePresence mode="wait" initial={false}>
-							<Component {...pageProps} />
-						</AnimatePresence>
-					</Layout>
-				</LocalizationProvider>
-			</ThemeProvider>
+			<AppContext.Provider value={{ ...state, themeMode, toggleThemeMode }}>
+				<ThemeProvider
+					theme={themeMode === "dark" ? darkTheme : darkTheme}
+				>
+					<DefaultSeo {...SEO} />
+					<CssBaseline />
+					<LocalizationProvider dateAdapter={AdapterDateFns}>
+						<Layout
+							onToggleThemeMode={toggleThemeMode}
+							themeMode={themeMode.palette?.mode}
+							showCitation={state.citationOpen}
+						>
+							<AnimatePresence mode="wait" initial={false}>
+								<Component {...pageProps} />
+							</AnimatePresence>
+						</Layout>
+					</LocalizationProvider>
+				</ThemeProvider>
+			</AppContext.Provider>
 		</CacheProvider>
 	);
 };

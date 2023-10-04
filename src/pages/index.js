@@ -14,9 +14,9 @@ const Home = (props) => {
 			className={"p-4 relative"}
 			sx={{ padding: (theme) => theme.spacing(5) }}
 		>
-			<Grid item xs={12}>
+			{/* <Grid item xs={12} className="mb-8">
 				<Headline />
-			</Grid>
+			</Grid> */}
 
 			<Grid item xs={12}>
 				<SummarySection />

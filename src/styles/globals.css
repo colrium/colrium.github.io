@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
 @property --magic-card-rotate {
   syntax: "<angle>";
   initial-value: 132deg;
@@ -14,10 +16,16 @@
   
   
 }
-body {
-	background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(0,0,0) 100%);
+
+* {
+	/* font-family: 'Outfit'; */
 }
+body {
+	background: #191c29;
+
+}
+
+.bg-main
 .magic-card {
   padding: 3px;
   position: relative;

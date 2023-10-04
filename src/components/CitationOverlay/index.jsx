@@ -20,7 +20,7 @@ const CitationOverlay = ({ citation }) => {
 	return (
 		<AnimatePresence>
 			<motion.div
-				className="absolute flex items-center justify-center w-full h-full"
+				className="absolute flex items-center justify-center w-full h-full bg-main"
 				variants={{
 					initial: {
 						opacity: 1,
@@ -39,6 +39,7 @@ const CitationOverlay = ({ citation }) => {
 				}}
 				initial="initial"
 				animate={citation ? "initial" : "invisible"}
+				exit={{ scale: 0 }}
 			>
 				<Container>
 					{citation && (
@@ -59,14 +60,14 @@ const CitationOverlay = ({ citation }) => {
 								delay: 0.1,
 								duration: 0.2,
 							}}
-							exit={{ opacity: 0, y: -200 }}
+							exit={{ scale: 0, y: -200 }}
 							className="flex flex-col items-center justify-center"
 						>
-							<NinjaIcon className="w-10" />
+							<NinjaIcon className="w-24" />
 						</motion.div>
 					)}
 					<motion.p
-						className="mt-4 mb-2 text-xl font-medium leading-none text-2xl text-black-900 my-0"
+						className="mt-4 mb-2 text-xl font-medium leading-none text-2xl text-black-900 my-0 mb-4"
 						variants={textVariants}
 						initial="initial"
 						animate="visible"
@@ -78,7 +79,7 @@ const CitationOverlay = ({ citation }) => {
 						{t("citation.title")}
 					</motion.p>
 					<motion.p
-						className="text-base text-center text-red-700"
+						className="text-base text-center "
 						initial="initial"
 						animate="visible"
 						variants={textVariants}
