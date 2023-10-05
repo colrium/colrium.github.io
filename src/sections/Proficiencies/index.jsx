@@ -262,7 +262,7 @@ export default function ProficienciesSection() {
 								size={1.5}
 							/>
 							<Typography variant="body1" color="primary">
-								TV & Mobile
+								Mobile
 							</Typography>
 							<Typography variant="body2" className="text-center">
 								Kotlin, Swift & React Native & WebOs

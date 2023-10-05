@@ -4,33 +4,33 @@ const darkTheme = createTheme({
 	palette: {
 		mode: "dark",
 		primary: {
-			contrastText: "#FFFFFF",
+			contrastText: "#dedede",
 			// main: "#aa0000",
 			main: colors.primary || "#005522",
 		},
 		secondary: {
-			contrastText: "#FFFFFF",
+			contrastText: "#dedede",
 			main: colors.secondary || "#2e2e2e",
 			light: "#5c5c5c",
 			dark: "#000000",
 		},
 		accent: {
-			contrastText: "#FFFFFF",
+			contrastText: "#dedede",
 			main: colors.accent || "#ff0000",
 		},
 		inverse: {
-			main: "#FFFFFF",
+			main: "#dedede",
 			contrastText: "#000000",
 		},
 		contrast: {
-			main: "#FFFFFF",
+			main: "#dedede",
 			contrastText: "#000000",
 		},
 		default: {
 			main: "inherit",
 		},
 		white: {
-			main: "#FFFFFF",
+			main: "#dedede",
 		},
 		success: {
 			main: "#00AF41",
@@ -52,10 +52,10 @@ const darkTheme = createTheme({
 			paper: "#0b0d13",
 		},
 		text: {
-			primary: "#ffffff",
-			contrast: "#1a1a1a",
+			primary: "#dedede",
+			contrast: "#8c8c8c",
 			contrastDark: "#ffffff",
-			secondary: "#d4d4d4",
+			secondary: "#8c8c8c",
 			disabled: "#999999",
 		},
 	},
