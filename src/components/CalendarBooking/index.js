@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/styles";
 import { useTranslation } from "next-export-i18n";
-import { InlineWidget } from "react-calendly";
+import { InlineWidget, PopupWidget } from "react-calendly";
 const CalendarBooking = () => {
     const theme = useTheme();
     const { t } = useTranslation();
@@ -36,6 +36,16 @@ const CalendarBooking = () => {
 								height: 800,
 							}}
 							backgroundColor={theme.palette.primary.main}
+						/>
+						<PopupWidget
+							url="https://calendly.com/colrium/30min"
+							rootElement={document.getElementById(
+								"main-wrapper"
+							)}
+							text={t("schedule.title")}
+							textColor={theme.palette.text.primary}
+							color={theme.palette.primary.main}
+							backgroundColor={theme.palette.background.paper}
 						/>
 					</Grid>
 				</Grid>

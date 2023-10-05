@@ -32,6 +32,7 @@ const Layout = React.forwardRef(
 					// background: (theme) =>
 					// 	`radial-gradient(to bottom,  ${theme.palette.background.paper} 0%, ${theme.palette.background.default} 100%)`,
 				}}
+				id="main-wrapper"
 			>
 				<CitationOverlay
 					// citation={citation}
