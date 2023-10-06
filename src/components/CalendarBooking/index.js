@@ -2,12 +2,66 @@ import { Box, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/styles";
 import { useTranslation } from "next-export-i18n";
 import { InlineWidget, PopupWidget } from "react-calendly";
+import { Fab, Zoom } from "@mui/material";
+import EventIcon from "@mui/icons-material/Event";
+import { useEffect, useRef, useState, useMemo } from "react";
+
+function useIsInViewport(ref) {
+	const [isIntersecting, setIsIntersecting] = useState(false);
+
+	const observer = useMemo(
+		() =>
+			new IntersectionObserver(([entry]) =>
+				setIsIntersecting(entry.isIntersecting)
+			),
+		[]
+	);
+
+	useEffect(() => {
+		observer.observe(ref.current);
+
+		return () => {
+			observer.disconnect();
+		};
+	}, [ref, observer]);
+
+	return isIntersecting;
+}
 const CalendarBooking = () => {
     const theme = useTheme();
     const { t } = useTranslation();
+	const ref = useRef();
+	const isInViewport = useIsInViewport(ref);
+	const transitionDuration = {
+		enter: theme.transitions.duration.enteringScreen,
+		exit: theme.transitions.duration.leavingScreen,
+	};
+	const [showButton, setShowButton] = useState(true);
+
+	const handleOnFabClick = () => {
+		ref.current?.scrollIntoView?.({ behavior: "smooth", block: "end", inline: "nearest" });
+	}
+
+	const handleOnScroll = (e) => {
+		// console.log(
+		// 	"window.scrollY",
+		// 	window.scrollY,
+		// 	"ref.current?.offsetTop",
+		// 	ref.current
+		// );
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleOnScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleOnScroll);
+		};
+	}, [])
+
 
 	return (
-		<Box className={"relative z-50"}>
+		<Box className={"relative z-50"} id="schedule-a-meet" ref={ref}>
 			<Box className="text-black-900 dark:text-white-900">
 				<Grid container>
 					<Grid
@@ -37,24 +91,32 @@ const CalendarBooking = () => {
 							}}
 							backgroundColor={theme.palette.primary.main}
 						/>
-						<PopupWidget
-							url="https://calendly.com/colrium/30min"
-							rootElement={document.getElementById(
-								"main-wrapper"
-							)}
-							text={t("schedule.title")}
-							textColor={theme.palette.text.primary}
-							color={theme.palette.primary.main}
-							backgroundColor={theme.palette.background.paper}
-						/>
 					</Grid>
 				</Grid>
-
-				{/* <Box
-					className="calendly-inline-widget"
-					data-url="https://calendly.com/colrium/30min"
-					style={{ minWidth: "320px", height: "580px" }}
-				/> */}
+				<Zoom
+					in={!isInViewport}
+					timeout={transitionDuration}
+					style={{
+						transitionDelay: `${
+							!isInViewport ? transitionDuration.exit : 0
+						}ms`,
+					}}
+					unmountOnExit
+				>
+					<Fab
+						variant="extended"
+						color="primary"
+						className="fixed bottom-8 right-8"
+						onClick={handleOnFabClick}
+						size="medium"
+						sx={{
+							backgroundColor: `${theme.palette.primary.main} !important`,
+						}}
+					>
+						<EventIcon fontSize="inherit" sx={{ mr: 1 }} />
+						{t("schedule.title")}
+					</Fab>
+				</Zoom>
 			</Box>
 		</Box>
 	);
