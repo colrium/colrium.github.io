@@ -1,10 +1,10 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { calendly } from "@app/config";
+import Icon from "@mdi/react";
+import { Box, Fab, Grid, Typography, Zoom } from "@mui/material";
 import { useTheme } from "@mui/styles";
 import { useTranslation } from "next-export-i18n";
-import { InlineWidget, PopupWidget } from "react-calendly";
-import { Fab, Zoom } from "@mui/material";
-import EventIcon from "@mui/icons-material/Event";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { InlineWidget } from "react-calendly";
 
 function useIsInViewport(ref) {
 	const [isIntersecting, setIsIntersecting] = useState(false);
@@ -61,7 +61,7 @@ const CalendarBooking = () => {
 
 
 	return (
-		<Box className={"relative z-50"} id="schedule-a-meet" ref={ref}>
+		<Box className={"relative z-50 pt-8"} id="schedule-a-meet" ref={ref}>
 			<Box className="text-black-900 dark:text-white-900">
 				<Grid container>
 					<Grid
@@ -73,23 +73,49 @@ const CalendarBooking = () => {
 							justifyContent: "center",
 						}}
 					>
-						<Typography>{t("schedule.title")}</Typography>
+						<Box className="flex items-center justify-center w-full">
+							<Box spacing={1} className="flex flex-col w-3/4">
+								<Box className="flex items-center justify-center">
+									<Box spacing={1} className="flex flex-col">
+										<Box
+											spacing={1}
+											className="flex flex-1 flex-col items-center justify-center"
+										>
+											<Typography
+												variant="h5"
+												color="textSecondary"
+												className="mb-4"
+											>
+												{t("schedule.title")}
+											</Typography>
+
+											<Typography
+												textAlign={"center"}
+												variant="body2"
+											>
+												{t("schedule.description")}
+											</Typography>
+										</Box>
+									</Box>
+								</Box>
+							</Box>
+						</Box>
 					</Grid>
 					<Grid item xs={12}>
 						<InlineWidget
-							url="https://calendly.com/colrium/30min"
+							url={calendly.url}
 							pageSettings={{
 								backgroundColor: theme.palette.background.paper,
 								hideEventTypeDetails: false,
 								hideLandingPageDetails: false,
-								primaryColor: theme.palette.primary.main,
+								primaryColor: calendly.color,
 								textColor: theme.palette.text.primary,
 							}}
-							text="Click here to schedule!"
+							text={t(calendly.text)}
 							styles={{
-								height: 800,
+								height: 1000,
 							}}
-							backgroundColor={theme.palette.primary.main}
+							backgroundColor={calendly.color}
 						/>
 					</Grid>
 				</Grid>
@@ -105,16 +131,16 @@ const CalendarBooking = () => {
 				>
 					<Fab
 						variant="extended"
-						color="primary"
+						color="accent"
 						className="fixed bottom-8 right-8"
 						onClick={handleOnFabClick}
 						size="medium"
 						sx={{
-							backgroundColor: `${theme.palette.primary.main} !important`,
+							backgroundColor: `${theme.palette.error.main} !important`,
 						}}
 					>
-						<EventIcon fontSize="inherit" sx={{ mr: 1 }} />
-						{t("schedule.title")}
+						<Icon path={calendly.icon} size={1} className="mr-2" />
+						{t("schedule.meet")}
 					</Fab>
 				</Zoom>
 			</Box>

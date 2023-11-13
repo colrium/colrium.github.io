@@ -1,12 +1,21 @@
 import {
+	mdiCalendarBadgeOutline,
 	mdiGithub,
-	mdiTwitter,
 	mdiLinkedin,
-	mdiWhatsapp,
-	mdiInstagram,
+	mdiWhatsapp
 } from "@mdi/js";
+export const contacts = {
+	email: "colrium@gmail.com",
+	phone: "+254724146857",
+};
 export const email = "colrium@gmail.com";
-
+export const calendly = {
+	label: "schedule.meet",
+	url: "https://calendly.com/colrium/30min",
+	color: "#dd2a7b",
+	icon: mdiCalendarBadgeOutline,
+	text: "schedule.title",
+};
 export const socialMedias = [
 	{
 		name: "GitHub",
@@ -20,19 +29,6 @@ export const socialMedias = [
 		mdiIcon: mdiLinkedin,
 		color: "#0077B5",
 	},
-	// {
-	// 	name: "Instagram",
-	// 	url: "https://www.instagram.com/mutugimiriti",
-	// 	mdiIcon: mdiInstagram,
-	// 	color: "#dd2a7b",
-	// },
-	// {
-	// 	name: "Twitter",
-	// 	url: "https://twitter.com/mutugiringu",
-	// 	mdiIcon: mdiTwitter,
-	// 	color: "#1DA1F2",
-	// },
-
 	{
 		name: "Whatsapp",
 		url: "https://api.whatsapp.com/send/?phone=254724146857&text=Hey+Mutugi",

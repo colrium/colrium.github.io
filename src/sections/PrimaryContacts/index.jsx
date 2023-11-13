@@ -1,29 +1,24 @@
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/material/styles";
 import Link from "@app/components/Link";
-import Image from "next/image";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
+import { contacts } from "@app/config";
 import {
-	mdiGithub,
-	mdiTwitter,
-	mdiLinkedin,
-	mdiWhatsapp,
 	mdiEmailVariant,
-	mdiPhone,
+	mdiPhone
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { alpha, useTheme } from "@mui/material/styles";
+import { LazyMotion, domAnimation, motion, useScroll } from "framer-motion";
 import { useTranslation } from "next-export-i18n";
-import { email, socialMedias } from "@app/config";
-import { LazyMotion, domAnimation, useScroll, motion } from "framer-motion";
 
 const MotionGrid = motion(Grid);
 export default function PrimaryContacts() {
 	const { scrollYProgress } = useScroll();
 	const theme = useTheme();
 	const { t } = useTranslation();
+
+	console.log('theme', theme)
 	return (
 		<LazyMotion features={domAnimation}>
 			<MotionGrid
@@ -68,15 +63,26 @@ export default function PrimaryContacts() {
 					item
 					xs={12}
 					className="text-center flex  flex-col lg:flex-row mt-8 items-center justify-center "
+					sx={{
+						"& .contact-btn": {
+							backgroundColor: alpha(
+								theme.palette.primary.main,
+								0.05
+							),
+							"&:hover": {
+								backgroundColor: alpha(
+									theme.palette.primary.main,
+									theme.palette.action.selectedOpacity
+								),
+							},
+						},
+					}}
 				>
 					<Link
 						component={Button}
-						className="lowercase px-8 mx-4 mb-8 rounded-full backlight "
+						className="lowercase px-8 mx-4 mb-8 rounded-full backlight contact-btn"
 						variant="text"
-						href="mailto:colrium@gmail.com"
-						sx={{
-							backgroundColor: theme.palette.contrast.main,
-						}}
+						href={`mailto:${contacts.email}`}
 						startIcon={
 							<Icon
 								path={mdiEmailVariant}
@@ -86,22 +92,19 @@ export default function PrimaryContacts() {
 						}
 						disableRipple
 					>
-						colrium@gmail.com
+						{contacts.email}
 					</Link>
 
 					<Link
 						component={Button}
-						className="lowercase px-8 mx-4 mb-8 rounded-full"
+						className="lowercase px-8 mx-4 mb-8 rounded-full contact-btn"
 						variant="text"
-						href="tel:+254724146857"
-						sx={{
-							backgroundColor: theme.palette.contrast.main,
-						}}
+						href={`tel:${contacts.phone}`}
 						startIcon={
 							<Icon path={mdiPhone} title="Phone" size={0.7} />
 						}
 					>
-						+254 724 146 857
+						{contacts.phone}
 					</Link>
 				</Grid>
 			</MotionGrid>

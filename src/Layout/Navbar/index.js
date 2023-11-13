@@ -1,12 +1,10 @@
-import { TitleMask } from "@app/components";
 import Globe from "@app/components/Globe";
-import { usePrefereredColorScheme, useSignal } from "@app/hooks";
+import { useSignal } from "@app/hooks";
 import { useApp } from "@app/pages/_app";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import { IconButton, Chip } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
+import { Chip } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -18,8 +16,6 @@ import { useTranslation } from "next-export-i18n";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useRef } from "react";
-import Lottie from "react-lottie";
-import themeModeLottie from "@app/assets/lottie/color-mode-circle.json";
 const utc = require("dayjs/plugin/utc");
 const timezone = require("dayjs/plugin/timezone"); // dependent on utc plugin
 
@@ -95,49 +91,22 @@ const Header = (props) => {
 				>
 					<Box className="flex items-center justify-center">
 						<Box spacing={1} className="flex flex-col w-3/4">
-							{/* <Box className="flex w-full justify-end items-center">
-								<IconButton onClick={handleToggleColorMode}>
-									<Lottie
-										options={{
-											loop: true,
-											autoplay: true,
-											animationData: themeModeLottie,
-											rendererSettings: {
-												preserveAspectRatio:
-													"xMidYMid slice",
-											},
-										}}
-										height={64}
-										width={64}
-										// isStopped={state.isStopped}
-										// isPaused={this.state.isPaused}
-									/>
-								</IconButton>
-							</Box> */}
+							
 
 							<Box
 								spacing={1}
 								className="flex flex-1 flex-col items-center justify-center"
 							>
-								<Box item xs={12} className="my-8">
-									<Box>
-										{/* <HandWave className="text-2xl" /> */}
-										{/*<NinjaIcon width="50px" height="50px" /> */}
-										{/* <Typography
-											variant="h5"
-											color="accent"
-											gutterBottom
-											className="text-center"
-										>
-											{t("meta.greeting")}
-										</Typography> */}
+								<Box item xs={12} className="flex item-center justify-center my-8">
+									<Box className="flex flex-col gap-2">
+										<Typography variant="h2" textAlign={'center'}>
+											{t("title")}
+										</Typography>
+
+										<Typography color="textSecondary" variant="h5" textAlign={'right'}>
+											{t("tagline")}
+										</Typography>
 									</Box>
-									<Box
-										component="img"
-										src="./img/august.svg"
-										width={400}
-										height={"auto"}
-									/>
 								</Box>
 								<Box>
 									<Box className="w-full flex items-center justify-center">
@@ -151,9 +120,8 @@ const Header = (props) => {
 											}
 											label={`${t("common.location")} ${t(
 												"locale.location"
-											)}`}
-											//variant="outlined"
-											color="primary"
+											)}`}											
+											
 										/>
 
 										<Chip
@@ -161,12 +129,11 @@ const Header = (props) => {
 												<TravelExploreIcon fontSize="inherit" />
 											}
 											label={`${t("locale.timezone")}`}
-											//variant="outlined"
-											color="primary"
+											
 										/>
 
 										<Chip
-											color="primary"
+											// color="primary"
 											icon={
 												<AccessTimeIcon fontSize="inherit" />
 											}

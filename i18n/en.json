@@ -1,6 +1,6 @@
 {
 	"title": "Mutugi Riungu",
-	"tagline": "Full Stack Developer",	
+	"tagline": "Full Stack Mid-Senior SE",	
 	
 	"profile": {
 		"availability": "Available for remote opportunities",
@@ -26,7 +26,8 @@
 		"description": "Here are some of my most favourite projects that I enjoyed coding and designing from scratch, both in a team and alone."
 	},
 	"skills": {
-		"title": "Things I do"
+		"title": "Things I do",
+		"description": "I am holistically proficient very adaptable accross the web and mobile software development domins. These especially, I have in-depth knowlde on and hands-on experience in."
 	},
 	"repos": {
 		"title": "What I do",
@@ -45,11 +46,12 @@
 		"titleAlt": "Curriculum Vitae"
 	},
 	"schedule": {
-		"title": "Shedule a meet",
-		"titleAlt": ""
+		"title": "I would love to meet",
+		"description": "Shedule a meet here. Please pick a date and time for a <=30 minute video/audio Whatsapp, Zoom or Google Meet from my calendar. Any available time is a good time.",
+		"meet": "Schedule a Meet"
 	},
 	"citation": {
 		"title": "Mutugi Riungu",
-		"subtitle": "A FullStack Ninja "
+		"subtitle": "A FullStack Ninja"
 	}
 }

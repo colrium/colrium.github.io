@@ -1,7 +1,7 @@
 import { useApp } from "@app/pages/_app";
 import { useTheme } from "@mui/styles";
 import createGlobe from "cobe";
-import { useEffect, useRef, memo, useLayoutEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Globe =({width=300, height=300, ...rest}) => {
     const canvasRef = useRef();
