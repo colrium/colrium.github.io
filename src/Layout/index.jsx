@@ -9,6 +9,7 @@ import { CitationOverlay } from "@app/components";
 import { Box, Grid } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Navbar from "./Navbar";
+import BouncingBlobs from "@app/components/BouncingBlobs";
 
 const Layout = React.forwardRef(
 	({ children, sx, themeMode, onToggleThemeMode, showCitation, ...rest }, ref) => {
@@ -28,12 +29,13 @@ const Layout = React.forwardRef(
 		return (
 			<Box
 				sx={{
-					background: (theme) => theme.palette.background.default,
+					// background: (theme) => theme.palette.background.default,
 					// background: (theme) =>
 					// 	`radial-gradient(to bottom,  ${theme.palette.background.paper} 0%, ${theme.palette.background.default} 100%)`,
 				}}
 				id="main-wrapper"
 			>
+
 				<CitationOverlay
 					// citation={citation}
 					citation={showCitation}
@@ -56,11 +58,12 @@ const Layout = React.forwardRef(
 							themeMode={themeMode}
 							onToggleThemeMode={onToggleThemeMode}
 						/>
-						<Grid container className="lg:px-16 px-4">
+						<Grid container className="lg:px-16 px-4 relative">
 							{/* <Divider orientation="vertical" variant="middle" flexItem>
 						VERTICAL
 					</Divider> */}
 							<Grid item xs>
+							<BouncingBlobs />
 								{children}
 							</Grid>
 						</Grid>

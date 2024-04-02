@@ -1,3 +1,5 @@
+import CircularParticles from "@app/components/CircularParticles";
+import Devices from "@app/components/Devices";
 import Link from "@app/components/Link";
 import { contacts } from "@app/config";
 import {
@@ -5,6 +7,7 @@ import {
 	mdiPhone
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import { Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -18,7 +21,6 @@ export default function PrimaryContacts() {
 	const theme = useTheme();
 	const { t } = useTranslation();
 
-	console.log('theme', theme)
 	return (
 		<LazyMotion features={domAnimation}>
 			<MotionGrid
@@ -26,17 +28,17 @@ export default function PrimaryContacts() {
 					scale: 0.5,
 					opacity: 0,
 					x: 0,
-					y: -40,
+					y: -40
 				}}
 				whileInView={{ scale: 1, opacity: 1, y: 0 }}
 				exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
 				transition={{
-					type: "spring",
+					type: 'spring',
 					damping: 30,
 					mass: 0.75,
 					stiffness: 400,
 					delay: 0.03,
-					duration: 0.25,
+					duration: 0.25
 				}}
 				component="div"
 				container
@@ -52,30 +54,22 @@ export default function PrimaryContacts() {
 						color="textSecondary"
 						className="mb-4"
 					>
-						{t("contact.title")}
+						{t('contact.title')}
 					</Typography>
 
-					<Typography variant="body2">
-						{t("contact.description")}
-					</Typography>
+					<Typography variant="body2">{t('contact.description')}</Typography>
 				</Grid>
 				<Grid
 					item
 					xs={12}
 					className="text-center flex  flex-col lg:flex-row mt-8 items-center justify-center "
 					sx={{
-						"& .contact-btn": {
-							backgroundColor: alpha(
-								theme.palette.primary.main,
-								0.05
-							),
-							"&:hover": {
-								backgroundColor: alpha(
-									theme.palette.primary.main,
-									theme.palette.action.selectedOpacity
-								),
-							},
-						},
+						'& .contact-btn': {
+							backgroundColor: alpha(theme.palette.primary.main, 0.05),
+							'&:hover': {
+								backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity)
+							}
+						}
 					}}
 				>
 					<Link
@@ -101,12 +95,17 @@ export default function PrimaryContacts() {
 						variant="text"
 						href={`tel:${contacts.phone}`}
 						startIcon={
-							<Icon path={mdiPhone} title="Phone" size={0.7} />
+							<Icon
+								path={mdiPhone}
+								title="Phone"
+								size={0.7}
+							/>
 						}
 					>
 						{contacts.phone}
 					</Link>
 				</Grid>
+				
 			</MotionGrid>
 		</LazyMotion>
 	);

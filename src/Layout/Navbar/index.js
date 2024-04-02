@@ -1,3 +1,4 @@
+import BouncingBlobs from "@app/components/BouncingBlobs";
 import Globe from "@app/components/Globe";
 import { useSignal } from "@app/hooks";
 import { useApp } from "@app/pages/_app";
@@ -38,7 +39,7 @@ const MotionBox = motion(Box);
 const Header = (props) => {
 	const {themeMode, toggleThemeMode} = useApp()
 	const theme = useTheme();
-	const router = useRouter();
+	const [user, setUser] = useSignal(['Mutugi', 'Riungu']);
 	const colorToggleLottieRef = useRef();
 	const { scrollYProgress } = useScroll();
 	const { t } = useTranslation();
@@ -50,9 +51,11 @@ const Header = (props) => {
 			.tz("Africa/Nairobi")
 			.format("hh:mm:ss A")}`
 	);
-
+	console.log('user.firstname', user.firstname);
+	console.log('localTime.value', localTime.value);
 	useEffect(() => {
 		let interval = setInterval(() => {
+			setUser([`Mutugi ${dayjs().tz('Africa/Nairobi').format('ss')}`, `Riungu ${dayjs().tz('Africa/Nairobi').format('ss')}`]);
 			setLocalTime(
 				`${t("locale.localtime")} : ${dayjs()
 					.tz("Africa/Nairobi")
@@ -74,6 +77,7 @@ const Header = (props) => {
 				<title>{t("title")}</title>
 				<meta name="description" content={t("meta.description")} />
 			</Head>
+			
 			<Box sx={{ flexGrow: 1 }}>
 				<MotionBox
 					className="fixed top-0 left-0 right-0 z-10 origin-left"
@@ -105,6 +109,10 @@ const Header = (props) => {
 
 										<Typography color="textSecondary" variant="h5" textAlign={'right'}>
 											{t("tagline")}
+										</Typography>
+
+										<Typography color="textSecondary" variant="h6" textAlign={'center'}>
+											{user.firstname} {user.lastname}
 										</Typography>
 									</Box>
 								</Box>

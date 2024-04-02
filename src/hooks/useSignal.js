@@ -57,12 +57,12 @@ export function useSignal(initialValue) {
 	}, []);
 
 	const Render = ({ keyPath, mapCallback }) => {
-		const [value, setValue] = useState(valRef.current);
+		const [valueState, setValueState] = useState(valRef.current);
 
 		useIsomorphicLayoutEffect(() => {
-			listeners.current.push(setValue);
+			listeners.current.push(setValueState);
 			return () => {
-				const index = listeners.current.indexOf(setValue);
+				const index = listeners.current.indexOf(setValueState);
 				listeners.current.splice(index, 1);
 			};
 		}, []);
@@ -75,10 +75,10 @@ export function useSignal(initialValue) {
 		});
 
 		if (!Array.isArray(keyPath)) {
-			return value;
+			return valueState;
 		}
 
-		const subVal = keyPath.reduce((obj, key) => obj[key], value);
+		const subVal = keyPath.reduce((obj, key) => obj[key], valueState);
 
 		return mapCallback ? subVal.map(mapCallback) : subVal;
 	};
@@ -88,35 +88,28 @@ export function useSignal(initialValue) {
 		return new Proxy(obj, {
 			get: (target, key) => {
 				const val = target[key];
-				console.log("keyPath", keyPath);
-				console.log("val", val);
-
 				if (key === "map" && val === Array.prototype.map) {
 					const fakeArrayMap = (mapCallback) => {
-						/* return (
+						return (
 							<Render
 								keyPath={keyPath}
 								mapCallback={mapCallback}
 							/>
-						); */
-						return Render({ keyPath, mapCallback });
+						);
+						
 					};
 					console.log("fakeArrayMap", fakeArrayMap);
 					return fakeArrayMap;
 				}
 
-				keyPath.push(key);
-				
-
-				if (isPrimitive(val)) {
-					const retValue = Render({ keyPath });
-					//return <Render keyPath={keyPath} />;
-					
-					return Render({keyPath});
+				keyPath.push(key);				
+				console.log('key', key);
+				console.log('target', target);
+				console.log('val', val);
+				if (isPrimitive(val)) {				
+					return <Render />;
 				}
-				
-
-				return proxy(val, keyPath);
+				return val;
 			},
 		});
 	}, []);
@@ -136,12 +129,14 @@ export function useSignal(initialValue) {
 				}
 
 				// eslint-disable-next-line react-hooks/rules-of-hooks
-				useState();
+				// useState();
 				if (isPrimitive(valRef.current)) {
-					return <Render />;
+					Render.value = valRef.current;
+					return <Render/>;
 				}
-
-				return proxy(valRef.current, []);
+				const proxyVal = proxy(valRef.current, []).get('map');
+				console.log('proxyVal', proxyVal);
+				return proxyVal;
 			} catch (e) {
 				return valRef.current;
 			}

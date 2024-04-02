@@ -1,5 +1,6 @@
 /** @format */
 
+import Devices from '@app/components/Devices';
 import {
 	mdiApplicationBraces,
 	mdiCloud,
@@ -29,8 +30,18 @@ export default function ProficienciesSection() {
 				component="div"
 				container
 				spacing={1}
-				
 			>
+				<Grid
+					item
+					xs={12}
+					sx={{
+						display: 'flex',
+						alignItems: 'center',
+						flexDirection: 'column'
+					}}
+				>
+					<Devices />
+				</Grid>
 				<Grid
 					item
 					xs={12}
@@ -85,16 +96,13 @@ export default function ProficienciesSection() {
 						xl={2}
 					>
 						<MotionBox
-							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48"
+							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48 blur-surface"
 							initial={{ scale: 0.5, opacity: 0, x: 0, y: -40 }}
 							whileInView={{ scale: 1, opacity: 1, y: 0 }}
 							exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
 							transition={{
 								type: 'anticipate',
 								duration: 0.25
-							}}
-							sx={{
-								backgroundColor: (theme) => theme.palette.background.paper
 							}}
 						>
 							<MotionIcon
@@ -137,16 +145,13 @@ export default function ProficienciesSection() {
 						xl={2}
 					>
 						<MotionBox
-							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48"
+							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48 blur-surface"
 							initial={{ scale: 0.5, opacity: 0, x: 0, y: -40 }}
 							whileInView={{ scale: 1, opacity: 1, y: 0 }}
 							exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
 							transition={{
 								type: 'anticipate',
 								duration: 0.25
-							}}
-							sx={{
-								backgroundColor: (theme) => theme.palette.background.paper
 							}}
 						>
 							<MotionIcon
@@ -189,16 +194,13 @@ export default function ProficienciesSection() {
 						xl={2}
 					>
 						<MotionBox
-							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48"
+							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48 blur-surface"
 							initial={{ scale: 0.5, opacity: 0, x: 0, y: -40 }}
 							whileInView={{ scale: 1, opacity: 1, y: 0 }}
 							exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
 							transition={{
 								type: 'anticipate',
 								duration: 0.25
-							}}
-							sx={{
-								backgroundColor: (theme) => theme.palette.background.paper
 							}}
 						>
 							<Icon
@@ -229,16 +231,13 @@ export default function ProficienciesSection() {
 						xl={2}
 					>
 						<MotionBox
-							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48"
+							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48 blur-surface"
 							initial={{ scale: 0.5, opacity: 0, x: 0, y: -40 }}
 							whileInView={{ scale: 1, opacity: 1, y: 0 }}
 							exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
 							transition={{
 								type: 'anticipate',
 								duration: 0.25
-							}}
-							sx={{
-								backgroundColor: (theme) => theme.palette.background.paper
 							}}
 						>
 							<Icon
@@ -269,16 +268,13 @@ export default function ProficienciesSection() {
 						xl={2}
 					>
 						<MotionBox
-							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48"
+							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48 blur-surface"
 							initial={{ scale: 0.5, opacity: 0, x: 0, y: -40 }}
 							whileInView={{ scale: 1, opacity: 1, y: 0 }}
 							exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
 							transition={{
 								type: 'anticipate',
 								duration: 0.25
-							}}
-							sx={{
-								backgroundColor: (theme) => theme.palette.background.paper
 							}}
 						>
 							<Icon
@@ -309,16 +305,13 @@ export default function ProficienciesSection() {
 						xl={2}
 					>
 						<MotionBox
-							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48"
+							className="flex flex-col items-center justify-center p-8 rounded-lg m-4 h-auto md:h-56 lg:h-48 blur-surface"
 							initial={{ scale: 0.5, opacity: 0, x: 0, y: -40 }}
 							whileInView={{ scale: 1, opacity: 1, y: 0 }}
 							exit={{ scale: 0, opacity: 0, x: 0, y: -40 }}
 							transition={{
 								type: 'anticipate',
 								duration: 0.25
-							}}
-							sx={{
-								backgroundColor: (theme) => theme.palette.background.paper
 							}}
 						>
 							<Icon
