@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RIVR | Fluid Asset Streams</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Hanken Grotesk -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Framer Motion for micro-interactions (CDN fallback for script-based motion) -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#2b1700",
+                        "secondary-fixed": "#dde2f1",
+                        "on-primary-fixed": "#021a41",
+                        "on-background": "#1b1b1e",
+                        "primary-fixed": "#d9e2ff",
+                        "outline": "#75777f",
+                        "primary-container": "#1e325a",
+                        "secondary": "#595f6a",
+                        "inverse-surface": "#303033",
+                        "surface-tint": "#4b5e88",
+                        "on-surface": "#1b1b1e",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#161c26",
+                        "primary": "#041c44",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#5f6571",
+                        "outline-variant": "#c5c6cf",
+                        "surface-container-high": "#e9e7eb",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface": "#fbf8fd",
+                        "tertiary": "#2d1900",
+                        "on-tertiary-fixed-variant": "#614011",
+                        "tertiary-fixed-dim": "#efbe84",
+                        "tertiary-container": "#4a2c00",
+                        "surface-bright": "#fbf8fd",
+                        "on-tertiary-container": "#bf935d",
+                        "on-error": "#ffffff",
+                        "surface-container": "#efedf1",
+                        "surface-container-low": "#f5f3f7",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf8fd",
+                        "inverse-primary": "#b3c6f7",
+                        "on-secondary-fixed-variant": "#414752",
+                        "on-primary-fixed-variant": "#33466f",
+                        "secondary-fixed-dim": "#c1c6d4",
+                        "surface-dim": "#dbd9dd",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e3e2e6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e3e2e6",
+                        "primary-fixed-dim": "#b3c6f7",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary-container": "#dde2f1",
+                        "on-surface-variant": "#44474e",
+                        "on-primary-container": "#889bc9",
+                        "inverse-on-surface": "#f2f0f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "64px",
+                        "unit": "8px",
+                        "card-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(4, 28, 68, 0.1);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <main class="min-h-screen bg-[#f0f0f0]">
+        <!-- Hero Component Wrapper -->
+        <div class="w-full h-screen flex items-center justify-center p-3 md:p-5 bg-[#f0f0f0]">
+            <!-- Inner Container -->
+            <section
+                class="relative w-full max-w-[1536px] h-full rounded-[1.5rem] md:rounded-[3rem] overflow-hidden shadow-none flex flex-col items-center bg-white/10 group">
+                <!-- Video Background -->
+                <video autoplay=""
+                    class="absolute inset-0 w-full h-full object-cover object-[65%] lg:object-center z-0 scale-105 group-hover:scale-100 transition-transform duration-[2000ms]"
+                    loop="" muted="" playsinline=""
+                    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260428_193507_4286c423-2fd9-4efd-92bd-91a939453fc1.mp4">
+                </video>
+                <!-- Content Layer -->
+                <div class="relative z-10 w-full h-full flex flex-col items-center">
+                    <!-- TopAppBar (Navbar) -->
+                    <nav class="flex justify-between items-center px-6 md:px-10 h-20 w-full relative z-10">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-3xl" data-icon="waves">waves</span>
+                            <span class="font-display text-2xl font-bold text-primary tracking-tighter">RIVR</span>
+                        </div>
+                        <!-- Desktop Menu -->
+                        <div class="hidden md:flex items-center gap-8">
+                            <a class="cursor-pointer hover:opacity-70 transition-opacity flex items-center gap-1 text-[rgb(45,45,45)] font-normal text-sm"
+                                href="#">Ecosystem</a>
+                            <div
+                                class="cursor-pointer hover:opacity-70 transition-opacity flex items-center gap-0.5 text-[rgb(45,45,45)] font-normal text-sm">
+                                Economics
+                                <span class="material-symbols-outlined text-xs"
+                                    data-icon="chevron_right">chevron_right</span>
+                            </div>
+                            <a class="cursor-pointer hover:opacity-70 transition-opacity flex items-center gap-1 text-[rgb(45,45,45)] font-normal text-sm"
+                                href="#">Developers</a>
+                            <div
+                                class="cursor-pointer hover:opacity-70 transition-opacity flex items-center gap-0.5 text-[rgb(45,45,45)] font-normal text-sm">
+                                Governance
+                                <span class="material-symbols-outlined text-xs"
+                                    data-icon="chevron_right">chevron_right</span>
+                            </div>
+                        </div>
+                        <!-- Right Button -->
+                        <button
+                            class="flex items-center bg-[rgba(30,50,90,0.8)] text-white rounded-full pl-2 pr-4 md:pr-6 py-1.5 md:py-2 gap-2 md:gap-3 hover:bg-[rgba(30,50,90,1)] transition-all duration-300 group active:scale-95">
+                            <div class="bg-white/20 p-1 md:p-1.5 rounded-full flex items-center justify-center">
+                                <span
+                                    class="material-symbols-outlined text-sm md:text-base text-white group-hover:rotate-45 transition-transform"
+                                    data-icon="arrow_outward">arrow_outward</span>
+                            </div>
+                            <span class="font-label-md text-label-md">Book Demo</span>
+                        </button>
+                    </nav>
+                    <!-- Hero Text Container -->
+                    <div class="w-full flex flex-col items-center pt-16 md:pt-24 px-6 text-center max-w-4xl">
+                        <!-- Hero Badge -->
+                        <div
+                            class="animate-fade-in-up flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-white/20 mx-auto mb-6 w-fit shadow-sm">
+                            <span class="material-symbols-outlined text-sm text-[rgba(30,50,90,0.8)]"
+                                data-icon="auto_awesome">auto_awesome</span>
+                            <span class="font-label-md text-label-md text-[rgba(30,50,90,0.9)]">Fluid Staking</span>
+                        </div>
+                        <h1
+                            class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-normal text-[#1B1B1E] mb-6 tracking-tight leading-[1.05] text-glow">
+                            Fluid Asset Streams
+                        </h1>
+                        <p
+                            class="font-body-lg text-sm sm:text-base md:text-lg text-[#5E6470] opacity-80 leading-relaxed max-w-xl mx-auto">
+                            Access Smart Vaults, stake RIVR, NFTs, transform rigid holdings into liquid cash instantly.
+                        </p>
+                    </div>
+                    <!-- BottomLeftCard -->
+                    <div
+                        class="absolute bottom-32 right-6 md:bottom-10 md:left-10 md:right-auto p-4 md:p-6 lg:p-8 rounded-[1.5rem] md:rounded-[2.2rem] glass-card flex flex-col gap-4 min-w-[160px] md:min-w-[200px] shadow-lg animate-fade-in-left">
+                        <div>
+                            <div
+                                class="font-display text-3xl md:text-4xl font-normal text-[rgba(30,50,90,0.9)] tracking-tight">
+                                5.2K</div>
+                            <div
+                                class="font-label-sm text-label-sm text-[rgba(30,50,90,0.6)] uppercase tracking-[0.1em]">
+                                Active Yielders</div>
+                        </div>
+                        <button
+                            class="flex items-center bg-white rounded-full pl-1.5 pr-5 py-1.5 gap-2 hover:bg-white/90 transition-all active:scale-95 self-start group">
+                            <div class="bg-[rgba(30,50,90,0.1)] p-1.5 rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm text-[rgba(30,50,90,0.9)]"
+                                    data-icon="arrow_outward">arrow_outward</span>
+                            </div>
+                            <span class="font-label-md text-label-md text-[rgba(30,50,90,0.9)]">Join Discord</span>
+                        </button>
+                    </div>
+                    <!-- BottomRightCorner Decoration -->
+                    <div
+                        class="absolute bottom-0 right-0 p-4 pt-6 pl-10 sm:p-6 sm:pt-8 sm:pl-12 md:p-8 md:pt-10 md:pl-16 bg-[#f0f0f0] rounded-tl-[1.5rem] sm:rounded-tl-[3rem] md:rounded-tl-[4.5rem] flex items-center gap-4 sm:gap-6 md:gap-8 animate-fade-in-up">
+                        <!-- Corner Mask Top -->
+                        <svg class="absolute -top-[55px] right-0 h-[56px] w-[56px]" fill="none" viewbox="0 0 56 56"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M56 56V0C56 30.9279 30.9279 56 0 56H56Z" fill="#f0f0f0"></path>
+                        </svg>
+                        <!-- Corner Mask Left -->
+                        <svg class="absolute bottom-0 -left-[55px] h-[56px] w-[56px]" fill="none" viewbox="0 0 56 56"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M56 56H0C30.9279 56 56 30.9279 56 0V56Z" fill="#f0f0f0"></path>
+                        </svg>
+                        <div class="flex items-center gap-6">
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-display text-lg md:text-xl text-[rgba(30,50,90,0.9)] cursor-pointer hover:text-primary transition-colors">Documentation</span>
+                                <div
+                                    class="flex items-center gap-1 group cursor-pointer text-[rgba(30,50,90,0.6)] hover:text-primary transition-colors">
+                                    <span class="font-label-md text-label-md">Library</span>
+                                    <span
+                                        class="material-symbols-outlined text-xs group-hover:translate-x-0.5 transition-transform"
+                                        data-icon="chevron_right">chevron_right</span>
+                                </div>
+                            </div>
+                            <div
+                                class="w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-xl md:text-2xl"
+                                    data-icon="arrow_outward">arrow_outward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Footer Section (Simplified version for context) -->
+        <footer
+            class="bg-surface py-gutter px-container-padding-mobile md:px-container-padding-desktop w-full border-t border-outline-variant/30">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1440px] mx-auto">
+                <div class="flex items-center gap-2">
+                    <span class="font-display text-headline-md font-bold text-primary">RIVR</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Ecosystem</a>
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Economics</a>
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Developers</a>
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Governance</a>
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Documentation</a>
+                </div>
+                <div class="font-body-md text-label-sm text-on-surface-variant opacity-60">
+                    © 2024 RIVR Protocol. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        // Micro-animations for the UI
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in-left');
+
+            // Simple animation observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Set initial states via inline styles to avoid CSS overhead
+            document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.animate-fade-in-left').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateX(-20px)';
+                el.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
