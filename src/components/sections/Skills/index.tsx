@@ -74,14 +74,14 @@ export default function Skills() {
 					>
 						{skillsData.headline}
 					</h2>
-                    <div className="w-full my-16">
-						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
-					</div>
 					<p className="mt-6 text-base mx-auto w-2/3 leading-8 text-on-surface/75 text-center">
 						{skillsData.intro}
 					</p>
+					<div className="w-full my-16">
+						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
+					</div>
 				</div>
-                
+
 				<div className="mt-12 grid gap-6 sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
 					{skillsData.categories.map((cat) => (
 						<CategoryCard

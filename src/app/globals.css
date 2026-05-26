@@ -419,15 +419,18 @@ section.panel .layer-bg {
     border-radius: 0.125em;
 }
 
-.device_monitor_stand_y,
-.device_monitor_stand_x,
+
+
 .device_shadow_a,
 .device_shadow_b {
     background-color: var(--device-color);
     border-radius: 0.125em;
 }
-
-.device_monitor_stand_y {
+.device_monitor_stand_y,
+.device_monitor_stand_x {
+    background-color: var(--accent);
+}
+.device_monitor_stand_y {    
     animation-name: device-monitor-stand-y-anim;
     top: 2.25em;
     left: 1.875em;
@@ -437,6 +440,7 @@ section.panel .layer-bg {
 
 .device_monitor_stand_x {
     animation-name: device-monitor-stand-x-anim;
+    border-radius: 0.125em;
     top: 3em;
     left: 1em;
     width: 2em;
@@ -449,7 +453,7 @@ section.panel .layer-bg {
     width: 1.5em;
     height: 0.875em;
     visibility: hidden;
-    background-color: var(--device-color);
+    background-color: var(--accent);
 
 }
 
