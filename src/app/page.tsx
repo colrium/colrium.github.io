@@ -1,6 +1,12 @@
+import Contact from "@/components/sections/Contact";
 import CraftAesthetics from "@/components/sections/CraftAesthetics";
+import Credentials from "@/components/sections/Credentials";
+import Engagements from "@/components/sections/Engagements";
+import Experience from "@/components/sections/Experience";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import ImpactHighlights from "@/components/sections/ImpactHighlights";
 import MainHero from "@/components/sections/MainHero";
-import Panel from "@/components/sections/Panel";
+import Process from "@/components/sections/Process";
 import Skills from "@/components/sections/Skills";
 import SpiderWeb from "@/components/ui/SpiderWeb";
 import Image from "next/image";
@@ -40,27 +46,13 @@ export default function Home() {
 				</div>
 
 				<Skills /> 
-				{/* <Panel
-					bgText="SWE"
-					bgTextClassName="right-20"
-					innerClassName="w-full justify-center items-center text-right"
-					copyClassName="w-full "
-				>
-					<p className="layer-tag">Software Engineer</p>
-
-					<div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-						<div className="flex-1">
-							<h2 className="text-3x lg:text-7xl uppercase l font-bold text-primary text-center">
-								The Web Guy
-							</h2>
-						</div>
-						<div>
-							<SpiderWeb />
-						</div>
-                    </div>
-                    <p className="layer-line text-on-surface">Polyglot engineer with an unreasonable fondness for clean architecture. Based in Nairobi, fully remote-native, and always building something worth shipping.</p>
-					
-				</Panel> */}
+				<FeaturedProjects />
+				<Experience />
+				<ImpactHighlights />
+				<Process />
+				<Engagements />
+				<Credentials />
+				<Contact />
 			</main>
 		</div>
 	);

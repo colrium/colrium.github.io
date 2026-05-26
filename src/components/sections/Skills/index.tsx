@@ -7,7 +7,7 @@ const skillsData = {
 	tag: 'Skills & Stack',
 	headline: 'Broad Stack, Deep Expertise',
 	intro:
-		'Solutions built on strong computer science fundamentals extended through years of practical delivery across web, mobile, cloud, and AI.',
+		'Built on strong computer science fundamentals extended through years of practical delivery across web, mobile, cloud, and AI.',
 	categories: [
 		{
 			id: 'languages',

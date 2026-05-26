@@ -397,7 +397,7 @@ section.panel .layer-bg {
 .device_home_btn,
 .device_watch_crown {
     visibility: hidden;
-    background-color: var(--device-color);
+    background-color: var(--accent);
 }
 
 .device_home_btn {
@@ -406,7 +406,6 @@ section.panel .layer-bg {
     left: 1.25em;
     width: 1em;
     height: 0.2em;
-    background-color: var(--device-color);
     border-radius: 0.125em;
 }
 
