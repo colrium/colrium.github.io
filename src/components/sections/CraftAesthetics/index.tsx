@@ -1,7 +1,8 @@
 "use client";
 
+import AirHockey from "@/components/ui/AirHockey";
 import DotCube from "@/components/ui/DotCube";
-
+import {useState} from "react";
 const principles = [
 	{
 		id: "typography",
@@ -38,13 +39,16 @@ const principles = [
 const tools = ["Figma", "React", "Tailwind CSS", "Framer Motion", "Storybook"];
 
 export default function CraftAesthetics() {
+    const [showAdvancedUI, setShowAdvancedUI] = useState(false);
 	return (
 		<section className="w-full py-16 min-h-[80vh] flex flex-col items-center justify-center md:py-32">
 			<div className="mx-auto max-w-6xl px-6 md:px-10">
 				<div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
-					<div className="flex-1 flex items-center justify-center w-full lg:w-2/5">
-						<DotCube className="mt-16  w-200 h-200" />
-					</div>
+					{!showAdvancedUI && (
+						<div className="flex-1 flex items-center justify-center w-full lg:w-2/5">
+							<DotCube className="mt-16  w-200 h-200" />
+						</div>
+					)}
 
 					<div className="px-8">
 						<span className="inline-flex rounded-full bg-transparent px-4 py-2 text-sm  text-on-surface border border-accent/20">
@@ -56,9 +60,9 @@ export default function CraftAesthetics() {
 
 						<p className="mt-6 text-base md:text-lg leading-8 text-on-surface/75">
 							Great software deserves great interfaces. I treat UI
-							work with the same rigor as backend architecture -
-							deliberate spacing, precise typography, and
-							interactions that feel inevitable.
+							work with the same rigor as backend architecture.
+							deliberate and precise interactions that feel
+							inevitable.
 						</p>
 					</div>
 				</div>
@@ -75,6 +79,8 @@ export default function CraftAesthetics() {
           ))*/}
 				</div>
 
+				{showAdvancedUI && <AirHockey />}
+
 				<div className="mt-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 					<div>
 						<div className="flex flex-wrap gap-3">
@@ -88,9 +94,11 @@ export default function CraftAesthetics() {
 							))}
 						</div>
 					</div>
-
-					<button className="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-on-primary transition hover:bg-primary-container">
-						View UI Samples
+					<button
+						onClick={() => setShowAdvancedUI(!showAdvancedUI)}
+						className="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-on-primary transition hover:bg-primary-container"
+					>
+						{showAdvancedUI ? "Hide" : "Show"} Advanced UI
 					</button>
 				</div>
 			</div>
