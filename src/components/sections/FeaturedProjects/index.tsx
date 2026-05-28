@@ -1,11 +1,26 @@
 const projects = [
 	{
+		title: "Grand Master Ledger",
+		type: "Chess Analysis Platform",
+		description:
+			"Built a comprehensive chess analysis tool that integrates with chess.com and lichess to track skill progression, analyze games with Stockfish, and deliver personalized coaching recommendations based on performance patterns.",
+		stack: ["Python", "Next.js", "Node.js", "Stockfish", "API Integration"],
+		outcome:
+			"Provides players with data-driven insights into their gameplay and targeted improvement strategies across multiple platforms.",
+	},
+	{
 		title: "Non-Profits CRM",
 		type: "Custom Product Build",
 		description:
 			"Designed and implemented a custom CRM solution for ActionAid Kenya, shaped around non-profit operations and stakeholder workflows.",
-		stack: ["Full-Stack Development", "Product Thinking", "API Design", "QA"],
-		outcome: "Converted organization-specific requirements into a shipped operational tool.",
+		stack: [
+			"Full-Stack Development",
+			"Product Thinking",
+			"API Design",
+			"QA",
+		],
+		outcome:
+			"Converted organization-specific requirements into a shipped operational tool.",
 	},
 	{
 		title: "Fixed Assets Tracker",
@@ -13,7 +28,8 @@ const projects = [
 		description:
 			"Created a fixed-assets lifecycle tracker for custody, allocation, depreciation, and client-side asset visibility.",
 		stack: ["Web", "Mobile", "Databases", "Automation"],
-		outcome: "Shipped to roughly 30 clients and tracks more than 1 million assets.",
+		outcome:
+			"Shipped to roughly 30 clients and tracks more than 1 million assets.",
 	},
 	{
 		title: "GHG Calculator",
@@ -21,7 +37,8 @@ const projects = [
 		description:
 			"Built a proof of concept for greenhouse gas emissions accounting and projection, turning environmental inputs into useful estimates.",
 		stack: ["Prototyping", "Data Modeling", "Product Design", "Reporting"],
-		outcome: "Explored climate-accounting workflows through a practical calculator interface.",
+		outcome:
+			"Explored climate-accounting workflows through a practical calculator interface.",
 	},
 ];
 
@@ -36,6 +53,7 @@ export default function FeaturedProjects() {
 				<div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
 					<div className="max-w-2xl">
 						<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
+                            
 							Selected Work
 						</span>
 						<h2
