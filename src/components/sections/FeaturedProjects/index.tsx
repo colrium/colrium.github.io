@@ -62,8 +62,8 @@ const projects = [
 			"Shipped to roughly 30 clients and tracks more than 1 million assets.",
 	},
 	{
-		title: "GHG Calculator",
-		type: "Hobby Project",
+		title: "ECO Calc",
+		type: "GHG Emissions and Projections Calculator",
 		description:
 			"Built a proof of concept for greenhouse gas emissions accounting and projection, turning environmental inputs into useful estimates.",
 		stack: ["Prototyping", "Data Modeling", "Product Design", "Reporting"],
