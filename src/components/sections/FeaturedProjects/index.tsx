@@ -23,7 +23,20 @@ const projects = [
 		outcome:
 			"Delivered a functional ride-hailing platform tailored to local market needs and user workflows.",
 	},
-
+	{
+		title: "CAT (Connect Assure Technology)",
+		type: "Data Export Software",
+		description:
+			"Developed data export software that promotes compliance by interfacing compatible STERIS products with leading instrument tracking systems.",
+		stack: [
+			"Data Integration",
+			"Compliance",
+			"API Development",
+			"STERIS Systems",
+		],
+		outcome:
+			"Enabled seamless data synchronization across facility management systems to streamline compliance workflows.",
+	},
 	{
 		title: "Non-Profits CRM",
 		type: "Custom Product Build",
@@ -38,6 +51,7 @@ const projects = [
 		outcome:
 			"Converted organization-specific requirements into a shipped operational tool.",
 	},
+
 	{
 		title: "Fixed Assets Tracker",
 		type: "Web and Mobile Platform",
