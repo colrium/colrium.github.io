@@ -5,7 +5,7 @@ import { HeroBadge } from '@/components/sections/MainHero/HeroBadge';
 import { IconButton } from '@/components/sections/MainHero/IconButton';
 import { StatsCard } from '@/components/sections/MainHero/StatsCard';
 import { DocFooter } from '@/components/sections/MainHero/DocFooter';
-import SpiderWeb from '@/components/ui/SpiderWeb';
+import Image from 'next/image';
 
 interface MainHeroProps {
 	videosrc?: string;
@@ -18,6 +18,8 @@ interface MainHeroProps {
 	description?: string;
 	statsValue?: string;
     statsLabel?: string;
+    statsHref?: string;
+    statsButtonIcon?: string;
     bgText?: string;
 	statsButtonLabel?: string;
 	onStatsButtonClick?: () => void;
@@ -34,9 +36,11 @@ export default function MainHero({
   statsValue = '9+',
   statsLabel = 'Years of Experience',
     statsButtonLabel = 'Engage',
+    statsButtonIcon="phone",
+    statsHref="/#contact",
     accessory = null,
     top,
-    bgText = 'SWE',
+    bgText,
   onStatsButtonClick,
   onDocumentationClick,
 }: MainHeroProps) {
@@ -118,7 +122,8 @@ export default function MainHero({
 							value={statsValue}
 							label={statsLabel}
 							buttonLabel={statsButtonLabel}
-							buttonIcon="arrow_outward"
+                            buttonIcon={statsButtonIcon}
+                            href={statsHref}
 							onButtonClick={onStatsButtonClick}
 						/>
 					</div>
@@ -126,14 +131,16 @@ export default function MainHero({
 					{/* Bottom Right Corner Decoration */}
 					<DocFooter onDocumentationClick={onDocumentationClick} />
 				</div>
-				{bgText && (
+				{bgText? (
 					<span
 						className={` layer-bg absolute left-4 md:left-auto md:right-10 md:right-12 lg:right-20 text-right bottom-4 md:bottom-16`}
 						aria-hidden="true"
 					>
 						{bgText}
 					</span>
-				)}
+				) : (
+                    <Image src="/logo.svg" alt="logo" width={420} height={420} className={` layer-bg absolute left-4 opacity-5 md:left-auto md:right-10 md:right-12 lg:right-20 bottom-4 md:bottom-16 transition-all duration-1000`}  />
+                )}
 			</section>
 		</div>
   );

@@ -8,6 +8,7 @@ interface StatsCardProps {
   buttonLabel: string;
   buttonIcon: string;
   onButtonClick?: () => void;
+  href?: string;
 }
 
 export function StatsCard({
@@ -15,7 +16,8 @@ export function StatsCard({
   label,
   buttonLabel,
   buttonIcon,
-  onButtonClick,
+    onButtonClick,
+  href
 }: StatsCardProps) {
   return (
     <GlassCard className="p-4 md:p-6 lg:p-8 flex flex-col gap-4 min-w-40 md:min-w-50 shadow-lg">
@@ -26,12 +28,14 @@ export function StatsCard({
         <div className="text-xs font-semibold text-on-surface/60 uppercase tracking-widest">
           {label}
         </div>
-      </div>
+          </div>
+          
       <IconButton
         icon={buttonIcon}
         label={buttonLabel}
         variant="secondary"
         onClick={onButtonClick}
+        href={href}
         className="self-start"
       />
     </GlassCard>
