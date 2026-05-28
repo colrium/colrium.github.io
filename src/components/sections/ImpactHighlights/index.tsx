@@ -1,21 +1,21 @@
 const highlights = [
 	{
+		value: "95%",
+		label: "CSAT",
+		detail: "Consistently high customer satisfaction scores across all client engagements and projects.",
+	},
+	{
 		value: "20+",
 		label: "client products deployed",
 		detail: "Delivered at Idea Kenya with a 100% on-time delivery rate.",
 	},
 	{
-		value: "100k+",
+		value: "1m+",
 		label: "mobile app downloads",
 		detail: "Across two Tier-1 apps maintained with Java, Kotlin, and Swift.",
 	},
 	{
-		value: "1m+",
-		label: "assets tracked",
-		detail: "Custody, allocation, and depreciation workflows across roughly 30 clients.",
-	},
-	{
-		value: "20%",
+		value: "30%",
 		label: "technical debt reduced",
 		detail: "Through refactoring and performance tuning at Stream4Tech.",
 	},
