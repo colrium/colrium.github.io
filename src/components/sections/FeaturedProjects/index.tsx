@@ -62,12 +62,12 @@ export default function FeaturedProjects() {
 									<span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
 										{project.type}
 									</span>
-									<span
+									{/* <span
 										className="material-symbols-outlined text-primary"
 										aria-hidden="true"
 									>
 										arrow_outward
-									</span>
+									</span> */}
 								</div>
 								<h3 className="text-2xl font-semibold text-on-surface">
 									{project.title}

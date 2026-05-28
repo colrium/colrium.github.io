@@ -94,12 +94,12 @@ export default function CraftAesthetics() {
 							))}
 						</div>
 					</div>
-					<button
+					{/* <button
 						onClick={() => setShowAdvancedUI(!showAdvancedUI)}
 						className="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-on-primary transition hover:bg-primary-container"
 					>
 						{showAdvancedUI ? "Hide" : "Show"} Advanced UI
-					</button>
+					</button> */}
 				</div>
 			</div>
 		</section>
