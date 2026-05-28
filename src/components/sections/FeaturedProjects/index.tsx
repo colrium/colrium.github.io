@@ -9,6 +9,22 @@ const projects = [
 			"Provides players with data-driven insights into their gameplay and targeted improvement strategies across multiple platforms.",
 	},
 	{
+		title: "Creuse",
+		type: "Cab Hailing Platform",
+		description:
+			"Built a Kenyan alternative to ride-hailing services, enabling seamless connections between drivers and passengers with real-time tracking and payment integration.",
+		stack: [
+			"PHP",
+			"Laravel",
+			"Kotlin",
+			"Mobile Development",
+			"Real-time Systems",
+		],
+		outcome:
+			"Delivered a functional ride-hailing platform tailored to local market needs and user workflows.",
+	},
+
+	{
 		title: "Non-Profits CRM",
 		type: "Custom Product Build",
 		description:
