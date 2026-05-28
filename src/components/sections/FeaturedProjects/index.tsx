@@ -19,6 +19,7 @@ const projects = [
 			"Kotlin",
 			"Mobile Development",
 			"Real-time Systems",
+            "M-PESA"
 		],
 		outcome:
 			"Delivered a functional ride-hailing platform tailored to local market needs and user workflows.",
@@ -70,7 +71,7 @@ const projects = [
 		outcome:
 			"Explored climate-accounting workflows through a practical calculator interface.",
     },
-    
+
     
 ];
 
