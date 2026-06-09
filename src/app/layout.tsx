@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Bebas_Neue, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import PageLoader from "@/components/ui/PageLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
 			className={`${bebasNeue.variable} ${plusJakartaSans.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col bg-surface-tint ">
+				<PageLoader />
 				{children}
 			</body>
 		</html>
