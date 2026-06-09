@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Bebas_Neue, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import {  Epilogue } from "next/font/google";
 import "./globals.css";
 import PageLoader from "@/components/ui/PageLoader";
+const googleSansFlex = localFont({
+	src: [
+		{
+			path: "./fonts/google-sans-flex-latin-300-normal.woff2",
+			style: "normal",
+		},
+	],
+	variable: "--font-google-sans-flex", // Define the custom CSS variable
+});
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const epilogue = Epilogue({
+  variable: "--font-epilogue",
   subsets: ["latin"],
-});
-
-const bebasNeue = Bebas_Neue({
-    variable: "--font-bebas-neue",
-    weight: "400",
-	subsets: ["latin"],
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-	variable: "--font-plus-jakarta-sans",
-	subsets: ["latin"],
-    weight: ["300", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
 		<html
 			lang="en"
-			className={`${bebasNeue.variable} ${plusJakartaSans.variable} h-full antialiased`}
+			className={`${googleSansFlex.variable} ${epilogue.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col bg-surface-tint ">
 				<PageLoader />

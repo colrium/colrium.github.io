@@ -7,11 +7,12 @@ import { StatsCard } from '@/components/sections/MainHero/StatsCard';
 import { DocFooter } from '@/components/sections/MainHero/DocFooter';
 import Image from 'next/image';
 import ShuffleText from '@/lib/ShuffleText';
+import ShuffleTextComponent from '@/components/ui/ShuffleText';
 
 const SocialsStrip: React.FC = () => {
 	const socials = [
 		{
-			href: 'https://github.com/',
+			href: 'https://github.com/colrium',
 			label: 'GitHub',
 			svg: (
 				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -20,16 +21,7 @@ const SocialsStrip: React.FC = () => {
 			),
 		},
 		{
-			href: 'https://twitter.com/',
-			label: 'Twitter',
-			svg: (
-				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.2 4.2 0 0 0 1.84-2.32 8.3 8.3 0 0 1-2.66 1.02A4.15 4.15 0 0 0 12 9.03c0 .33.04.66.11.97A11.8 11.8 0 0 1 3.15 4.6a4.13 4.13 0 0 0-.56 2.09c0 1.44.73 2.71 1.83 3.45a4.1 4.1 0 0 1-1.88-.52v.05c0 2.02 1.44 3.71 3.34 4.09-.35.1-.72.15-1.1.15-.27 0-.52-.03-.77-.07.52 1.62 2.03 2.8 3.82 2.83A8.33 8.33 0 0 1 2 19.54 11.77 11.77 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.36 8.36 0 0 0 22.46 6z"/>
-				</svg>
-			),
-		},
-		{
-			href: 'https://www.linkedin.com/',
+			href: 'https://www.linkedin.com/in/colrium',
 			label: 'LinkedIn',
 			svg: (
 				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +30,7 @@ const SocialsStrip: React.FC = () => {
 			),
 		},
 		{
-			href: 'mailto:hello@example.com',
+			href: 'mailto:colrium@gmail.com',
 			label: 'Email',
 			svg: (
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -125,28 +117,6 @@ export default function MainHero({
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsLoaded(true);
-      
-      const shuffleTextElements = document.querySelectorAll('#main-hero-title');
-      
-      for (let i = 0; i < shuffleTextElements.length; i++) {
-          const element = shuffleTextElements[i] as HTMLElement;
-          const section: HTMLElement | null = element.closest("[data-random-character]");
-          const shuffleText: ShuffleText = new ShuffleText(element);
-          shuffleText.sourceRandomCharacter =
-              section?.dataset.randomCharacter ?? "░▒▓█";
-          element.addEventListener("mouseover", () => {
-              shuffleText.start();
-          });
-          shuffleText.start();
-      }
-      return () => {
-          /* for (let i = 0; i < shuffleTextElements.length; i++) {
-              const element = shuffleTextElements[i] as HTMLElement;
-              element.removeEventListener("mouseover", () => {
-                  shuffleText.start();
-              })
-            } */
-        };
   }, []);
 
   return (
@@ -169,36 +139,10 @@ export default function MainHero({
 							{top}
 						</div>
 					)}
-					<div className="w-full md:h-3/5 md:py-50 flex flex-col-reverse md:flex-row items-center   px-6  ">
-						<div
-							className={` flex flex-col items-center md:px-6 lg:px-12  text-center transition-all duration-1000 ${
-								isLoaded
-									? "opacity-100 translate-y-0"
-									: "opacity-0 translate-y-10"
-							}`}
-							data-random-character="░▒▓█"
-						>
-							{/* Hero Badge */}
-							<HeroBadge icon={badgeIcon} label={badgeLabel} />
-							{tagline && (
-								<h2 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-6 tracking-tight leading-[1.05] drop-shadow-sm">
-									{tagline}
-								</h2>
-							)}
-							{/* Heading */}
-							<h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-6 tracking-tight leading-[1.05] drop-shadow-sm" id="main-hero-title">
-								{title}
-							</h1>
-							<p className="font-body-sm text-sm sm:text-base text-on-surface/70 opacity-80 leading-relaxed max-w-xl mx-auto">
-								{description}
-                          </p>
-                          
-                          <SocialsStrip />
-                          
-						</div>
+					<div className="w-full md:h-4/5 md:py-50 flex flex-col  items-center   px-6  ">
 						{
 							<div
-								className={`flex flex-col items-center  justify-center h-full transition-all duration-1000 ${
+								className={`flex flex-col items-center  justify-center h-1/2 transition-all duration-1000 ${
 									isLoaded
 										? "opacity-100 translate-y-0"
 										: "opacity-0 translate-y-10"
@@ -207,6 +151,33 @@ export default function MainHero({
 								{accessory}
 							</div>
 						}
+						<div
+							className={` flex flex-col items-center md:px-6 lg:px-12  text-center `}
+						>
+							{/* Hero Badge */}
+							<HeroBadge icon={badgeIcon} label={badgeLabel} />
+							{tagline && (
+								<h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-6 tracking-tight leading-[1.05] drop-shadow-sm">
+									{tagline}
+								</h3>
+							)}
+							{/* Heading */}
+							<ShuffleTextComponent
+								component="h1"
+								className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-6 tracking-tight leading-[1.05] drop-shadow-sm"
+								id="main-hero-title"
+								replayOnClick
+							>
+								{title}
+							</ShuffleTextComponent>
+							<p
+								className={`font-body-sm text-sm sm:text-base text-on-surface/70 opacity-80 mb-8 leading-relaxed max-w-xl mx-auto`}
+							>
+								{description}
+							</p>
+
+							<SocialsStrip />
+						</div>
 					</div>
 					{/* Hero Text Container */}
 
@@ -229,7 +200,14 @@ export default function MainHero({
 					</div>
 
 					{/* Bottom Right Corner Decoration */}
-					<DocFooter onDocumentationClick={onDocumentationClick} />
+					<DocFooter
+						className={` transition-all duration-1000 ${
+							isLoaded
+								? "opacity-100 translate-y-0"
+								: "opacity-0 translate-y-10"
+						}`}
+						onDocumentationClick={onDocumentationClick}
+					/>
 				</div>
 				{bgText ? (
 					<span

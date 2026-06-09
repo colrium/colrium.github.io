@@ -1,6 +1,7 @@
 'use client';
 
 import Devices from '@/components/ui/Devices';
+import ShuffleTextComponent from '@/components/ui/ShuffleText';
 import React from 'react';
 
 const skillsData = {
@@ -68,12 +69,13 @@ export default function Skills() {
 					<span className="inline-flex items-center rounded-full border border-accent/20 px-4 py-2 text-sm font-semibold text-on-surface">
 						{skillsData.tag}
 					</span>
-					<h2
+                    <ShuffleTextComponent
+                        component="h2"
 						id="skills-heading"
 						className="my-16 text-3xl sm:text-4xl md:text-5xl font-semibold text-on-surface tracking-tight text-center"
 					>
 						{skillsData.headline}
-					</h2>
+					</ShuffleTextComponent>
 					<p className="mt-6 text-base mx-auto w-2/3 leading-8 text-on-surface/75 text-center">
 						{skillsData.intro}
 					</p>

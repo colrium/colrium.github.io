@@ -29,7 +29,7 @@ export default function Home() {
 									width={32}
 									height={32}
 								/>
-								<span className="font-display text-xl font-bold text-accent tracking-tighter">
+								<span className="text-xl font-bold text-accent tracking-tighter">
 									Mutugi
 								</span>
 							</div>
