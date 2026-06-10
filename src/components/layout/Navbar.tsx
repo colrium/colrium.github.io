@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
+import ActiveLink from "../ui/ActiveLink";
 
 const NAV_LINKS = [
 	{ label: "Skills", href: "/#skills" },
 	{ label: "Aesthetics", href: "/#aesthetics" },
 	{ label: "Experience", href: "/#experience" },
     { label: "Impact", href: "/#impact" },
-    { label: "Best", href: "/#engagements" },
+    { label: "engagements", href: "/#engagements" },
 	{
 		label: "GitHub",
 		href: "https://github.com/colrium",
@@ -19,13 +21,22 @@ const NAV_LINKS = [
 
 export default function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
-
 	useEffect(() => {
+        const scrollToId =
+                window?.location?.hash || null;
+    
+            if (scrollToId) {
+                const element = document.getElementById(scrollToId.substring(1));
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                } 
+            }
+            
 		const onScroll = () => setScrolled(window.scrollY > 32);
 		window.addEventListener("scroll", onScroll, { passive: true });
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
-
+    
 	return (
 		<header
 			className={`
@@ -64,7 +75,7 @@ export default function Navbar() {
 					</div>
 					<span
 						className={`
-              font-bold tracking-tight text-accent transition-all duration-500
+              font-bold tracking-tight text-primary uppercase transition-all duration-500
               ${scrolled ? "text-base" : "text-lg"}
             `}
 					>
@@ -82,21 +93,24 @@ export default function Navbar() {
 				>
 					{NAV_LINKS.map(({ label, href, external }) => (
 						<li key={label}>
-							<Link
+							<ActiveLink
 								href={href}
 								target={external ? "_blank" : undefined}
 								rel={
 									external ? "noopener noreferrer" : undefined
 								}
 								className={`
-                  relative text-sm font-medium text-on-surface/60 hover:text-on-surface/90
+                  relative text-sm font-medium 
                   transition-all duration-200
                   px-3 py-1.5 rounded-lg hover:bg-surface/8
                   ${scrolled ? "text-xs" : "text-sm"}
                 `}
+								activeClassName="text-accent/70 hover:text-accent/90"
+								inactiveClassName="text-on-surface/60 hover:text-on-surface/90"
+								observe
 							>
 								{label}
-							</Link>
+							</ActiveLink>
 						</li>
 					))}
 				</ul>

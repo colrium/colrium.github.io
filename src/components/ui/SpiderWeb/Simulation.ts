@@ -13,7 +13,7 @@ import {
 const GRAVITY = new Vec2(0, 0.2);
 const FRICTION = 0.99;
 const GROUND_FRICTION = 0.8;
-const SELECTION_RADIUS = 20;
+const BASE_SELECTION_RADIUS = 20;
 
 // ── Draggable interface ────────────────────────────────────────────────────
 // Both Particle and PinConstraint expose a mutable `.pos` and can be dragged.
@@ -27,6 +27,7 @@ interface Draggable {
 export class Simulation {
 	composites: Composite[] = [];
 	mouse = new Vec2(0, 0);
+	spiderScale = 1;
 
 	private draggedEntity: Draggable | null = null;
 	private handlers: { type: string; fn: EventListener }[] = [];
@@ -120,7 +121,7 @@ export class Simulation {
 	// ── Rendering ──────────────────────────────────────────────────────────
 
 	draw(): void {
-		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		this.ctx.clearRect(0, 0, this.width, this.height);
 
 		for (const composite of this.composites) {
 			if (composite.drawConstraints) {
@@ -143,7 +144,7 @@ export class Simulation {
 			this.ctx.arc(
 				highlighted.pos.x,
 				highlighted.pos.y,
-				8,
+				8 * this.spiderScale,
 				0,
 				2 * Math.PI,
 			);
@@ -158,12 +159,13 @@ export class Simulation {
 		let nearest: Particle | null = null;
 		let nearestD2 = 0;
 		let nearestConstraints: Constraint[] | null = null;
+		const selectionRadius = BASE_SELECTION_RADIUS * this.spiderScale;
 
 		for (const composite of this.composites) {
 			for (const p of composite.particles) {
 				const d2 = p.pos.dist2(this.mouse);
 				if (
-					d2 <= SELECTION_RADIUS ** 2 &&
+					d2 <= selectionRadius ** 2 &&
 					(nearest === null || d2 < nearestD2)
 				) {
 					nearest = p;
@@ -261,13 +263,15 @@ export class Simulation {
 
 	// ── Spider builder ─────────────────────────────────────────────────────
 
-	buildSpider(origin: Vec2): SpiderComposite {
+	buildSpider(origin: Vec2, scale = 1): SpiderComposite {
 		const spider = new SpiderComposite();
+		this.spiderScale = scale;
+		const s = scale;
 
 		// Body
 		spider.thorax = new Particle(origin);
-		spider.head = new Particle(origin.add(new Vec2(0, -5)));
-		spider.abdomen = new Particle(origin.add(new Vec2(0, 10)));
+		spider.head = new Particle(origin.add(new Vec2(0, -5 * s)));
+		spider.abdomen = new Particle(origin.add(new Vec2(0, 10 * s)));
 
 		spider.particles.push(spider.thorax, spider.head, spider.abdomen);
 		spider.constraints.push(
@@ -290,14 +294,14 @@ export class Simulation {
 
 		// Build 4 pairs of legs (8 legs total — right + left per pair)
 		for (let i = 0; i < 4; i++) {
-			const lateral = (i - 1.5) * 3;
+			const lateral = (i - 1.5) * 3 * s;
 
 			// ── Leg root joints (attached to thorax) ──────────────────────────
 			const rootR = new Particle(
-				spider.thorax.pos.add(new Vec2(3, lateral)),
+				spider.thorax.pos.add(new Vec2(3 * s, lateral)),
 			);
 			const rootL = new Particle(
-				spider.thorax.pos.add(new Vec2(-3, lateral)),
+				spider.thorax.pos.add(new Vec2(-3 * s, lateral)),
 			);
 			spider.particles.push(rootR, rootL);
 
@@ -321,16 +325,16 @@ export class Simulation {
 			// ── Knee joints ────────────────────────────────────────────────────
 			const kneeR = new Particle(
 				rootR.pos.add(
-					new Vec2(20, (i - 1.5) * 30)
+					new Vec2(20 * s, (i - 1.5) * 30 * s)
 						.normal()
-						.mutableScale(20 * lenCoef),
+						.mutableScale(20 * s * lenCoef),
 				),
 			);
 			const kneeL = new Particle(
 				rootL.pos.add(
-					new Vec2(-20, (i - 1.5) * 30)
+					new Vec2(-20 * s, (i - 1.5) * 30 * s)
 						.normal()
-						.mutableScale(20 * lenCoef),
+						.mutableScale(20 * s * lenCoef),
 				),
 			);
 			spider.particles.push(kneeR, kneeL);
@@ -344,16 +348,16 @@ export class Simulation {
 			// ── Ankle joints ───────────────────────────────────────────────────
 			const ankleR = new Particle(
 				kneeR.pos.add(
-					new Vec2(20, (i - 1.5) * 50)
+					new Vec2(20 * s, (i - 1.5) * 50 * s)
 						.normal()
-						.mutableScale(20 * lenCoef),
+						.mutableScale(20 * s * lenCoef),
 				),
 			);
 			const ankleL = new Particle(
 				kneeL.pos.add(
-					new Vec2(-20, (i - 1.5) * 50)
+					new Vec2(-20 * s, (i - 1.5) * 50 * s)
 						.normal()
-						.mutableScale(20 * lenCoef),
+						.mutableScale(20 * s * lenCoef),
 				),
 			);
 			spider.particles.push(ankleR, ankleL);
@@ -367,16 +371,16 @@ export class Simulation {
 			// ── Feet (tip of each leg, anchors to web) ─────────────────────────
 			const footR = new Particle(
 				ankleR.pos.add(
-					new Vec2(20, (i - 1.5) * 100)
+					new Vec2(20 * s, (i - 1.5) * 100 * s)
 						.normal()
-						.mutableScale(12 * lenCoef),
+						.mutableScale(12 * s * lenCoef),
 				),
 			);
 			const footL = new Particle(
 				ankleL.pos.add(
-					new Vec2(-20, (i - 1.5) * 100)
+					new Vec2(-20 * s, (i - 1.5) * 100 * s)
 						.normal()
-						.mutableScale(12 * lenCoef),
+						.mutableScale(12 * s * lenCoef),
 				),
 			);
 			spider.particles.push(footR, footL);
@@ -408,8 +412,8 @@ export class Simulation {
 	// ── Crawl — move one foot to a new web node ────────────────────────────
 
 	crawl(legIndex: number): void {
-		const STEP_RADIUS_MIN = 35;
-		const STEP_RADIUS_MAX = 100;
+		const STEP_RADIUS_MIN = 35 * this.spiderScale;
+		const STEP_RADIUS_MAX = 100 * this.spiderScale;
 
 		const web = this.composites[0] as Composite;
 		const spider = this.composites[1] as SpiderComposite;

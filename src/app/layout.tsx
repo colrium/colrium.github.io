@@ -1,14 +1,46 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import {  Epilogue } from "next/font/google";
+import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import PageLoader from "@/components/ui/PageLoader";
 const googleSansFlex = localFont({
 	src: [
 		{
 			path: "./fonts/google-sans-flex-latin-300-normal.woff2",
-			style: "normal",
-		},
+            style: "normal",
+            weight: "300",
+        },
+        {
+            path: "./fonts/google-sans-flex-latin-400-normal.woff2",
+            style: "normal",
+            weight: "400",
+        },
+        {
+            path: "./fonts/google-sans-flex-latin-500-normal.woff2",
+            style: "normal",
+            weight: "500",
+        },
+        {
+            path: "./fonts/google-sans-flex-latin-600-normal.woff2",
+            style: "normal",
+            weight: "600",
+        },
+        {
+            path: "./fonts/google-sans-flex-latin-700-normal.woff2",
+            style: "normal",
+            weight: "700",
+        },
+        {
+            path: "./fonts/google-sans-flex-latin-800-normal.woff2",
+            style: "normal",
+            weight: "800",
+        },
+        {
+            path: "./fonts/google-sans-flex-latin-900-normal.woff2",
+            style: "normal",
+            weight: "900",
+        },
 	],
 	variable: "--font-google-sans-flex", // Define the custom CSS variable
 });
@@ -30,6 +62,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+    
   return (
 		<html
 			lang="en"
@@ -37,6 +71,7 @@ export default function RootLayout({
 		>
 			<body className="min-h-full flex flex-col bg-surface-tint ">
 				<PageLoader />
+                <Navbar />
 				{children}
 			</body>
 		</html>

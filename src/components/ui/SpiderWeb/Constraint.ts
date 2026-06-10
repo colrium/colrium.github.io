@@ -55,6 +55,7 @@ export class PinConstraint implements Constraint {
 	}
 
 	relax(_stepCoef: number): void {
+		void _stepCoef;
 		this.a.pos.mutableSet(this.pos);
 	}
 
