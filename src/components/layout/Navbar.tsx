@@ -75,7 +75,7 @@ export default function Navbar() {
 					</div>
 					<span
 						className={`
-              font-bold tracking-tight text-primary uppercase transition-all duration-500
+              hidden md:flex font-bold tracking-tight text-primary uppercase transition-all duration-500
               ${scrolled ? "text-base" : "text-lg"}
             `}
 					>
@@ -100,13 +100,13 @@ export default function Navbar() {
 									external ? "noopener noreferrer" : undefined
 								}
 								className={`
-                  relative text-sm font-medium 
+                  relative text-sm font-thin 
                   transition-all duration-200
                   px-3 py-1.5 rounded-lg hover:bg-surface/8
                   ${scrolled ? "text-xs" : "text-sm"}
                 `}
 								activeClassName="text-accent/70 hover:text-accent/90"
-								inactiveClassName="text-on-surface/60 hover:text-on-surface/90"
+								inactiveClassName="text-on-surface/40 hover:text-on-surface/90"
 								observe
 							>
 								{label}
@@ -120,8 +120,8 @@ export default function Navbar() {
 					href="/Software-Engineer-Collins-Riungu-CV.pdf"
 					className={`
             inline-flex items-center gap-1.5 font-semibold rounded-full
-            bg-surface-tint
-            text-accent 
+            bg-accent
+            text-surface 
             hover:scale-[1.03]
             active:scale-[0.97]
             transition-all duration-300
@@ -131,7 +131,7 @@ export default function Navbar() {
 					<svg
 						viewBox="0 0 16 16"
 						fill="none"
-						className={`transition-all duration-500 ${scrolled ? "w-3 h-3" : "w-3.5 h-3.5"}`}
+						className={`text-surface transition-all duration-500 ${scrolled ? "w-3 h-3" : "w-3.5 h-3.5"}`}
 					>
 						<path
 							d="M8 2v8M5 7l3 3 3-3M3 12h10"

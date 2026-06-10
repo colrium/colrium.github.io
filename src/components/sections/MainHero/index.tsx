@@ -247,16 +247,16 @@ export default function MainHero({
 							{top}
 						</div>
 					)}
-					<div className="w-full h-4/5 md:h-4/5  flex flex-col justify-center items-center   px-6  ">
+					<div className="w-full h-4/5 flex flex-col justify-center items-center   px-6  ">
 						{
 							<div
-								className={`flex flex-col items-center justify-center  transition-all duration-1000`}
+								className={`flex flex-col items-center justify-center pt-12 transition-all duration-1000`}
 							>
 								{accessory}
 							</div>
 						}
 						<div
-							className={` flex flex-col items-center md:px-6 lg:px-12  text-center `}
+							className={`-mt-20 flex flex-col items-center md:px-6 lg:px-12  text-center `}
 						>
 							{/* Hero Badge */}
 							<HeroBadge icon={badgeIcon} label={badgeLabel} />
