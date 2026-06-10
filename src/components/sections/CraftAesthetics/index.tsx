@@ -2,7 +2,7 @@
 
 import AirHockey from "@/components/ui/AirHockey";
 import DotCube from "@/components/ui/DotCube";
-import ShuffleTextComponent from "@/components/ui/ShuffleText";
+import ShuffleText from "@/components/ui/ShuffleText";
 import {useState} from "react";
 const principles = [
 	{
@@ -55,9 +55,9 @@ export default function CraftAesthetics() {
 						<span className="inline-flex rounded-full bg-transparent px-4 py-2 text-sm  text-on-surface border border-accent/20">
 							Craft & Aesthetics
 						</span>
-						<ShuffleTextComponent component="h2" className="my-16 text-3xl sm:text-4xl md:text-5xl font-semibold text-on-surface tracking-tight">
+						<ShuffleText component="h2" className="my-16 text-3xl sm:text-4xl md:text-5xl font-semibold text-on-surface tracking-tight">
 							Pixel-Perfect UI, Down to the Last Detail
-						</ShuffleTextComponent>
+						</ShuffleText>
 
 						<p className="mt-6 text-base md:text-lg leading-8 text-on-surface/75">
 							Great software deserves great interfaces. I treat UI

@@ -7,7 +7,7 @@ import {
 	ElementType,
 	ComponentPropsWithoutRef,
 } from "react";
-import ShuffleTextClass from "@/lib/ShuffleText";
+import TextShuffler from "@/components/ui/ShuffleText/TextShuffler";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -52,22 +52,22 @@ type ShuffleTextProps<T extends AnyTag = "span"> = {
 // ---------------------------------------------------------------------------
 
 /**
- * `ShuffleTextComponent` wraps any HTML tag or React component and applies
+ * `ShuffleText` wraps any HTML tag or React component and applies
  * the ShuffleText scramble-reveal effect to its text content.
  *
  * @example
  * // Plain span (default)
- * <ShuffleTextComponent text="Hello World" />
+ * <ShuffleText text="Hello World" />
  *
  * @example
  * // h1 with custom duration
- * <ShuffleTextComponent component="h1" text="Welcome" duration={1000} className="hero" />
+ * <ShuffleText component="h1" text="Welcome" duration={1000} className="hero" />
  *
  * @example
  * // Re-trigger on state change
- * <ShuffleTextComponent text={label} trigger={label} component="button" />
+ * <ShuffleText text={label} trigger={label} component="button" />
  */
-export default function ShuffleTextComponent<T extends AnyTag = "span">({
+export default function ShuffleText<T extends AnyTag = "span">({
 	text,
 	children,
 	component,
@@ -83,7 +83,7 @@ export default function ShuffleTextComponent<T extends AnyTag = "span">({
 }: ShuffleTextProps<T>) {
 	const Tag = (component ?? "span") as ElementType;
 	const ref = useRef<HTMLElement | null>(null);
-	const shuffleRef = useRef<ShuffleTextClass | null>(null);
+	const shuffleRef = useRef<TextShuffler | null>(null);
 	const [isMounted, setIsMounted] = useState(false);
 	const hasPlayedRef = useRef(false);
 
@@ -108,7 +108,7 @@ export default function ShuffleTextComponent<T extends AnyTag = "span">({
 		ref.current.textContent = resolvedText;
 		hasPlayedRef.current = false;
 
-		const instance = new ShuffleTextClass(ref.current);
+		const instance = new TextShuffler(ref.current);
 
 		if (sourceRandomCharacter !== undefined) {
 			instance.sourceRandomCharacter = sourceRandomCharacter;

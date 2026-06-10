@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import ShuffleTextComponent from "../ShuffleText";
+import ShuffleText from "../ShuffleText";
 
 export default function PageLoader() {
 	const [progress, setProgress] = useState(0);
@@ -103,12 +103,12 @@ export default function PageLoader() {
 			style={{ backgroundColor: "var(--surface-tint)" }}
 		>
 			<div className="flex flex-col items-center gap-10">
-				<ShuffleTextComponent
+				<ShuffleText
 					className="uppercase text-5xl tracking-tighter text-primary"
                     
 				>
 					Mutugi
-				</ShuffleTextComponent>
+				</ShuffleText>
 
 				<div
 					className="w-48 h-px rounded-full overflow-hidden"

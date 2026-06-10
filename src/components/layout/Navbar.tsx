@@ -9,7 +9,7 @@ const NAV_LINKS = [
 	{ label: "Aesthetics", href: "/#aesthetics" },
 	{ label: "Experience", href: "/#experience" },
     { label: "Impact", href: "/#impact" },
-    { label: "Fit", href: "/#fit" },
+    { label: "Best", href: "/#engagements" },
 	{
 		label: "GitHub",
 		href: "https://github.com/colrium",

@@ -1,4 +1,4 @@
-export default class ShuffleText {
+export default class TextShuffler {
 	/**
 	 * The string for random text.
 	 * @type {string}

@@ -6,8 +6,7 @@ import { IconButton } from '@/components/sections/MainHero/IconButton';
 import { StatsCard } from '@/components/sections/MainHero/StatsCard';
 import { DocFooter } from '@/components/sections/MainHero/DocFooter';
 import Image from 'next/image';
-import ShuffleText from '@/lib/ShuffleText';
-import ShuffleTextComponent from '@/components/ui/ShuffleText';
+import ShuffleText from '@/components/ui/ShuffleText';
 
 const SocialsStrip: React.FC = () => {
 	const socials = [
@@ -287,14 +286,14 @@ export default function MainHero({
 								</h3>
 							)}
 							{/* Heading */}
-							<ShuffleTextComponent
+							<ShuffleText
 								component="h1"
 								className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-6 tracking-tight leading-[1.05] drop-shadow-sm"
 								id="main-hero-title"
 								replayOnClick
 							>
 								{title}
-							</ShuffleTextComponent>
+							</ShuffleText>
 							<p
 								className={`font-body-sm text-sm sm:text-base text-on-surface/70 opacity-80 mb-8 leading-relaxed max-w-xl mx-auto`}
 							>
