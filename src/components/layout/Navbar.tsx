@@ -10,8 +10,8 @@ const NAV_LINKS = [
 	{ label: "Skills", href: "/#skills" },
 	{ label: "Aesthetics", href: "/#aesthetics" },
 	{ label: "Experience", href: "/#experience" },
-    { label: "Impact", href: "/#impact" },
-    { label: "engagements", href: "/#engagements" },
+	{ label: "Impact", href: "/#impact" },
+	{ label: "engagements", href: "/#engagements" },
 	{
 		label: "GitHub",
 		href: "https://github.com/colrium",
@@ -22,48 +22,36 @@ const NAV_LINKS = [
 export default function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
 	useEffect(() => {
-        const scrollToId =
-                window?.location?.hash || null;
-    
-            if (scrollToId) {
-                const element = document.getElementById(scrollToId.substring(1));
-                if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                } 
-            }
-            
-		const onScroll = debounce(() => setScrolled(window.scrollY > 32), 250);
+		const scrollToId = window?.location?.hash || null;
+
+		if (scrollToId) {
+			const element = document.getElementById(scrollToId.substring(1));
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			}
+		}
+
+		const onScroll = () => setScrolled(window.scrollY > 32);
 		window.addEventListener("scroll", onScroll, { passive: true });
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
-    
+
 	return (
 		<header
-			className={`
-        fixed top-0 left-0 right-0 z-50 flex justify-center
-        transition-all duration-500 ease-out
-        ${scrolled ? "pt-3" : "pt-6"}
-      `}
+			className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-out ${scrolled ? "pt-3" : "pt-6"}`}
 		>
 			<nav
-				className={`
-          flex items-center justify-between border-transparent transition-all  duration-500 ease-out 
-          ${
-				scrolled
-					? "border border-accent/10!  bg-on-surface/5 rounded-full backdrop-blur-xl  w-[min(720px,calc(100vw-2rem))] px-5 py-2.5 shadow-[0_8px_48px_rgba(0,0,0,0.6)]"
-					: "w-[min(1100px,calc(100vw-3rem))] px-8 py-4 "
-			}
-        `}
+				className={`flex items-center justify-between border-transparent transition-all  duration-500 ease-out ${
+					scrolled
+						? "border border-accent/10!  bg-on-surface/5 rounded-full backdrop-blur-xl  w-[min(720px,calc(100vw-2rem))] px-5 py-2.5 shadow-[0_8px_48px_rgba(0,0,0,0.6)]"
+						: "w-[min(1100px,calc(100vw-3rem))] px-8 py-4 "
+				}`}
 			>
+				
 				{/* Logo */}
 				<Link href="/" className="flex items-center gap-2.5 group">
 					<div
-						className={`
-              rounded-xl 
-              flex items-center justify-center
-              transition-all duration-500
-              ${scrolled ? "w-7 h-7" : "w-9 h-9"}
-            `}
+						className={`rounded-xl flex items-center justify-center transition-all duration-500 ${scrolled ? "w-7 h-7" : "w-9 h-9"}`}
 					>
 						<Image
 							src="/logo.svg"
@@ -74,10 +62,7 @@ export default function Navbar() {
 						/>
 					</div>
 					<span
-						className={`
-              hidden md:flex font-bold tracking-tight text-primary uppercase transition-all duration-500
-              ${scrolled ? "text-base" : "text-lg"}
-            `}
+						className={`hidden md:flex font-bold tracking-tight text-primary uppercase transition-all duration-500 ${scrolled ? "text-base" : "text-lg"}`}
 					>
 						Mutugi
 					</span>
@@ -85,11 +70,7 @@ export default function Navbar() {
 
 				{/* Center links — hidden when scrolled on small screens */}
 				<ul
-					className={`
-            hidden md:flex items-center gap-1
-            transition-all duration-500
-            ${scrolled ? "gap-0.5" : "gap-1"}
-          `}
+					className={`hidden md:flex items-center gap-1 transition-all duration-500 ${scrolled ? "gap-0.5" : "gap-1"}`}
 				>
 					{NAV_LINKS.map(({ label, href, external }) => (
 						<li key={label}>
@@ -99,12 +80,7 @@ export default function Navbar() {
 								rel={
 									external ? "noopener noreferrer" : undefined
 								}
-								className={`
-                  relative text-sm font-thin 
-                  transition-all duration-200
-                  px-3 py-1.5 rounded-lg hover:bg-surface/8
-                  ${scrolled ? "text-xs" : "text-sm"}
-                `}
+								className={`relative text-sm font-thin transition-all duration-200 px-3 py-1.5 rounded-lg hover:bg-surface/8 ${scrolled ? "text-xs" : "text-sm"}`}
 								activeClassName="text-accent/70 hover:text-accent/90"
 								inactiveClassName="text-on-surface/40 hover:text-on-surface/90"
 								observe
@@ -118,15 +94,7 @@ export default function Navbar() {
 				{/* CTA */}
 				<Link
 					href="/Software-Engineer-Collins-Riungu-CV.pdf"
-					className={`
-            inline-flex items-center gap-1.5 font-semibold rounded-full
-            bg-accent
-            text-surface 
-            hover:scale-[1.03]
-            active:scale-[0.97]
-            transition-all duration-300
-            ${scrolled ? "px-4 py-1.5 text-xs" : "px-5 py-2 text-sm"}
-          `}
+					className={`inline-flex items-center gap-1.5 font-semibold rounded-full bg-accent text-surface hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 ${scrolled ? "px-4 py-1.5 text-xs" : "px-5 py-2 text-sm"}`}
 				>
 					<svg
 						viewBox="0 0 16 16"
