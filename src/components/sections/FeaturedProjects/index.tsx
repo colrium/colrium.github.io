@@ -106,11 +106,11 @@ export default function FeaturedProjects() {
 					{projects.map((project) => (
 						<article
 							key={project.title}
-							className="flex min-h-[360px] flex-col justify-between rounded-lg border border-on-surface/10 bg-surface p-6 transition hover:border-accent/40"
+							className="flex min-h-[360px] flex-col justify-between rounded-xl border border-accent/20 p-6 transition hover:border-accent/50"
 						>
 							<div>
 								<div className="mb-8 flex items-center justify-between gap-4">
-									<span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+									<span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
 										{project.type}
 									</span>
 									{/* <span
@@ -136,7 +136,7 @@ export default function FeaturedProjects() {
 									{project.stack.map((item) => (
 										<span
 											key={item}
-											className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface-mute"
+											className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface"
 										>
 											{item}
 										</span>

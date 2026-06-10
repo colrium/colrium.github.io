@@ -49,7 +49,7 @@ export default function Process() {
 					{steps.map((step) => (
 						<article
 							key={step.number}
-							className="min-h-[280px] bg-surface-tint p-6"
+							className="min-h-[280px]  p-6"
 						>
 							<p className="font-display text-6xl text-accent/30">
 								{step.number}

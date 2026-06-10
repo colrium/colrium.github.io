@@ -42,14 +42,14 @@ export default function ImpactHighlights() {
 						</h2>
 					</div>
 					<p className="max-w-md text-sm leading-7 text-on-surface/70 md:text-base">
-						These are the quiet signals I like in a portfolio: shipped
-						work, useful scale, and measurable improvements.
+						These are the quiet signals I like in a portfolio:
+						shipped work, useful scale, and measurable improvements.
 					</p>
 				</div>
 
-				<div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-on-surface/10 bg-on-surface/10 sm:grid-cols-2 lg:grid-cols-4">
+				<div className="mt-12 grid overflow-hidden rounded-xl border border-on-surface/10 bg-on-surface/10 sm:grid-cols-2 lg:grid-cols-4">
 					{highlights.map((item) => (
-						<article key={item.label} className="bg-surface p-6">
+						<article key={item.label} className=" p-6">
 							<p className="font-display text-6xl text-primary">
 								{item.value}
 							</p>
