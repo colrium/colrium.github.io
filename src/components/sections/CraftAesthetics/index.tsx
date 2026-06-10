@@ -42,7 +42,7 @@ const tools = ["Figma", "React", "Tailwind CSS", "Framer Motion", "Storybook"];
 export default function CraftAesthetics() {
     const [showAdvancedUI, setShowAdvancedUI] = useState(false);
 	return (
-		<section className="w-full py-16 min-h-[80vh] flex flex-col items-center justify-center md:py-32">
+		<section className="w-full py-16 min-h-[80vh] flex flex-col items-center justify-center md:py-32" id="aesthetics">
 			<div className="mx-auto max-w-6xl px-6 md:px-10">
 				<div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
 					{!showAdvancedUI && (

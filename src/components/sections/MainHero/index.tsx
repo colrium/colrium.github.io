@@ -12,30 +12,155 @@ import ShuffleTextComponent from '@/components/ui/ShuffleText';
 const SocialsStrip: React.FC = () => {
 	const socials = [
 		{
-			href: 'https://github.com/colrium',
-			label: 'GitHub',
+			href: "https://github.com/colrium",
+			label: "GitHub",
 			svg: (
-				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.28-1.72-1.28-1.72-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.97.1-.76.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.28 1.2-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.02 11.02 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.83 1.2 3.09 0 4.44-2.7 5.42-5.27 5.7.41.35.77 1.04.77 2.1 0 1.52-.01 2.75-.01 3.12 0 .31.2.68.8.56C20.21 21.44 23.5 17.12 23.5 12.02 23.5 5.73 18.27.5 12 .5z"/>
+				<svg
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.28-1.72-1.28-1.72-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.97.1-.76.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.28 1.2-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.02 11.02 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.83 1.2 3.09 0 4.44-2.7 5.42-5.27 5.7.41.35.77 1.04.77 2.1 0 1.52-.01 2.75-.01 3.12 0 .31.2.68.8.56C20.21 21.44 23.5 17.12 23.5 12.02 23.5 5.73 18.27.5 12 .5z" />
 				</svg>
 			),
 		},
 		{
-			href: 'https://www.linkedin.com/in/colrium',
-			label: 'LinkedIn',
+			href: "https://www.linkedin.com/in/colrium",
+			label: "LinkedIn",
 			svg: (
-				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2H5c1.1 0 2-.9 2-2s-.9-2-2-2h-.02zM3.5 8.98H6.5V21H3.5zM9.5 8.98h2.88v1.63h.04c.4-.75 1.38-1.54 2.85-1.54 3.05 0 3.61 2.01 3.61 4.62V21h-3V14.6c0-1.5-.03-3.43-2.09-3.43-2.09 0-2.41 1.63-2.41 3.32V21h-3V8.98z"/>
+				<svg
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2H5c1.1 0 2-.9 2-2s-.9-2-2-2h-.02zM3.5 8.98H6.5V21H3.5zM9.5 8.98h2.88v1.63h.04c.4-.75 1.38-1.54 2.85-1.54 3.05 0 3.61 2.01 3.61 4.62V21h-3V14.6c0-1.5-.03-3.43-2.09-3.43-2.09 0-2.41 1.63-2.41 3.32V21h-3V8.98z" />
 				</svg>
 			),
 		},
 		{
-			href: 'mailto:colrium@gmail.com',
-			label: 'Email',
+			href: "mailto:colrium@gmail.com",
+			label: "Email",
 			svg: (
-				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-					<path d="M4 4h16v16H4z" fill="none" />
-					<path d="M22 6l-10 7L2 6" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24px"
+					height="19px"
+					viewBox="0 0 24 19"
+					version="1.1"
+				>
+					<defs>
+						<linearGradient
+							id="linear0"
+							gradientUnits="userSpaceOnUse"
+							x1="165"
+							y1="44"
+							x2="165"
+							y2="166"
+							gradientTransform="matrix(0.132102,0,0,0.135791,-0.681791,-3.530542)"
+						>
+							<stop
+								offset="0"
+								stopColor="rgb(37.647059%,83.921569%,45.098039%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.17"
+								stopColor="rgb(25.882353%,78.431373%,40.784314%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.39"
+								stopColor="rgb(5.490196%,73.72549%,37.254902%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.62"
+								stopColor="rgb(0%,66.27451%,73.333333%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.86"
+								stopColor="rgb(23.529412%,56.470588%,100%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="1"
+								stopColor="rgb(19.215686%,52.54902%,100%)"
+								stopOpacity="1"
+							/>
+						</linearGradient>
+						<linearGradient
+							id="linear1"
+							gradientUnits="userSpaceOnUse"
+							x1="8"
+							y1="46.130001"
+							x2="184"
+							y2="46.130001"
+							gradientTransform="matrix(0.132102,0,0,0.135791,-0.681791,-3.530542)"
+						>
+							<stop
+								offset="0.08"
+								stopColor="rgb(100%,38.823529%,62.745098%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.3"
+								stopColor="rgb(98.823529%,25.490196%,23.921569%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.5"
+								stopColor="rgb(98.823529%,25.490196%,23.921569%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.65"
+								stopColor="rgb(98.823529%,25.490196%,23.921569%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.72"
+								stopColor="rgb(98.823529%,36.078431%,18.823529%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.86"
+								stopColor="rgb(99.607843%,69.411765%,4.705882%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.91"
+								stopColor="rgb(99.607843%,78.039216%,0%)"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="0.96"
+								stopColor="rgb(100%,85.882353%,5.882353%)"
+								stopOpacity="1"
+							/>
+						</linearGradient>
+					</defs>
+					<g id="surface1">
+						<path
+							stroke="none"
+							fillRule="nonzero"
+							fill="url(#linear0)"
+							d="M 18.605469 2.441406 L 23.625 2.441406 L 23.625 17.382812 C 23.625 18.28125 22.917969 19.011719 22.039062 19.011719 L 19.398438 19.011719 C 18.960938 19.011719 18.605469 18.648438 18.605469 18.195312 Z M 18.605469 2.441406 "
+						/>
+						<path
+							stroke="none"
+							fillRule="nonzero"
+							fill="rgb(98.823529%,25.490198%,23.921569%)"
+							fillOpacity="1"
+							d="M 5.394531 2.441406 L 0.375 2.441406 L 0.375 17.382812 C 0.375 18.28125 1.082031 19.011719 1.960938 19.011719 L 4.601562 19.011719 C 5.039062 19.011719 5.394531 18.648438 5.394531 18.195312 Z M 5.394531 2.441406 "
+						/>
+						<path
+							stroke="none"
+							fillRule="nonzero"
+							fill="url(#linear1)"
+							d="M 4.5 0.605469 C 3.441406 -0.3125 1.855469 -0.171875 0.964844 0.921875 C 0.0703125 2.011719 0.207031 3.636719 1.269531 4.554688 L 11.320312 13.238281 C 11.714844 13.578125 12.285156 13.578125 12.679688 13.238281 L 22.730469 4.554688 C 23.792969 3.636719 23.929688 2.011719 23.035156 0.921875 C 22.144531 -0.171875 20.558594 -0.3125 19.5 0.605469 L 12 7.085938 Z M 4.5 0.605469 "
+						/>
+					</g>
 				</svg>
 			),
 		},

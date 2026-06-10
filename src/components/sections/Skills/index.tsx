@@ -63,6 +63,7 @@ export default function Skills() {
 		<section
 			className="p-3 py-16 md:py-32 w-full min-h-[80vh] flex flex-col items-center justify-center"
 			aria-labelledby="skills-heading"
+            id="skills"
 		>
 			<div className="mx-auto w-full max-w-7xl px-6 md:px-10 flex flex-col items-center gap-16 bg-surface rounded-3xl p-10 md:p-16">
 				<div className="w-full">

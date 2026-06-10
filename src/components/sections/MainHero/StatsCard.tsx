@@ -33,7 +33,7 @@ export function StatsCard({
       <IconButton
         icon={buttonIcon}
         label={buttonLabel}
-        variant="secondary"
+        variant="accent"
         onClick={onButtonClick}
         href={href}
         className="self-start"

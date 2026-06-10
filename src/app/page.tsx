@@ -1,3 +1,4 @@
+import Navbar from "@/components/layout/Navbar";
 import Contact from "@/components/sections/Contact";
 import CraftAesthetics from "@/components/sections/CraftAesthetics";
 import Credentials from "@/components/sections/Credentials";
@@ -20,32 +21,35 @@ export default function Home() {
 					title="The Web Guy"
 					badgeLabel="Software Engineer"
 					statsValue="9+"
-					top={
-						<nav className="flex justify-between items-center px-6 md:px-10 h-20 w-full relative z-10">
-							<div className="flex items-center gap-2">
-								<Image
-									src="/logo.svg"
-									alt="Logo"
-									width={32}
-									height={32}
-								/>
-								<span className="text-xl font-bold text-accent tracking-tighter">
-									Mutugi
-								</span>
-							</div>
-						</nav>
+					// top={
+					// 	<nav className="flex justify-between items-center px-6 md:px-10 h-20 w-full relative z-10">
+					// 		<div className="flex items-center gap-2">
+					// 			<Image
+					// 				src="/logo.svg"
+					// 				alt="Logo"
+					// 				width={32}
+					// 				height={32}
+					// 			/>
+					// 			<span className="text-xl font-bold text-accent tracking-tighter">
+					// 				Mutugi
+					// 			</span>
+					// 		</div>
+					// 	</nav>
+					// }
+					top={<Navbar />}
+					accessory={
+						<div className="flex items-center gap-4 h-full my-16 ">
+							<SpiderWeb className="w-70 h-70 md:w-80 md:h-80 lg:w-120 lg:h-120" />
+						</div>
 					}
-					accessory={<div className="flex items-center gap-4 h-full my-16 ">                        
-                        <SpiderWeb className="w-70 h-70 md:w-80 md:h-80 lg:w-120 lg:h-120" />
-                    </div>}
 					statsLabel="Years of Experience"
 					description="Polyglot engineer with an unreasonable fondness for clean architecture. Based in Nairobi, fully remote-native, and always building something worth shipping."
 				/>
+				<Skills />
 				<div className="relative w-full">
 					<CraftAesthetics />
 				</div>
 
-				<Skills /> 
 				<FeaturedProjects />
 				<Experience />
 				<ImpactHighlights />
