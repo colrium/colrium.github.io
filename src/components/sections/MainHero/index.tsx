@@ -256,7 +256,7 @@ export default function MainHero({
 							</div>
 						}
 						<div
-							className={`-mt-20 flex flex-col items-center md:px-6 lg:px-12  text-center `}
+							className={`-mt-8 md:-mt-20 flex flex-col items-center md:px-6 lg:px-12  text-center `}
 						>
 							{/* Hero Badge */}
 							<HeroBadge icon={badgeIcon} label={badgeLabel} />

@@ -17,7 +17,8 @@ interface ActiveLinkProps extends Omit<
 	target?: HTMLAttributeAnchorTarget;
     rel?: string;
     href: string | URL;
-    observe?: boolean
+    observe?: boolean;
+	onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 export default function ActiveLink({ href, children, className,  activeClassName, inactiveClassName, observe=false, ...rest  }: ActiveLinkProps) {
