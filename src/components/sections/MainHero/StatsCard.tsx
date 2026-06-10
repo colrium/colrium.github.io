@@ -22,10 +22,10 @@ export function StatsCard({
   return (
     <GlassCard className="p-4 md:p-6 lg:p-8 flex flex-col gap-4 min-w-40 md:min-w-50 shadow-lg">
       <div>
-        <div className="text-3xl md:text-4xl font-normal text-on-surface tracking-tight">
+        <div className="text-3xl md:text-4xl font-normal text-secondary tracking-tight">
           {value}
         </div>
-        <div className="text-xs font-semibold text-on-surface/60 uppercase tracking-widest">
+        <div className="text-xs font-thin text-on-surface/60 uppercase tracking-widest">
           {label}
         </div>
           </div>

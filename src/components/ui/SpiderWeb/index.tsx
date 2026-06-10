@@ -59,7 +59,7 @@ const DEFAULT_SPIDER: Required<SpiderColors> = {
 };
 
 const DEFAULT_WEB: Required<WebColors> = {
-	strands: "#474747",
+	strands: "rgba(120, 124, 124, 0.5)",
 	nodes: "#474747",
 };
 

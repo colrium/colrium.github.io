@@ -35,8 +35,8 @@ export function IconButton({
 			href={href}
 			className={`${baseClasses} ${variantClasses[variant]} ${className}`}
 		>
-			<div className="bg-surface/20 p-2 md:p-1 rounded-full flex items-center justify-center">
-				<span className="material-symbols-outlined text-xs">
+			<div className=" p-1 md:p-0 rounded-full flex items-center justify-center">
+				<span className="material-symbols-outlined text-surface text-xs">
 					{icon}
 				</span>
 			</div>

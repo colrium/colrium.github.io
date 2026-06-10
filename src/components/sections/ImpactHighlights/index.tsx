@@ -1,3 +1,5 @@
+import ShuffleText from "@/components/ui/ShuffleText";
+
 const highlights = [
 	{
 		value: "95%",
@@ -34,12 +36,13 @@ export default function ImpactHighlights() {
 						<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
 							Impact
 						</span>
-						<h2
+						<ShuffleText
+                            component="h2"
 							id="impact-heading"
 							className="mt-8 text-3xl font-semibold tracking-tight text-on-surface sm:text-4xl md:text-5xl"
 						>
 							Numbers that point to reliable delivery.
-						</h2>
+						</ShuffleText>
 					</div>
 					<p className="max-w-md text-sm leading-7 text-on-surface/70 md:text-base">
 						These are the quiet signals I like in a portfolio:

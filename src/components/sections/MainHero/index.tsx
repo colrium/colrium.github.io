@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { HeroBadge } from '@/components/sections/MainHero/HeroBadge';
-import { IconButton } from '@/components/sections/MainHero/IconButton';
 import { StatsCard } from '@/components/sections/MainHero/StatsCard';
 import { DocFooter } from '@/components/sections/MainHero/DocFooter';
 import Image from 'next/image';
@@ -17,6 +16,8 @@ const SocialsStrip: React.FC = () => {
 				<svg
 					viewBox="0 0 24 24"
 					fill="currentColor"
+                    height="100%"
+                    width="100%"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.28-1.72-1.28-1.72-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.97.1-.76.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.28 1.2-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.02 11.02 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.83 1.2 3.09 0 4.44-2.7 5.42-5.27 5.7.41.35.77 1.04.77 2.1 0 1.52-.01 2.75-.01 3.12 0 .31.2.68.8.56C20.21 21.44 23.5 17.12 23.5 12.02 23.5 5.73 18.27.5 12 .5z" />
@@ -27,13 +28,7 @@ const SocialsStrip: React.FC = () => {
 			href: "https://www.linkedin.com/in/colrium",
 			label: "LinkedIn",
 			svg: (
-				<svg
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2H5c1.1 0 2-.9 2-2s-.9-2-2-2h-.02zM3.5 8.98H6.5V21H3.5zM9.5 8.98h2.88v1.63h.04c.4-.75 1.38-1.54 2.85-1.54 3.05 0 3.61 2.01 3.61 4.62V21h-3V14.6c0-1.5-.03-3.43-2.09-3.43-2.09 0-2.41 1.63-2.41 3.32V21h-3V8.98z" />
-				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 72 72" width="100%"><g fill="none" fillRule="evenodd"><path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" fill="#007EBB"/><path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z" fill="#FFF"/></g></svg>
 			),
 		},
 		{
@@ -42,8 +37,8 @@ const SocialsStrip: React.FC = () => {
 			svg: (
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24px"
-					height="19px"
+					width="100%"
+					height="100%"
 					viewBox="0 0 24 19"
 					version="1.1"
 				>
@@ -176,25 +171,13 @@ const SocialsStrip: React.FC = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label={s.label}
-							className="text-on-surface/80 hover:text-primary transition-colors"
+							className={`text-on-surface/80 hover:text-on-surface transition-colors`}
 						>
-							<span className="w-6 h-6 inline-block">{s.svg}</span>
+							<span className="w-6 h-6 rounded-full hover:bg-surface-tint/10 inline-block">{s.svg}</span>
 						</a>
 					))}
 				</div>
 			</div>
-			{/* <style jsx>{`
-				.marquee-inner {
-					display: inline-flex;
-					gap: 2rem;
-					padding-left: 0.25rem;
-					animation: marquee 10s linear infinite;
-				}
-				@keyframes marquee {
-					0% { transform: translateX(0%); }
-					100% { transform: translateX(-50%); }
-				}
-			`}</style> */}
 		</div>
 	);
 };
@@ -219,7 +202,8 @@ interface MainHeroProps {
 }
 
 export default function MainHero({
-    videosrc = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260428_193507_4286c423-2fd9-4efd-92bd-91a939453fc1.mp4',
+    // videosrc = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260428_193507_4286c423-2fd9-4efd-92bd-91a939453fc1.mp4',
+    videosrc,
     tagline,
   badgeLabel = 'SWE',
   badgeIcon = 'code',
@@ -247,14 +231,14 @@ export default function MainHero({
 		<div className="w-full h-screen flex items-center justify-center p-3 md:p-5 ">
 			<section className="w-full max-w-7xl h-full rounded-2xl md:rounded-3xl overflow-hidden shadow-none flex flex-col items-center bg-surface group relative">
 				{/* Video Background */}
-				{/* <video
-          autoPlay
-          className="absolute inset-0 w-full h-full object-cover object-[65%] lg:object-center z-0 scale-105 group-hover:scale-100 transition-transform duration-[2000ms]"
-          loop
-          muted
-          playsInline
-          src={videosrc}
-        /> */}
+              {videosrc && <video
+                  autoPlay
+                  className="absolute inset-0 w-full h-full object-cover object-[65%] lg:object-center z-0 scale-105 group-hover:scale-100 transition-transform duration-2000ms"
+                  loop
+                  muted
+                  playsInline
+                  src={videosrc}
+              />}
 
 				{/* Content Layer */}
 				<div className=" w-full h-full flex flex-col ">
@@ -263,14 +247,10 @@ export default function MainHero({
 							{top}
 						</div>
 					)}
-					<div className="w-full md:h-4/5 md:py-50 flex flex-col  items-center   px-6  ">
+					<div className="w-full h-4/5 md:h-4/5  flex flex-col justify-center items-center   px-6  ">
 						{
 							<div
-								className={`flex flex-col items-center  justify-center h-1/2 transition-all duration-1000 ${
-									isLoaded
-										? "opacity-100 translate-y-0"
-										: "opacity-0 translate-y-10"
-								}`}
+								className={`flex flex-col items-center justify-center  transition-all duration-1000`}
 							>
 								{accessory}
 							</div>

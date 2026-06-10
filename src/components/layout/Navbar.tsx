@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ActiveLink from "../ui/ActiveLink";
+import { debounce } from "@/lib/utils";
 
 const NAV_LINKS = [
 	{ label: "Skills", href: "/#skills" },
@@ -31,7 +32,7 @@ export default function Navbar() {
                 } 
             }
             
-		const onScroll = () => setScrolled(window.scrollY > 32);
+		const onScroll = debounce(() => setScrolled(window.scrollY > 32), 250);
 		window.addEventListener("scroll", onScroll, { passive: true });
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
@@ -46,11 +47,11 @@ export default function Navbar() {
 		>
 			<nav
 				className={`
-          flex items-center justify-between border-transparent backdrop-blur-xl transition-all  duration-500 ease-out 
+          flex items-center justify-between border-transparent transition-all  duration-500 ease-out 
           ${
 				scrolled
-					? "border border-accent/10!  bg-on-surface/5 rounded-full w-[min(720px,calc(100vw-2rem))] px-5 py-2.5 shadow-[0_8px_48px_rgba(0,0,0,0.6)]"
-					: "w-[min(1100px,calc(100vw-3rem))] px-8 py-4 shadow-[0_4px_32px_rgba(0,0,0,0.4)]"
+					? "border border-accent/10!  bg-on-surface/5 rounded-full backdrop-blur-xl  w-[min(720px,calc(100vw-2rem))] px-5 py-2.5 shadow-[0_8px_48px_rgba(0,0,0,0.6)]"
+					: "w-[min(1100px,calc(100vw-3rem))] px-8 py-4 "
 			}
         `}
 			>
