@@ -4,9 +4,21 @@ import {  Epilogue } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import PageLoader from "@/components/ui/PageLoader";
+export const dynamic = 'force-dynamic'
+
 const googleSansFlex = localFont({
 	src: [
 		{
+			path: "./fonts/google-sans-flex-latin-300-normal.woff2",
+            style: "normal",
+            weight: "100",
+        },
+        {
+			path: "./fonts/google-sans-flex-latin-300-normal.woff2",
+            style: "normal",
+            weight: "200",
+        },
+        {
 			path: "./fonts/google-sans-flex-latin-300-normal.woff2",
             style: "normal",
             weight: "300",

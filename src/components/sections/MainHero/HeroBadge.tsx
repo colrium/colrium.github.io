@@ -11,7 +11,7 @@ export function HeroBadge({ icon, label }: HeroBadgeProps) {
       <span className="material-symbols-outlined text-sm text-accent">
         {icon}
       </span>
-      <span className="text-sm font-medium text-accent">
+      <span className="text-sm font-thin text-on-surface">
         {label}
       </span>
     </div>
