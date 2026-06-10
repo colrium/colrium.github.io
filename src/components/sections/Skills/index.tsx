@@ -46,7 +46,7 @@ const skillsData = {
 function CategoryCard({ label, items }: { label: string; items: string[] }) {
 	return (
 		<div className="rounded-2xl border border-accent/10 bg-surface-container p-6 shadow-sm">
-			<h4 className="text-lg font-semibold text-primary-container mb-3">{label}</h4>
+			<h4 className="text-lg font-semibold text-on-surface-mute mb-3">{label}</h4>
 			<ul className="flex flex-col gap-2">
 				{items.map((it) => (
 					<li key={it} className="text-sm text-on-surface-variant">
