@@ -1207,13 +1207,13 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.translate(W / 2, H / 2);
             G.scale(ease, ease);
             G.textAlign = "center";
-            G.font = '900 64px var(--sans)';
+            G.font = '900 64px var(--font-sans)';
             G.fillStyle = isP ? "#029bc9" : "#e68200";
             G.shadowColor = isP ? "#029bc9" : "#e68200";
             G.shadowBlur = 40;
             G.fillText("GOAL!", 0, -10);
             G.shadowBlur = 0;
-            G.font = '500 13px "Rajdhani"';
+            G.font = '500 13px var(--font-sans)';
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (G as any).letterSpacing = "6px";
             G.fillStyle = isP ? "rgba(0,212,255,0.75)" : "rgba(255,45,85,0.75)";
@@ -1273,7 +1273,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.translate(W / 2, H / 2 - 60);
             G.scale(scale, scale);
             G.textAlign = "center";
-            G.font = "900 34px var(--sans)";
+            G.font = "900 34px var(--font-sans)";
             G.fillStyle = "#000";
             G.fillText(s.speedUpMsg, 2, 2);
             const grd2 = G.createLinearGradient(-100, -30, 100, 10);
@@ -1368,7 +1368,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                     G.save();
                     G.globalAlpha = alpha2 * pulse2;
                     G.textAlign = "center";
-                    G.font = '900 16px var(--sans)';
+                    G.font = '900 16px var(--font-sans)';
                     G.fillStyle = "rgba(0,0,0,0.5)";
                     G.fillText(
                         "⚡  GAME POINT  ⚡",
@@ -1443,22 +1443,32 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
         setMuted(next);
     }, [getAudio]);
 
-    return (
-		<div className="flex items-center justify-center  overflow-hidden select-none cursor-none">
-			<div className="flex items-center gap-0 w-full max-w-[1100px]">
+	return (
+		<div className="flex items-center justify-center overflow-hidden select-none cursor-none">
+			<div className="flex flex-col md:flex-row items-center gap-0 w-full max-w-[1100px]">
 				{/* Left stat panel */}
-				<StatPanel
-					side="left"
-					color="#029bc9"
-					label="YOU"
-					score={uiScore.p}
-					streak={uiStats.pStreak}
-					speed={uiStats.pSpeed}
-					power={uiStats.pPower}
-				/>
+				<div className="max-lg:hidden">
+					<StatPanel
+						side="left"
+						color="#029bc9"
+						label="YOU"
+						score={uiScore.p}
+						streak={uiStats.pStreak}
+						speed={uiStats.pSpeed}
+						power={uiStats.pPower}
+					/>
+				</div>
 
 				{/* Arena */}
 				<div className="relative w-full max-w-[760px] aspect-[760/520] mx-auto touch-none">
+
+					{/* Mobile score overlay */}
+					<div className="lg:hidden absolute top-1 left-1 right-1 flex justify-between items-center px-2 py-1 z-10 bg-black/40 rounded">
+						<span className="font-bold text-xs tracking-widest" style={{color: "#029bc9"}}>YOU {uiScore.p}</span>
+						<span className="text-[8px] tracking-widest text-white/40 uppercase">FIRST TO 7</span>
+						<span className="font-bold text-xs tracking-widest" style={{color: "#e68200"}}>{uiScore.cpu} CPU</span>
+					</div>
+
 					<canvas
 						ref={canvasRef}
 						className="block w-full h-full rounded-xl"
@@ -1468,7 +1478,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 					{/* Game Over overlay */}
 					{gameOver.show && (
 						<div
-							className={`absolute  inset-0 flex items-center justify-center rounded-xl bg-surface/60 backdrop-blur-md`}
+							className={`absolute inset-0 flex items-center justify-center rounded-xl bg-surface/60 backdrop-blur-md`}
 						>
 							<div className="text-center">
 								<div
@@ -1518,15 +1528,17 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 				</div>
 
 				{/* Right stat panel */}
-				<StatPanel
-					side="right"
-					color="#e68200"
-					label="CPU"
-					score={uiScore.cpu}
-					streak={uiStats.cpuStreak}
-					speed={uiStats.cpuSpeed}
-					power={uiStats.cpuPower}
-				/>
+				<div className="max-lg:hidden">
+					<StatPanel
+						side="right"
+						color="#e68200"
+						label="CPU"
+						score={uiScore.cpu}
+						streak={uiStats.cpuStreak}
+						speed={uiStats.cpuSpeed}
+						power={uiStats.cpuPower}
+					/>
+				</div>
 			</div>
 
 			<style>{`
