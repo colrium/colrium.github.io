@@ -26,7 +26,7 @@ const CPU_ERROR_Y = 26;
 const CPU_MISTAKE_CHANCE = 0.018;
 const CPU_MISTAKE_DUR = 42;
 const CONF_COLORS = [
-    "#029bc9",
+    "#1A2BE0",
     "#FF991C",
     "#ffc940",
     "#ffffff",
@@ -472,7 +472,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 s.speedUpTimer = 130;
                 playSound("speedup");
             }
-            if (who === "p") burst(TABLE_X, CY, "#029bc9", "#ffffff", 40);
+            if (who === "p") burst(TABLE_X, CY, "#1A2BE0", "#ffffff", 40);
             else burst(W - TABLE_X, CY, "#FF991C", "#ffffff", 40);
             burst(s.puck.x, s.puck.y, "#ffc940", "#ffffff", 30);
             shake(8);
@@ -602,7 +602,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
         if (spd > 14) s.stats[who].powerHits++;
         syncStats();
         if (spd > 3) {
-            const col = isPlayer ? "#029bc9" : "#FF991C";
+            const col = isPlayer ? "#1A2BE0" : "#FF991C";
             burst(pk.x, pk.y, col, "#ffffff", Math.floor(spd * 1.5));
             if (spd > 19) shake(Math.min((spd - 19) * 0.4, 3));
         }
@@ -632,7 +632,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
         if (s.puck.y - s.puck.r < ty) {
             s.puck.y = ty + s.puck.r;
             s.puck.vy = Math.abs(s.puck.vy) * WALL_BOUNCE;
-            sparkLine(s.puck.x - 20, ty, s.puck.x + 20, ty, "#029bc9");
+            sparkLine(s.puck.x - 20, ty, s.puck.x + 20, ty, "#1A2BE0");
             playSound("wall");
         }
         if (s.puck.y + s.puck.r > ty + th) {
@@ -643,7 +643,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 ty + th,
                 s.puck.x + 20,
                 ty + th,
-                "#029bc9",
+                "#1A2BE0",
             );
             playSound("wall");
         }
@@ -869,7 +869,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             ]);
             G.fillRect(tx, ty + th - 8, tw, 8);
             G.save();
-            G.shadowColor = "#029bc9";
+            G.shadowColor = "#1A2BE0";
             G.shadowBlur = 10;
             G.strokeStyle = "rgba(0,212,255,0.7)";
             G.lineWidth = 2;
@@ -884,7 +884,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.restore();
             // left goal
             G.save();
-            G.shadowColor = "#029bc9";
+            G.shadowColor = "#1A2BE0";
             G.shadowBlur = 14;
             G.strokeStyle = "rgba(0,212,255,0.7)";
             G.lineWidth = 2.5;
@@ -926,9 +926,9 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.restore();
             [GOAL_Y1, GOAL_Y2].forEach((gy) => {
                 G.save();
-                G.shadowColor = "#029bc9";
+                G.shadowColor = "#1A2BE0";
                 G.shadowBlur = 12;
-                G.fillStyle = "#029bc9";
+                G.fillStyle = "#1A2BE0";
                 G.beginPath();
                 G.arc(tx, gy, 5, 0, Math.PI * 2);
                 G.fill();
@@ -969,7 +969,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 br = s.puck.r,
                 spd = Math.hypot(s.puck.vx, s.puck.vy);
             G.save();
-            G.shadowColor = "#029bc9";
+            G.shadowColor = "#1A2BE0";
             G.shadowBlur = 24 + spd * 1.5;
             G.fillStyle = grd(
                 bx,
@@ -995,9 +995,9 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.arc(bx, by, br, 0, Math.PI * 2);
             G.fill();
             G.save();
-            G.shadowColor = "#029bc9";
+            G.shadowColor = "#1A2BE0";
             G.shadowBlur = 8;
-            G.strokeStyle = "#029bc9";
+            G.strokeStyle = "#1A2BE0";
             G.lineWidth = 2.5;
             G.beginPath();
             G.arc(bx, by, br - 1, 0, Math.PI * 2);
@@ -1196,7 +1196,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 isP = s.goalWho === "p";
             G.save();
             G.globalAlpha = Math.min(prog * 3, 0.16);
-            G.fillStyle = isP ? "#029bc9" : "#FF991C";
+            G.fillStyle = isP ? "#1A2BE0" : "#FF991C";
             G.fillRect(0, 0, W, H);
             G.restore();
             s.goalMsgScale = Math.min(s.goalMsgScale + 0.12, 1);
@@ -1208,8 +1208,8 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.scale(ease, ease);
             G.textAlign = "center";
             G.font = '900 64px var(--font-sans)';
-            G.fillStyle = isP ? "#029bc9" : "#FF991C";
-            G.shadowColor = isP ? "#029bc9" : "#FF991C";
+            G.fillStyle = isP ? "#1A2BE0" : "#FF991C";
+            G.shadowColor = isP ? "#1A2BE0" : "#FF991C";
             G.shadowBlur = 40;
             G.fillText("GOAL!", 0, -10);
             G.shadowBlur = 0;
@@ -1327,7 +1327,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             updateConfettiLocal();
             drawPuck();
             drawMallet(s.cpu, "#2a0a0a", "#FF991C");
-            drawMallet(s.player, "#0a1a2a", "#029bc9");
+            drawMallet(s.player, "#0a1a2a", "#1A2BE0");
             // drawParticles();
             drawGoalFlash();
             drawSpeedUpMsg();
@@ -1450,7 +1450,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 				<div className="max-lg:hidden">
 					<StatPanel
 						side="left"
-						color="#029bc9"
+						color="#1A2BE0"
 						label="YOU"
 						score={uiScore.p}
 						streak={uiStats.pStreak}
@@ -1464,7 +1464,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 
 					{/* Mobile score overlay */}
 					<div className="lg:hidden absolute top-1 left-1 right-1 flex justify-between items-center px-2 py-1 z-10 bg-black/40 rounded">
-						<span className="font-bold text-xs tracking-widest" style={{color: "#029bc9"}}>YOU {uiScore.p}</span>
+						<span className="font-bold text-xs tracking-widest" style={{color: "#1A2BE0"}}>YOU {uiScore.p}</span>
 						<span className="text-[8px] tracking-widest text-white/40 uppercase">FIRST TO 7</span>
 						<span className="font-bold text-xs tracking-widest" style={{color: "#FF991C"}}>{uiScore.cpu} CPU</span>
 					</div>
