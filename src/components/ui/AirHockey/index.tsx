@@ -181,6 +181,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
     const getAudio = useCallback(() => {
         if (!s.audioCtx)
             s.audioCtx = new (
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 window.AudioContext || (window as any).webkitAudioContext
             )();
         if (s.audioCtx.state === "suspended") s.audioCtx.resume();
@@ -247,6 +248,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                     [0, "sawtooth", 233],
                     [0.01, "sawtooth", 220],
                     [0.02, "sawtooth", 246],
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 ].forEach(([dt, wv, f]: any[]) => {
                     const o = ctx.createOscillator(),
                         g2 = ctx.createGain();
@@ -270,6 +272,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                     [0.58, 494, 0.18],
                     [0.77, 440, 0.18],
                     [0.96, 523, 0.6],
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 ].forEach(([dt, f, dur]: any[]) => {
                     [-4, 0, 4].forEach((cents) => {
                         const o = ctx.createOscillator(),
@@ -1204,7 +1207,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.translate(W / 2, H / 2);
             G.scale(ease, ease);
             G.textAlign = "center";
-            G.font = '900 64px "Orbitron"';
+            G.font = '900 64px var(--sans)';
             G.fillStyle = isP ? "#029bc9" : "#e68200";
             G.shadowColor = isP ? "#029bc9" : "#e68200";
             G.shadowBlur = 40;
@@ -1270,12 +1273,12 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.translate(W / 2, H / 2 - 60);
             G.scale(scale, scale);
             G.textAlign = "center";
-            G.font = '900 34px "Orbitron"';
+            G.font = "900 34px var(--sans)";
             G.fillStyle = "#000";
             G.fillText(s.speedUpMsg, 2, 2);
             const grd2 = G.createLinearGradient(-100, -30, 100, 10);
             grd2.addColorStop(0, "#ffc940");
-            grd2.addColorStop(1, "#ff6820");
+            grd2.addColorStop(1, "#b81212");
             G.fillStyle = grd2;
             G.shadowColor = "#ffc940";
             G.shadowBlur = 24;
@@ -1365,7 +1368,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                     G.save();
                     G.globalAlpha = alpha2 * pulse2;
                     G.textAlign = "center";
-                    G.font = '900 16px "Orbitron"';
+                    G.font = '900 16px var(--sans)';
                     G.fillStyle = "rgba(0,0,0,0.5)";
                     G.fillText(
                         "⚡  GAME POINT  ⚡",
