@@ -23,11 +23,11 @@ export function IconButton({
 
 	const variantClasses = {
 		primary:
-			"bg-primary text-on-surface pl-2 pr-4 md:pr-6 py-1.5 md:py-2 hover:bg-primary-dark",
+			"bg-primary text-surface pl-2 pr-4 md:pr-6 py-1.5 md:py-2 hover:bg-primary-dark",
 		secondary:
-			"bg-secondary text-on-surface pl-1.5 pr-5 py-1.5 hover:bg-secondary-dark",
+			"bg-secondary text-surface pl-1.5 pr-5 py-1.5 hover:bg-secondary-dark",
         accent:
-			"bg-accent text-on-surface pl-1.5 pr-5 py-1.5 hover:bg-accent-dark",
+			"bg-accent text-surface pl-1.5 pr-5 py-1.5 hover:bg-accent-dark",
 	};
 
 	return href? (
