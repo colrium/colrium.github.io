@@ -80,7 +80,11 @@ interface TrailPoint {
     spd: number;
 }
 
-export default function AirHockey() {
+interface AirHockeyProps {
+    onCloseGame?: () => void;
+}
+
+export default function AirHockey({ onCloseGame }: AirHockeyProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const stateRef = useRef({
         gameState: "play" as "play" | "goal" | "over",
@@ -1207,6 +1211,7 @@ export default function AirHockey() {
             G.fillText("GOAL!", 0, -10);
             G.shadowBlur = 0;
             G.font = '500 13px "Rajdhani"';
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (G as any).letterSpacing = "6px";
             G.fillStyle = isP ? "rgba(0,212,255,0.75)" : "rgba(255,45,85,0.75)";
             G.fillText(isP ? "YOU SCORE" : "CPU SCORES", 0, 22);
@@ -1436,114 +1441,96 @@ export default function AirHockey() {
     }, [getAudio]);
 
     return (
-        <div className="flex items-center justify-center  overflow-hidden select-none cursor-none">
-            <div className="flex items-center gap-0 w-full max-w-[1100px]">
-                {/* Left stat panel */}
-                <StatPanel
-                    side="left"
-                    color="#029bc9"
-                    label="YOU"
-                    score={uiScore.p}
-                    streak={uiStats.pStreak}
-                    speed={uiStats.pSpeed}
-                    power={uiStats.pPower}
-                />
+		<div className="flex items-center justify-center  overflow-hidden select-none cursor-none">
+			<div className="flex items-center gap-0 w-full max-w-[1100px]">
+				{/* Left stat panel */}
+				<StatPanel
+					side="left"
+					color="#029bc9"
+					label="YOU"
+					score={uiScore.p}
+					streak={uiStats.pStreak}
+					speed={uiStats.pSpeed}
+					power={uiStats.pPower}
+				/>
 
-                {/* Arena */}
-                <div className="relative w-full max-w-[760px] aspect-[760/520] mx-auto touch-none">
-                    <canvas
-                        ref={canvasRef}
-                        className="block w-full h-full rounded-[18px]"
-                        style={{
-                            boxShadow:
-                                "0 0 0 2px rgba(0,212,255,0.2), 0 0 50px rgba(0,212,255,0.1), 0 20px 70px rgba(0,0,0,0.8)",
-                        }}
-                    />
+				{/* Arena */}
+				<div className="relative w-full max-w-[760px] aspect-[760/520] mx-auto touch-none">
+					<canvas
+						ref={canvasRef}
+						className="block w-full h-full rounded-xl"
+						
+					/>
 
-                    {/* Game Over overlay */}
-                    {gameOver.show && (
-                        <div
-                            className="absolute inset-0 flex items-center justify-center rounded-[18px]"
-                            style={{
-                                background: gameOver.playerWon
-                                    ? "rgba(4,6,10,0.4)"
-                                    : "rgba(20,4,8,0.9)",
-                                backdropFilter: "blur(8px)",
-                            }}
-                        >
-                            <div className="text-center">
-                                <div
-                                    className="text-6xl leading-none mb-2 block"
-                                    style={{
-                                        animation:
-                                            "facePop 0.5s cubic-bezier(0.36,0.07,0.19,0.97) both",
-                                    }}
-                                >
-                                    {gameOver.playerWon ? "😄" : "😢"}
-                                </div>
-                                <div
-                                    className="font-black leading-none"
-                                    style={{
-                                        fontSize: "clamp(36px,7vw,64px)",
-                                        color: gameOver.playerWon
-                                            ? "#029bc9"
-                                            : "#e68200",
-                                        textShadow: gameOver.playerWon
-                                            ? "0 0 30px #029bc9, 0 0 60px rgba(0,212,255,0.4)"
-                                            : "0 0 30px #e68200, 0 0 60px rgba(255,45,85,0.4)",
-                                    }}
-                                >
-                                    {gameOver.playerWon
-                                        ? "YOU WIN"
-                                        : "CPU WINS"}
-                                </div>
-                                <div className=" font-light text-sm tracking-[12px] text-white/60 mt-0.5">
-                                    {gameOver.playerWon
-                                        ? "GAME · SET · MATCH"
-                                        : "BETTER LUCK NEXT TIME"}
-                                </div>
-                                <div
-                                    className="text-2xl font-bold"
-                                    style={{
-                                        color: "#ffc940",
-                                        textShadow: "0 0 20px #ffc940",
-                                        margin: "12px 0 24px",
-                                    }}
-                                >
-                                    {gameOver.scoreStr}
-                                </div>
+					{/* Game Over overlay */}
+					{gameOver.show && (
+						<div
+							className={`absolute  inset-0 flex items-center justify-center rounded-xl bg-surface/60 backdrop-blur-md`}
+						>
+							<div className="text-center">
+								<div
+									className="text-7xl leading-none mb-6 block"
+									style={{
+										animation:
+											"facePop 0.5s cubic-bezier(0.36,0.07,0.19,0.97) both",
+									}}
+								>
+									{gameOver.playerWon ? "😄" : "😢"}
+								</div>
+								<div
+									className={`font-black leading-none text-[56px] font-[clamp(36px,7vw,64px)] mb-2 block ${gameOver.playerWon ? "text-primary" : "text-accent"}`}
+								>
+									{gameOver.playerWon
+										? "YOU WIN"
+										: "CPU WINS"}
+								</div>
+								<div className=" font-light text-sm text-on-surface/ mt-0.5">
+									{gameOver.playerWon
+										? "GAME · SET · MATCH"
+										: "BETTER LUCK NEXT TIME"}
+								</div>
+								<div
+									className="text-2xl font-bold text-accent mx-auto mt-4 mb-8 block"
+								>
+									{gameOver.scoreStr}
+								</div>
+                                <div className="flex items-center justify-center gap-6">
                                 <button
-                                    onClick={startGame}
-                                    className="px-11 py-3  font-bold text-xs tracking-widest cursor-pointer border-2 border-primary text-primary hover:bg-primary hover:text-black hover:shadow-[0_0_30px_rgba(0,212,255,0.5)]"
-                                    style={{
-                                        clipPath:
-                                            "polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)",
-                                    }}
+									onClick={startGame}
+									className="px-11 py-3 rounded-full text-sm tracking-widest cursor-pointer border border-primary/25 text-primary hover:bg-primary hover:text-black"
+								>
+									Play Again
+								</button>
+                                {onCloseGame && <button
+                                    onClick={onCloseGame}
+                                    className="px-11 py-3 rounded-full text-sm tracking-widest cursor-pointer border border-red-700/25 text-red-700 hover:bg-red-700 hover:text-white "
                                 >
-                                    PLAY AGAIN
-                                </button>
-                            </div>
-                        </div>
-                    )}
-                </div>
+                                    Close Game
+                                </button>}
+                                </div>
+								
+							</div>
+						</div>
+					)}
+				</div>
 
-                {/* Right stat panel */}
-                <StatPanel
-                    side="right"
-                    color="#e68200"
-                    label="CPU"
-                    score={uiScore.cpu}
-                    streak={uiStats.cpuStreak}
-                    speed={uiStats.cpuSpeed}
-                    power={uiStats.cpuPower}
-                />
-            </div>
+				{/* Right stat panel */}
+				<StatPanel
+					side="right"
+					color="#e68200"
+					label="CPU"
+					score={uiScore.cpu}
+					streak={uiStats.cpuStreak}
+					speed={uiStats.cpuSpeed}
+					power={uiStats.cpuPower}
+				/>
+			</div>
 
-            <style>{`
+			<style>{`
         @keyframes facePop { 0%{transform:scale(0);opacity:0} 65%{transform:scale(1.25);opacity:1} 100%{transform:scale(1);opacity:1} }
       `}</style>
-        </div>
-    );
+		</div>
+	);
 }
 
 function StatPanel({
