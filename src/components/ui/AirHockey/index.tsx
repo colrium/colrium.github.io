@@ -1475,6 +1475,15 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 						
 					/>
 
+					{onCloseGame && !gameOver.show && (
+						<button
+							onClick={onCloseGame}
+							className="absolute top-2 right-3 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-white/70 hover:bg-white/20 hover:text-white text-sm cursor-pointer"
+						>
+							✕
+						</button>
+					)}
+
 					{/* Game Over overlay */}
 					{gameOver.show && (
 						<div
