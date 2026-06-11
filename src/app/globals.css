@@ -5,12 +5,8 @@
     --primary: #029bc9;    
     --secondary: #49a100;    
     --accent: #e68200;
-    /* --surface: #fafafa;  
-    --surface-tint: #c7c7c7;
-    --on-surface: #1b1b1b;
-    --on-surface-mute: #636363; */
     --surface: #040615;  
-    --surface-tint: #070922;
+    --surface-tint: #090B2A;
     --on-surface: #f1f1f1;
     --on-surface-mute: #7a7a7a;
     --primary-light: color-mix(in srgb, var(--primary), white 20%);
@@ -30,8 +26,8 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* Dark Theme */
-        --surface: #40615;  
-        --surface-tint: #070922;
+        --surface: #040615;  
+        --surface-tint: #090B2A;
         --on-surface: #f1f1f1;
         --on-surface-mute: #7a7a7a;
     }
