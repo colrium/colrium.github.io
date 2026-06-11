@@ -27,7 +27,7 @@ const CPU_MISTAKE_CHANCE = 0.018;
 const CPU_MISTAKE_DUR = 42;
 const CONF_COLORS = [
     "#029bc9",
-    "#e68200",
+    "#FF991C",
     "#ffc940",
     "#ffffff",
     "#a855f7",
@@ -473,7 +473,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 playSound("speedup");
             }
             if (who === "p") burst(TABLE_X, CY, "#029bc9", "#ffffff", 40);
-            else burst(W - TABLE_X, CY, "#e68200", "#ffffff", 40);
+            else burst(W - TABLE_X, CY, "#FF991C", "#ffffff", 40);
             burst(s.puck.x, s.puck.y, "#ffc940", "#ffffff", 30);
             shake(8);
             playSound("goal");
@@ -602,7 +602,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
         if (spd > 14) s.stats[who].powerHits++;
         syncStats();
         if (spd > 3) {
-            const col = isPlayer ? "#029bc9" : "#e68200";
+            const col = isPlayer ? "#029bc9" : "#FF991C";
             burst(pk.x, pk.y, col, "#ffffff", Math.floor(spd * 1.5));
             if (spd > 19) shake(Math.min((spd - 19) * 0.4, 3));
         }
@@ -654,7 +654,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             }
             s.puck.x = tx + s.puck.r;
             s.puck.vx = Math.abs(s.puck.vx) * WALL_BOUNCE;
-            sparkLine(tx, s.puck.y - 20, tx, s.puck.y + 20, "#e68200");
+            sparkLine(tx, s.puck.y - 20, tx, s.puck.y + 20, "#FF991C");
             playSound("wall");
         }
         if (s.puck.x + s.puck.r > tx + tw) {
@@ -669,7 +669,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 s.puck.y - 20,
                 tx + tw,
                 s.puck.y + 20,
-                "#e68200",
+                "#FF991C",
             );
             playSound("wall");
         }
@@ -905,7 +905,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.restore();
             // right goal
             G.save();
-            G.shadowColor = "#e68200";
+            G.shadowColor = "#FF991C";
             G.shadowBlur = 14;
             G.strokeStyle = "rgba(255,45,85,0.7)";
             G.lineWidth = 2.5;
@@ -934,9 +934,9 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 G.fill();
                 G.restore();
                 G.save();
-                G.shadowColor = "#e68200";
+                G.shadowColor = "#FF991C";
                 G.shadowBlur = 12;
-                G.fillStyle = "#e68200";
+                G.fillStyle = "#FF991C";
                 G.beginPath();
                 G.arc(tx + tw, gy, 5, 0, Math.PI * 2);
                 G.fill();
@@ -1196,7 +1196,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 isP = s.goalWho === "p";
             G.save();
             G.globalAlpha = Math.min(prog * 3, 0.16);
-            G.fillStyle = isP ? "#029bc9" : "#e68200";
+            G.fillStyle = isP ? "#029bc9" : "#FF991C";
             G.fillRect(0, 0, W, H);
             G.restore();
             s.goalMsgScale = Math.min(s.goalMsgScale + 0.12, 1);
@@ -1208,8 +1208,8 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.scale(ease, ease);
             G.textAlign = "center";
             G.font = '900 64px var(--font-sans)';
-            G.fillStyle = isP ? "#029bc9" : "#e68200";
-            G.shadowColor = isP ? "#029bc9" : "#e68200";
+            G.fillStyle = isP ? "#029bc9" : "#FF991C";
+            G.shadowColor = isP ? "#029bc9" : "#FF991C";
             G.shadowBlur = 40;
             G.fillText("GOAL!", 0, -10);
             G.shadowBlur = 0;
@@ -1232,15 +1232,15 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.beginPath();
             G.arc(cx, cy, r, 0, Math.PI * 2);
             G.fill();
-            G.strokeStyle = "#e68200";
+            G.strokeStyle = "#FF991C";
             G.lineWidth = 3;
-            G.shadowColor = "#e68200";
+            G.shadowColor = "#FF991C";
             G.shadowBlur = 18;
             G.beginPath();
             G.arc(cx, cy, r, 0, Math.PI * 2);
             G.stroke();
             G.shadowBlur = 0;
-            G.strokeStyle = "#e68200";
+            G.strokeStyle = "#FF991C";
             G.lineWidth = 3.5;
             G.lineCap = "round";
             [
@@ -1256,7 +1256,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                 G.lineTo(cx + ex - 7, cy + ey + 7);
                 G.stroke();
             });
-            G.strokeStyle = "#e68200";
+            G.strokeStyle = "#FF991C";
             G.lineWidth = 3.5;
             G.beginPath();
             G.arc(cx, cy + 28, 20, Math.PI * 0.15, Math.PI * 0.85, false);
@@ -1326,7 +1326,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             }
             updateConfettiLocal();
             drawPuck();
-            drawMallet(s.cpu, "#2a0a0a", "#e68200");
+            drawMallet(s.cpu, "#2a0a0a", "#FF991C");
             drawMallet(s.player, "#0a1a2a", "#029bc9");
             // drawParticles();
             drawGoalFlash();
@@ -1466,7 +1466,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 					<div className="lg:hidden absolute top-1 left-1 right-1 flex justify-between items-center px-2 py-1 z-10 bg-black/40 rounded">
 						<span className="font-bold text-xs tracking-widest" style={{color: "#029bc9"}}>YOU {uiScore.p}</span>
 						<span className="text-[8px] tracking-widest text-white/40 uppercase">FIRST TO 7</span>
-						<span className="font-bold text-xs tracking-widest" style={{color: "#e68200"}}>{uiScore.cpu} CPU</span>
+						<span className="font-bold text-xs tracking-widest" style={{color: "#FF991C"}}>{uiScore.cpu} CPU</span>
 					</div>
 
 					<canvas
@@ -1540,7 +1540,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 				<div className="max-lg:hidden">
 					<StatPanel
 						side="right"
-						color="#e68200"
+						color="#FF991C"
 						label="CPU"
 						score={uiScore.cpu}
 						streak={uiStats.cpuStreak}
