@@ -13,7 +13,7 @@ export interface SpiderColors {
 	head?: string;
 	/** Abdomen circle. Default: '#015878' */
 	abdomen?: string;
-	/** Hip-to-knee leg segment (thickest). Default: '#1A2BE0' */
+	/** Hip-to-knee leg segment (thickest). Default: '#029bc9' */
 	legSeg1?: string;
 	/** Knee-to-ankle leg segment. Default: '#03aeda' */
 	legSeg2?: string;
@@ -52,7 +52,7 @@ export interface SpiderWebCanvasProps {
 const DEFAULT_SPIDER: Required<SpiderColors> = {
 	head: "#0289ab",
 	abdomen: "#015878",
-	legSeg1: "#1A2BE0",
+	legSeg1: "#029bc9",
 	legSeg2: "#03aeda",
 	legSeg3: "#5acde6",
 	legSeg4: "#9de3f2",
