@@ -4,6 +4,7 @@ import {  Epilogue } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import PageLoader from "@/components/ui/PageLoader";
+import { GameModeProvider } from "@/lib/contexts/GameModeContext";
 export const dynamic = 'force-dynamic'
 
 const googleSansFlex = localFont({
@@ -82,9 +83,11 @@ export default function RootLayout({
 			className={`${googleSansFlex.variable} ${epilogue.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col bg-surface-tint ">
-				<PageLoader />
-                <Navbar />
-				{children}
+				<GameModeProvider>
+					<PageLoader />
+					<Navbar />
+					{children}
+				</GameModeProvider>
 			</body>
 		</html>
   );

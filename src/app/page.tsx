@@ -11,10 +11,10 @@ import Process from "@/components/sections/Process";
 import Skills from "@/components/sections/Skills";
 import AirHockey from "@/components/ui/AirHockey";
 import SpiderWeb from "@/components/ui/SpiderWeb";
-import {useState} from "react";
+import { useGameMode } from "@/lib/contexts/GameModeContext";
 
 export default function Home() {
-	const [gameMode, setGameMode] = useState(false);
+	const { gameMode, setGameMode } = useGameMode();
 	return (
 		<div className="flex flex-col flex-1 items-center justify-center bg-background font-sans dark:bg-background">
 			{!gameMode? (

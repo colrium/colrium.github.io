@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ActiveLink from "../ui/ActiveLink";
+import { useGameMode } from "@/lib/contexts/GameModeContext";
 
 const NAV_LINKS = [
 	{ label: "Skills", href: "/#skills" },
@@ -19,6 +20,7 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
+	const { gameMode } = useGameMode();
 	const [scrolled, setScrolled] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -56,6 +58,8 @@ export default function Navbar() {
 			document.body.style.overflow = "";
 		};
 	}, [menuOpen]);
+
+	if (gameMode) return null;
 
 	return (
 		<>
