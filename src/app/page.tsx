@@ -35,10 +35,9 @@ export default function Home() {
 							/>
 						</div>
 					}
-                    // onToggleEasterEgg={() => {
-                    //     setGameMode((prev) => !prev);
-                    //     console.log("Easter Egg Toggled!");
-                    // }}
+                    onToggleEasterEgg={() => {
+                        setGameMode((prev) => !prev);
+                    }}
 					statsLabel="Years of Experience"
 					description="Polyglot engineer with an unreasonable fondness for clean architecture. Based in Nairobi, fully remote-native, and always building something worth shipping."
 				/>
