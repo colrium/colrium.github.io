@@ -100,6 +100,8 @@ export default function SpiderWeb({
 }: SpiderWebCanvasProps) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const offWebRef = useRef(false);
+	const lastLegMovementRef = useRef(-Infinity);
+	const prevLegPositionsRef = useRef<Vec2[]>([]);
 	const onSpiderOffWebRef = useRef(onSpiderOffWeb);
 	const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
@@ -177,8 +179,11 @@ export default function SpiderWeb({
 			new Vec2(canvas.width / 2, -webRadius * 1.5),
 			spiderScale,
 		);
-		offWebRef.current =
-			(spider as SpiderComposite).thorax.pos.dist2(center) > webRadius ** 2;
+		prevLegPositionsRef.current = (
+			spider as SpiderComposite
+		).legs.map((l) => new Vec2(l.pos.x, l.pos.y));
+		lastLegMovementRef.current = Number.NEGATIVE_INFINITY;
+		offWebRef.current = true;
 
 		const { seg1, seg2, seg3 } = (spider as SpiderComposite).legSegmentSets;
 
@@ -270,8 +275,26 @@ export default function SpiderWeb({
 			if (Math.random() < 0.25) sim.crawl((legIndex++ * 3) % 8);
 			sim.frame(16);
 
-			const spiderPosition = (spider as SpiderComposite).thorax.pos;
-			const isOffWeb = spiderPosition.dist2(center) > webRadius ** 2;
+			const spiderComposite = spider as SpiderComposite;
+			const legs = spiderComposite.legs;
+			const prev = prevLegPositionsRef.current;
+			let moved = false;
+			if (prev.length === legs.length) {
+				for (let i = 0; i < legs.length; i++) {
+					if (legs[i].pos.dist2(prev[i]) > 4) {
+						moved = true;
+						break;
+					}
+				}
+			}
+			if (moved) {
+				prevLegPositionsRef.current = legs.map(
+					(l) => new Vec2(l.pos.x, l.pos.y),
+				);
+				lastLegMovementRef.current = performance.now();
+			}
+			const isOffWeb =
+				performance.now() - lastLegMovementRef.current >= 3000;
 			if (offWebRef.current !== isOffWeb) {
 				offWebRef.current = isOffWeb;
 				onSpiderOffWebRef.current?.(isOffWeb);

@@ -27,14 +27,18 @@ export default function Home() {
 						<div className="flex items-center gap-4 h-full my-16 ">
 							<SpiderWeb
 								className="w-70 h-70 md:w-80 md:h-80 lg:w-120 lg:h-120"
-								
+								onSpiderOffWeb={(isOffWeb) => {
+                                    if (isOffWeb) {
+                                        setGameMode(true);
+                                    }
+                                }}
 							/>
 						</div>
 					}
-                    onToggleEasterEgg={() => {
-                        setGameMode((prev) => !prev);
-                        console.log("Easter Egg Toggled!");
-                    }}
+                    // onToggleEasterEgg={() => {
+                    //     setGameMode((prev) => !prev);
+                    //     console.log("Easter Egg Toggled!");
+                    // }}
 					statsLabel="Years of Experience"
 					description="Polyglot engineer with an unreasonable fondness for clean architecture. Based in Nairobi, fully remote-native, and always building something worth shipping."
 				/>
