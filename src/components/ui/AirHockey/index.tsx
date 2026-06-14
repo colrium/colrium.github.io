@@ -87,8 +87,9 @@ interface AirHockeyProps {
 export default function AirHockey({ onCloseGame }: AirHockeyProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const stateRef = useRef({
-        gameState: "play" as "play" | "goal" | "over",
-        tick: 0,
+		gameState: "play" as "play" | "goal" | "over",
+		paused: false,
+		tick: 0,
         shakeX: 0,
         shakeY: 0,
         shakeAmt: 0,
@@ -173,9 +174,10 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
         playerWon: boolean;
         scoreStr: string;
     }>({ show: false, playerWon: false, scoreStr: "" });
-    const [muted, setMuted] = useState(true);
+	const [muted, setMuted] = useState(true);
+	const [paused, setPaused] = useState(false);
 
-    const s = stateRef.current;
+	const s = stateRef.current;
 
     // ── Audio ──
     const getAudio = useCallback(() => {
@@ -1309,21 +1311,23 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.save();
             G.translate(s.shakeX, s.shakeY);
             drawTable();
-            if (s.gameState === "play" || s.gameState === "goal") {
-                updatePlayer(timeScale);
-                updateCPU(timeScale);
-                // scaled puck update
-                if (timeScale !== 1) {
-                    s.puck.vx *= timeScale;
-                    s.puck.vy *= timeScale;
-                }
-                updatePuck(goalScored);
-                if (timeScale !== 1 && s.gameState === "play") {
-                    s.puck.vx /= timeScale;
-                    s.puck.vy /= timeScale;
-                }
-                updateParticles();
-            }
+			if (s.gameState === "play" || s.gameState === "goal") {
+				if (!s.paused) {
+					updatePlayer(timeScale);
+					updateCPU(timeScale);
+					// scaled puck update
+					if (timeScale !== 1) {
+						s.puck.vx *= timeScale;
+						s.puck.vy *= timeScale;
+					}
+					updatePuck(goalScored);
+					if (timeScale !== 1 && s.gameState === "play") {
+						s.puck.vx /= timeScale;
+						s.puck.vy /= timeScale;
+					}
+					updateParticles();
+				}
+			}
             updateConfettiLocal();
             drawPuck();
             drawMallet(s.cpu, "#2a0a0a", "#FF991C");
@@ -1421,9 +1425,13 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             e.preventDefault();
             pointerToCanvas(e.touches[0].clientX, e.touches[0].clientY);
         };
-        const onKeyDown = (e: KeyboardEvent) => {
-            if (e.code === "Space" && s.gameState === "over") startGame();
-        };
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.code === "Space" && s.gameState === "over") startGame();
+			if (e.code === "Escape") {
+				s.paused = !s.paused;
+				setPaused(s.paused);
+			}
+		};
         document.addEventListener("mousemove", onMouseMove);
         cv.addEventListener("touchmove", onTouchMove, { passive: false });
         cv.addEventListener("touchstart", onTouchStart, { passive: false });
@@ -1475,13 +1483,43 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 						
 					/>
 
-					{onCloseGame && !gameOver.show && (
-						<button
-							onClick={onCloseGame}
-							className="absolute top-2 right-3 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-white/70 hover:bg-white/20 hover:text-white text-sm cursor-pointer"
-						>
-							✕
-						</button>
+					{!gameOver.show && (
+						<>
+							<button
+								onClick={() => {
+									s.paused = !s.paused;
+									setPaused(s.paused);
+								}}
+								className="absolute top-2 right-12 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-white/70 hover:bg-white/20 hover:text-white text-sm cursor-pointer"
+							>
+								{paused ? (
+									<svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 ml-0.5">
+										<path d="M8 5v14l11-7z" />
+									</svg>
+								) : (
+									<svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+										<path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+									</svg>
+								)}
+							</button>
+							{onCloseGame && (
+								<button
+									onClick={onCloseGame}
+									className="absolute top-2 right-3 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-white/70 hover:bg-white/20 hover:text-white text-sm cursor-pointer"
+								>
+									✕
+								</button>
+							)}
+						</>
+					)}
+
+					{/* Pause overlay */}
+					{paused && s.gameState !== "over" && (
+						<div className="absolute inset-0 z-20 flex items-center justify-center rounded-xl bg-black/50 backdrop-blur-[2px]">
+							<span className="text-2xl font-bold tracking-[0.3em] text-white/70">
+								PAUSED
+							</span>
+						</div>
 					)}
 
 					{/* Game Over overlay */}
