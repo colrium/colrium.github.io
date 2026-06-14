@@ -78,7 +78,7 @@ const projects = [
 export default function FeaturedProjects() {
 	return (
 		<section
-			id="work"
+			id="projects"
 			className="w-full py-16 md:py-28"
 			aria-labelledby="featured-projects-heading"
 		>
