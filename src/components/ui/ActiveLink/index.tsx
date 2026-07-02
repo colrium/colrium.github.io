@@ -49,7 +49,8 @@ export default function ActiveLink({ href, children, className,  activeClassName
                     }
 				});
 			},
-			{ rootMargin: "-20% 0px -60% 0px" }, // Triggers when section occupies the sweet spot of the viewport
+            // { rootMargin: "-20% 0px -60% 0px" },
+			{ rootMargin: "-30% 0px -30% 0px" }, // Triggers when section occupies the sweet spot of the viewport
 		);
 
 		// Observe all elements that have an ID matching our navbar links
