@@ -1219,7 +1219,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (G as any).letterSpacing = "6px";
             G.fillStyle = isP ? "rgba(0,212,255,0.75)" : "rgba(255,45,85,0.75)";
-            G.fillText(isP ? "YOU SCORE" : "CPU SCORES", 0, 22);
+            G.fillText(isP ? "YOU SCORE" : "COMPUTER SCORES", 0, 32);
             G.restore();
             s.goalFlash--;
         }
@@ -1542,7 +1542,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 								>
 									{gameOver.playerWon
 										? "YOU WIN"
-										: "CPU WINS"}
+										: "COMPUTER WINS"}
 								</div>
 								<div className=" font-light text-sm text-on-surface/ mt-0.5">
 									{gameOver.playerWon
@@ -1579,7 +1579,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 					<StatPanel
 						side="right"
 						color="#FF991C"
-						label="CPU"
+						label="COMPUTER"
 						score={uiScore.cpu}
 						streak={uiStats.cpuStreak}
 						speed={uiStats.cpuSpeed}
