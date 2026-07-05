@@ -74,10 +74,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
+	showNavbar = true,
+	showFooter = true,
 }: Readonly<{
 	children: React.ReactNode;
+	showNavbar?: boolean;
+    showFooter?: boolean;
 }>) {
-	
 	return (
 		<html
 			lang="en"
@@ -86,9 +89,9 @@ export default function RootLayout({
 			<body className="min-h-full flex flex-col bg-surface-tint ">
 				<GameModeProvider>
 					<PageLoader />
-					<Navbar />
+					{showNavbar && <Navbar />}
 					{children}
-					<Footer />
+					{showFooter && <Footer />}
 				</GameModeProvider>
 			</body>
 		</html>

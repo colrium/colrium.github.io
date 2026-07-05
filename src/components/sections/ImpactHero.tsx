@@ -17,7 +17,7 @@ export default function ImpactHero() {
 		<div className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-surface-tint">
 			<div className="absolute inset-0 flex items-center justify-center">
 				<div
-					className="absolute w-[30rem] h-[30rem] opacity-[0.03]"
+					className="absolute w-120 h-120 opacity-[0.03]"
 					style={{
 						background:
 							"conic-gradient(from 0deg, var(--primary), var(--accent), var(--secondary), var(--primary))",
@@ -26,45 +26,9 @@ export default function ImpactHero() {
 				/>
 			</div>
 
-			{/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
-				{[...Array(8)].map((_, i) => (
-					<span
-						key={i}
-						className="absolute w-0.5 h-0.5 rounded-full bg-accent/30"
-						style={{
-							top: `${15 + i * 10}%`,
-							left: `${5 + i * 12}%`,
-							animation: `float-up ${4 + (i % 3) * 2}s ease-in-out infinite`,
-							animationDelay: `${i * 0.5}s`,
-						}}
-					/>
-				))}
-			</div> */}
+			
 
-			{/* <div className="absolute right-[10%] top-1/4 hidden md:flex items-end gap-[3px] h-48 opacity-30">
-				{bars.map((bar, i) => (
-					<div
-						key={i}
-						className="w-2 rounded-t-sm"
-						style={{
-							height: bar.height,
-							background: bar.color,
-							animation: `bar-rise 1.5s ease-out forwards`,
-							animationDelay: bar.delay,
-							transformOrigin: "bottom",
-						}}
-					/>
-				))}
-			</div> */}
-
-			<div className="absolute left-[10%] top-1/3 hidden md:block">
-				<div
-					className="w-24 h-24 opacity-20 bg-primary/20"
-					style={{
-						animation: "morph-shape 8s ease-in-out infinite",
-					}}
-				/>
-			</div>
+			
 
 			<div className="relative z-10 flex flex-col items-center text-center px-6">
 				<span className="inline-flex rounded-full border border-accent/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-6">

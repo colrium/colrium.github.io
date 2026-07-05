@@ -63,15 +63,18 @@ export default function Skills() {
 		<section
 			className="p-3 py-16 md:py-32 w-full min-h-[80vh] flex flex-col items-center justify-center"
 			aria-labelledby="skills-heading"
-            id="skills"
+			id="skills"
 		>
-			<div className="mx-auto w-full max-w-7xl px-6 md:px-10 flex flex-col items-center gap-16 bg-surface rounded-3xl p-10 md:p-16">
+			<div className="mx-auto w-full max-w-7xl px-6 md:px-10 flex flex-col items-center gap-16  p-10 md:p-16">
 				<div className="w-full">
 					<span className="inline-flex items-center rounded-full border border-accent/20 px-4 py-2 text-sm font-semibold text-on-surface">
 						{skillsData.tag}
 					</span>
-                    <ShuffleText
-                        component="h2"
+					<div className="w-full my-16">
+						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
+					</div>
+					<ShuffleText
+						component="h2"
 						id="skills-heading"
 						className="my-16 text-3xl sm:text-4xl md:text-5xl font-semibold text-on-surface tracking-tight text-center"
 					>
@@ -80,9 +83,6 @@ export default function Skills() {
 					<p className="mt-6 text-base mx-auto w-2/3 leading-8 text-on-surface/75 text-center">
 						{skillsData.intro}
 					</p>
-					<div className="w-full my-16">
-						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
-					</div>
 				</div>
 
 				<div className="mt-12 grid gap-6 sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3">

@@ -45,8 +45,8 @@ export default function Footer() {
 					</div>
 
 					<div>
-						<h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-on-surface-mute mb-4">
-							Pages
+						<h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-on-surface-mute/50 mb-4">
+							Links
 						</h4>
 						<ul className="flex flex-col gap-2">
 							{footerLinks.map((link) => (
@@ -63,7 +63,7 @@ export default function Footer() {
 					</div>
 
 					<div>
-						<h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-on-surface-mute mb-4">
+						<h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-on-surface-mute/50 mb-4">
 							Contact
 						</h4>
 						<ul className="flex flex-col gap-2">
@@ -97,7 +97,7 @@ export default function Footer() {
 						reserved.
 					</p>
 					<p className="text-xs text-on-surface/40">
-						Built with Next.js & Tailwind CSS
+						{/* Built with Next.js & Tailwind CSS */}
 					</p>
 				</div>
 			</div>
