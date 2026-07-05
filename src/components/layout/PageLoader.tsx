@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import ShuffleText from "../ShuffleText";
+import ShuffleText from "../ui/ShuffleText";
+import useOnNavigate from "@/lib/hooks/useOnNavigate";
 
 export default function PageLoader() {
+    const fetchloading = useOnNavigate();
+	console.log("fetchloading", fetchloading);
 	const [progress, setProgress] = useState(0);
 	const [exiting, setExiting] = useState(false);
 	const [gone, setGone] = useState(false);

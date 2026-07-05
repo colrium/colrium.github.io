@@ -7,17 +7,11 @@ import ActiveLink from "../ui/ActiveLink";
 import { useGameMode } from "@/lib/contexts/GameModeContext";
 
 const NAV_LINKS = [
-	{ label: "Skills", href: "/#skills" },
-	{ label: "Aesthetics", href: "/#aesthetics" },
-    { label: "Projects", href: "/#projects" },
-	{ label: "Experience", href: "/#experience" },
-    { label: "Impact", href: "/#impact" },
-    { label: "Contact", href: "/#contact", external: false, },
-	/* {
-		label: "GitHub",
-		href: "https://github.com/colrium",
-		external: true,
-	}, */
+	{ label: "Skills", href: "/skills" },
+    { label: "Projects", href: "/projects" },
+	{ label: "Experience", href: "/experience" },
+    { label: "Impact", href: "/impact" },
+    { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -121,20 +115,13 @@ export default function Navbar() {
 					<ul
 						className={`hidden md:flex items-center transition-all duration-500 ${scrolled ? "gap-0.5" : "gap-1"}`}
 					>
-						{NAV_LINKS.map(({ label, href, external }) => (
+						{NAV_LINKS.map(({ label, href }) => (
 							<li key={label}>
 								<ActiveLink
 									href={href}
-									target={external ? "_blank" : undefined}
-									rel={
-										external
-											? "noopener noreferrer"
-											: undefined
-									}
 									className={`relative text-sm font-thin transition-all duration-200 px-3 py-1.5 rounded-lg hover:bg-surface/8 ${scrolled ? "text-xs" : "text-sm"}`}
 									activeClassName="text-accent/80 hover:text-accent/90"
 									inactiveClassName="text-on-surface/70 hover:text-on-surface/90"
-									observe
 								>
 									{label}
 								</ActiveLink>
@@ -244,21 +231,14 @@ export default function Navbar() {
 					</div>
 
 					<ul className="flex flex-col gap-1 p-3">
-						{NAV_LINKS.map(({ label, href, external }) => (
+						{NAV_LINKS.map(({ label, href }) => (
 							<li key={label}>
 								<ActiveLink
 									href={href}
-									target={external ? "_blank" : undefined}
-									rel={
-										external
-											? "noopener noreferrer"
-											: undefined
-									}
 									className="flex w-full text-sm font-thin transition-all duration-200 px-4 py-3 rounded-lg hover:bg-surface/8"
 									activeClassName="text-accent/70 hover:text-accent/90"
 									inactiveClassName="text-on-surface/40 hover:text-on-surface/90"
 									onClick={handleNavClick}
-									observe
 								>
 									{label}
 								</ActiveLink>

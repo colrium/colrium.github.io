@@ -235,7 +235,7 @@ export default function MainHero({
 	statsLabel = "Years of Experience",
 	statsButtonLabel = "Engage",
 	statsButtonIcon = "phone",
-	statsHref = "/#contact",
+	statsHref = "/contact",
 	accessory = null,
 	top,
 	bgText,
