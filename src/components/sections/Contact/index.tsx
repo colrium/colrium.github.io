@@ -26,7 +26,7 @@ const contactLinks = [
 	{
 		label: "Resume",
 		value: "Download CV",
-		href: "/Software-Engineer-Collins-Riungu-CV.pdf",
+		href: "/Software-Engineer-Collins-Riungu-resume.pdf",
 		icon: "description",
 	},
 ];

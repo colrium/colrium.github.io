@@ -147,7 +147,7 @@ export default function Navbar() {
 
 						{/* CTA */}
 						<Link
-							href="/Software-Engineer-Collins-Riungu-CV.pdf"
+							href="/Software-Engineer-Collins-Riungu-resume.pdf"
 							target="_blank"
 							className={`inline-flex items-center gap-1.5 font-semibold rounded-full bg-accent text-surface hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 ${scrolled ? "px-4 py-1.5 text-xs" : "px-5 py-2 text-sm"}`}
 						>
