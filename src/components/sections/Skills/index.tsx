@@ -71,7 +71,7 @@ export default function Skills() {
 					<div className="w-full my-4">
 						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
 					</div>
-					<span className="inline-flex items-center rounded-full border border-accent/20 px-4 py-2 text-sm font-semibold text-primary">
+					<span className="inline-flex items-center rounded-full border border-accent/20 px-4 py-2 text-sm font-semibold text-secondary">
 						{skillsData.tag}
 					</span>
 					<ShuffleText
