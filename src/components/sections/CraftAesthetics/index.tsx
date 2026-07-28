@@ -42,7 +42,10 @@ const tools = ["Figma", "React", "Tailwind CSS", "Framer Motion", "Storybook"];
 export default function CraftAesthetics() {
     const [showAdvancedUI, setShowAdvancedUI] = useState(false);
 	return (
-		<section className="w-full py-16 min-h-[80vh] flex flex-col items-center justify-center md:py-32" id="aesthetics">
+		<section
+			className="w-full py-16 min-h-[80vh] flex flex-col items-center justify-center md:py-32"
+			id="aesthetics"
+		>
 			<div className="mx-auto max-w-6xl px-6 md:px-10">
 				<div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
 					{!showAdvancedUI && (
@@ -55,7 +58,10 @@ export default function CraftAesthetics() {
 						<span className="inline-flex rounded-full bg-transparent px-4 py-2 text-sm  text-on-surface border border-accent/20">
 							Craft & Aesthetics
 						</span>
-						<ShuffleText component="h2" className="my-16 text-3xl sm:text-4xl md:text-5xl font-semibold text-on-surface tracking-tight">
+						<ShuffleText
+							component="h2"
+							className="my-16 text-3xl sm:text-4xl md:text-5xl font-semibold text-on-surface tracking-tight"
+						>
 							Pixel-Perfect UI, Down to the Last Detail
 						</ShuffleText>
 
@@ -88,7 +94,7 @@ export default function CraftAesthetics() {
 							{tools.map((tool) => (
 								<span
 									key={tool}
-									className="rounded-full border border-on-surface/20 bg-transparent px-4 py-2 text-sm font-sm text-on-surface-mute"
+									className="rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface/75 font-sm "
 								>
 									{tool}
 								</span>

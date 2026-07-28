@@ -5,7 +5,7 @@ import Skills from "@/components/sections/Skills";
 
 export default function SkillsPage() {
 	return (
-		<main className="flex flex-1 w-full flex-col items-center justify-between sm:items-start bg-surface">
+		<main className="flex flex-1 w-full flex-col items-center justify-between sm:items-start">
 			<Skills />
 			<CraftAesthetics />
 		</main>
