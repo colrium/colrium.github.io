@@ -30,7 +30,8 @@ export default function Home() {
 							setGameMode((prev) => !prev);
 						}}
 						statsLabel="Years of Experience"
-						description="Remote-native polyglot engineer with 9+ years designing and owning system architecture, from spec to shipping through scalable, secure implementation. Skilled at evaluating tradeoffs across stacks, structuring solutions for maintainability at scale, and integrating up-to-date workflows to boost delivery velocity. Drives technical excellence end-to-end, aligning architectural decisions with business objectives."
+						// description="Remote-native polyglot engineer with 9+ years designing and owning system architecture, from spec to shipping through scalable, secure implementation. Skilled at evaluating tradeoffs across stacks, structuring solutions for maintainability at scale, and integrating up-to-date workflows to boost delivery velocity. Drives technical excellence end-to-end, aligning architectural decisions with business objectives."
+						description="I build systems that scale. Polyglot engineer with 9+ years across web, mobile, and backend, turning specs into shipped, secure software."
 					/>
 				</main>
 			) : (
