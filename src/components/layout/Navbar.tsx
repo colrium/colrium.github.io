@@ -134,7 +134,7 @@ export default function Navbar() {
 						{/* Theme toggle */}
 						<button
 							onClick={toggleTheme}
-							className={`inline-flex items-center justify-center rounded-full hover:bg-surface/8 active:scale-[0.97] transition-all duration-300 ${scrolled ? "w-7 h-7" : "w-9 h-9"}`}
+							className={`inline-flex items-center justify-center rounded-full cursor-pointer hover:bg-surface/8 active:scale-[0.97] transition-all duration-300 ${scrolled ? "w-7 h-7" : "w-9 h-9"}`}
 							aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
 						>
 							{theme === "dark" ? (
@@ -289,13 +289,13 @@ export default function Navbar() {
 								</ActiveLink>
 							</li>
 						))}
-						<li className="mt-2 border-t border-accent/10 pt-2">
+						<li className="mt-2 border-t border-accent/10 pt-2 hover:cursor-pointer">
 							<button
 								onClick={() => {
 									toggleTheme();
 									handleNavClick();
 								}}
-								className="flex w-full text-sm font-thin transition-all duration-200 px-4 py-3 rounded-lg hover:bg-surface/8 text-on-surface/40 hover:text-on-surface/90"
+								className="flex w-full text-sm font-thin transition-all duration-200 px-4 py-3 rounded-lg hover:bg-surface/8 text-on-surface/40 hover:text-on-surface/90 hover:cursor-pointer"
 							>
 								{theme === "dark"
 									? "☀️ Light mode"
