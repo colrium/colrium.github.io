@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ActiveLink from "../ui/ActiveLink";
 import { useGameMode } from "@/lib/contexts/GameModeContext";
+import { useTheme } from "@/lib/contexts/ThemeContext";
 
 const NAV_LINKS = [
 	{ label: "Skills", href: "/skills" },
@@ -16,6 +17,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
 	const { gameMode } = useGameMode();
+	const { theme, toggleTheme } = useTheme();
 	const [scrolled, setScrolled] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -129,6 +131,24 @@ export default function Navbar() {
 						))}
 					</ul>
 					<div className="flex justify-end gap-4">
+						{/* Theme toggle */}
+						<button
+							onClick={toggleTheme}
+							className={`inline-flex items-center justify-center rounded-full hover:bg-surface/8 active:scale-[0.97] transition-all duration-300 ${scrolled ? "w-7 h-7" : "w-9 h-9"}`}
+							aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+						>
+							{theme === "dark" ? (
+								<svg viewBox="0 0 24 24" fill="none" className={`transition-all duration-500 ${scrolled ? "w-4 h-4" : "w-5 h-5"}`}>
+									<circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
+									<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+								</svg>
+							) : (
+								<svg viewBox="0 0 24 24" fill="none" className={`transition-all duration-500 ${scrolled ? "w-4 h-4" : "w-5 h-5"}`}>
+									<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+								</svg>
+							)}
+						</button>
+
 						{/* GitHub icon */}
 						<Link
 							href="https://github.com/colrium"
@@ -244,6 +264,14 @@ export default function Navbar() {
 								</ActiveLink>
 							</li>
 						))}
+						<li className="mt-2 border-t border-accent/10 pt-2">
+							<button
+								onClick={() => { toggleTheme(); handleNavClick(); }}
+								className="flex w-full text-sm font-thin transition-all duration-200 px-4 py-3 rounded-lg hover:bg-surface/8 text-on-surface/40 hover:text-on-surface/90"
+							>
+								{theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode"}
+							</button>
+						</li>
 					</ul>
 				</aside>
 			</div>

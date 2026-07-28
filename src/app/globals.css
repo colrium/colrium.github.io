@@ -33,6 +33,21 @@
     }
 }
 
+:root,
+[data-theme="dark"] {
+    --surface: #040615;  
+    --surface-tint: #070922;
+    --on-surface: #f1f1f1;
+    --on-surface-mute: #7a7a7a;
+}
+
+[data-theme="light"] {
+    --surface: #ffffff;
+    --surface-tint: #f5f5f0;
+    --on-surface: #1a1a1a;
+    --on-surface-mute: #6b6b6b;
+}
+
 body.dark {
     /* Dark Theme */
     --surface: #000000;  

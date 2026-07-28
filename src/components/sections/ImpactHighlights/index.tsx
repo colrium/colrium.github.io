@@ -1,4 +1,5 @@
 import ShuffleText from "@/components/ui/ShuffleText";
+import Reveal from "@/components/ui/Reveal";
 
 const highlights = [
 	{
@@ -52,8 +53,9 @@ export default function ImpactHighlights() {
 				</div>
 
 				<div className="mt-12 grid overflow-hidden rounded-xl border border-on-surface/10 bg-on-surface/10 sm:grid-cols-2 lg:grid-cols-4">
-					{highlights.map((item) => (
-						<article key={item.label} className=" p-6">
+					{highlights.map((item, i) => (
+						<Reveal key={item.label} delay={i * 100} direction="up" duration={600}>
+						<article className="p-6">
 							<p className="font-display text-6xl text-primary">
 								{item.value}
 							</p>
@@ -64,6 +66,7 @@ export default function ImpactHighlights() {
 								{item.detail}
 							</p>
 						</article>
+						</Reveal>
 					))}
 				</div>
 			</div>

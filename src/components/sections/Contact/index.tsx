@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/Reveal";
+
 const contactLinks = [
 	{
 		label: "Email",
@@ -57,11 +59,11 @@ export default function Contact() {
 				</div>
 
 				<div className="flex flex-col gap-3">
-					{contactLinks.map((link) => (
+					{contactLinks.map((link, i) => (
+						<Reveal key={link.label} delay={i * 80} direction="left" duration={500}>
 						<a
-							key={link.label}
 							href={link.href}
-							className="group flex items-center justify-between gap-4 rounded-lg border border-on-surface/10 bg-surface-tint p-5 transition hover:border-accent/40"
+							className="group flex items-center justify-between gap-4 rounded-lg border border-on-surface/10 bg-surface-tint p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-[0_0_20px_rgba(255,153,28,0.06)]"
 						>
 							<span>
 								<span className="block text-sm font-semibold uppercase tracking-[0.18em] text-accent">
@@ -78,6 +80,7 @@ export default function Contact() {
 								{link.icon}
 							</span>
 						</a>
+						</Reveal>
 					))}
 				</div>
 			</div>

@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/Reveal";
+
 const steps = [
 	{
 		number: "01",
@@ -46,10 +48,10 @@ export default function Process() {
 				</div>
 
 				<div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-on-surface/10 bg-on-surface/10 md:grid-cols-2 lg:grid-cols-4">
-					{steps.map((step) => (
+					{steps.map((step, i) => (
+						<Reveal key={step.number} delay={i * 120} direction="up" duration={600}>
 						<article
-							key={step.number}
-							className="min-h-[280px]  p-6"
+							className="min-h-[280px] p-6"
 						>
 							<p className="font-display text-6xl text-accent/30">
 								{step.number}
@@ -61,6 +63,7 @@ export default function Process() {
 								{step.copy}
 							</p>
 						</article>
+						</Reveal>
 					))}
 				</div>
 			</div>

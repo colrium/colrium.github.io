@@ -2,6 +2,7 @@
 
 import Devices from '@/components/ui/Devices';
 import ShuffleText from '@/components/ui/ShuffleText';
+import Reveal from '@/components/ui/Reveal';
 import React from 'react';
 
 const skillsData = {
@@ -45,7 +46,7 @@ const skillsData = {
 
 function CategoryCard({ label, items }: { label: string; items: string[] }) {
 	return (
-		<div className="rounded-2xl border border-accent/10 bg-surface-container p-6 shadow-sm">
+		<div className="rounded-2xl border border-accent/10 bg-surface-container p-6 shadow-sm h-full">
 			<h4 className="text-lg font-semibold text-on-surface-mute mb-3">{label}</h4>
 			<ul className="flex flex-col gap-2">
 				{items.map((it) => (
@@ -77,6 +78,7 @@ export default function Skills() {
 						component="h2"
 						id="skills-heading"
 						className="mt-8 text-3xl sm:text-4xl md:text-5xl font-semibold text-on-surface tracking-tight text-center"
+						sourceRandomCharacter={"_-"}
 					>
 						{skillsData.headline}
 					</ShuffleText>
@@ -86,12 +88,15 @@ export default function Skills() {
 				</div>
 
 				<div className="mt-12 grid gap-6 sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
-					{skillsData.categories.map((cat) => (
-						<CategoryCard
+					{skillsData.categories.map((cat, i) => (
+						<Reveal
 							key={cat.id}
-							label={cat.label}
-							items={cat.items}
-						/>
+							delay={i * 80}
+							direction="up"
+							duration={600}
+						>
+							<CategoryCard label={cat.label} items={cat.items} />
+						</Reveal>
 					))}
 				</div>
 			</div>

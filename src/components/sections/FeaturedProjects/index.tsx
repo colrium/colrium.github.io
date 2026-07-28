@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/Reveal";
+
 const projects = [
 	{
 		title: "Grand Master Ledger",
@@ -102,22 +104,16 @@ export default function FeaturedProjects() {
 				</div>
 
 				<div className="grid gap-4 lg:grid-cols-3">
-					{projects.map((project) => (
+					{projects.map((project, i) => (
+						<Reveal key={project.title} delay={i * 80} direction="up" duration={600}>
 						<article
-							key={project.title}
-							className="flex min-h-[360px] flex-col justify-between rounded-xl border border-accent/20 p-6 transition hover:border-accent/50"
+							className="flex min-h-[360px] flex-col justify-between rounded-xl border border-accent/20 p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card"
 						>
 							<div>
 								<div className="mb-8 flex items-center justify-between gap-4">
 									<span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
 										{project.type}
 									</span>
-									{/* <span
-										className="material-symbols-outlined text-primary"
-										aria-hidden="true"
-									>
-										arrow_outward
-									</span> */}
 								</div>
 								<h3 className="text-2xl font-semibold text-on-surface">
 									{project.title}
@@ -135,7 +131,7 @@ export default function FeaturedProjects() {
 									{project.stack.map((item) => (
 										<span
 											key={item}
-											className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface"
+											className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface transition-colors duration-300 group-hover/card:border-accent/30 group-hover/card:text-accent/80"
 										>
 											{item}
 										</span>
@@ -143,6 +139,7 @@ export default function FeaturedProjects() {
 								</div>
 							</div>
 						</article>
+						</Reveal>
 					))}
 				</div>
 			</div>

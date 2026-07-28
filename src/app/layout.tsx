@@ -5,6 +5,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import "./globals.css";
 import PageLoader from "@/components/layout/PageLoader";
 import { GameModeProvider } from "@/lib/contexts/GameModeContext";
+import { ThemeProvider } from "@/lib/contexts/ThemeContext";
 
 export const dynamic = "force-dynamic";
 
@@ -82,10 +83,12 @@ export default function RootLayout({
 			className={`${googleSansFlex.variable} ${epilogue.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col bg-surface-tint ">
+				<ThemeProvider>
 				<GameModeProvider>
 					<PageLoader />
 					<PageLayout>{children}</PageLayout>
 				</GameModeProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

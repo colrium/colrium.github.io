@@ -128,21 +128,6 @@ export default function PageLoader() {
 						}}
 					/>
 				</div>
-
-				<div className="flex items-baseline gap-1">
-					<span
-						className="text-5xl font-bold tabular-nums tracking-tighter"
-						style={{ color: "var(--on-surface)" }}
-					>
-						{Math.round(progress)}
-					</span>
-					<span
-						className="font-[family-name:var(--font-plus-jakarta-sans)] text-5xl font-bold tracking-tighter"
-						style={{ color: "var(--accent)" }}
-					>
-						%
-					</span>
-				</div>
 			</div>
 		</div>
 	);

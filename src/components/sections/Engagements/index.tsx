@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/Reveal";
+
 const engagements = [
 	{
 		title: "Remote Product Engineering",
@@ -50,10 +52,10 @@ export default function Engagements() {
 				</div>
 
 				<div className="grid gap-4 sm:grid-cols-2">
-					{engagements.map((item) => (
+					{engagements.map((item, i) => (
+						<Reveal key={item.title} delay={i * 100} direction="up" duration={600}>
 						<article
-							key={item.title}
-							className="rounded-lg border border-on-surface/10 bg-surface-tint p-6"
+							className="rounded-lg border border-on-surface/10 bg-surface-tint p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)] hover:border-accent/20"
 						>
 							<span
 								className="material-symbols-outlined text-accent"
@@ -68,6 +70,7 @@ export default function Engagements() {
 								{item.copy}
 							</p>
 						</article>
+						</Reveal>
 					))}
 				</div>
 			</div>
