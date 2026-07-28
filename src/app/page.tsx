@@ -30,7 +30,7 @@ export default function Home() {
 							setGameMode((prev) => !prev);
 						}}
 						statsLabel="Years of Experience"
-						description="Polyglot engineer with an unreasonable fondness for clean architecture. Based in Nairobi, fully remote-native, and always building something worth shipping."
+						description="Remote-native polyglot engineer with 9+ years designing and owning system architecture, from spec to shipping through scalable, secure implementation. Skilled at evaluating tradeoffs across stacks, structuring solutions for maintainability at scale, and integrating up-to-date workflows to boost delivery velocity. Drives technical excellence end-to-end, aligning architectural decisions with business objectives."
 					/>
 				</main>
 			) : (

@@ -37,9 +37,10 @@ export default function ImpactHighlights() {
 							Impact
 						</span>
 						<ShuffleText
-                            component="h2"
+							component="h2"
 							id="impact-heading"
 							className="mt-8 text-3xl font-semibold tracking-tight text-on-surface sm:text-4xl md:text-5xl"
+							sourceRandomCharacter={"_-"}
 						>
 							Numbers that point to reliable delivery.
 						</ShuffleText>

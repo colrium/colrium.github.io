@@ -46,7 +46,7 @@ export function DocFooter({
 				className="flex items-center gap-6  cursor-pointer text-foreground hover:text-on-surface transition-colors"
 				onClick={onDocumentationClick}
 			>
-				<div className="flex flex-col">
+				<div className="hidden md:flex md:flex-col">
 					<span className="text-lg md:text-xl  transition-colors font-medium">
 						{label}
 					</span>

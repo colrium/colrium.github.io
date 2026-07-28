@@ -20,7 +20,7 @@ export function StatsCard({
   href
 }: StatsCardProps) {
   return (
-    <GlassCard className="p-4 md:p-6 lg:p-8 flex flex-col gap-4 min-w-40 md:min-w-50 shadow-lg">
+    <GlassCard className="p-4 md:p-6 lg:p-8 hidden md:flex md:flex-col gap-4 min-w-40 md:min-w-50 shadow-lg">
       <div>
         <div className="text-3xl md:text-4xl font-normal text-secondary tracking-tight">
           {value}
