@@ -68,10 +68,10 @@ export default function Skills() {
 		>
 			<div className="mx-auto w-full max-w-7xl px-6 md:px-10 flex flex-col items-center gap-16  p-10 md:p-16">
 				<div className="w-full items-center justify-center flex flex-col gap-6 md:gap-8">
-					<div className="w-full my-16">
+					<div className="w-full my-4">
 						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
 					</div>
-					<span className="inline-flex items-center rounded-full border border-accent/20 px-4 py-2 text-sm font-semibold text-on-surface">
+					<span className="inline-flex items-center rounded-full border border-accent/20 px-4 py-2 text-sm font-semibold text-primary">
 						{skillsData.tag}
 					</span>
 					<ShuffleText

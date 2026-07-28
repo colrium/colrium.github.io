@@ -16,7 +16,7 @@ export default function ExperienceHero() {
 		<div className="relative w-full min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-surface">
 			<div className="flex flex-col relative items-center justify-center gap-12 md:gap-16">
 				<div
-					className="w-80 h-80  bg-primary/3 relative flex items-center justify-center "
+					className="w-80 h-80  bg-surface-tint relative flex items-center justify-center "
 					style={{
 						animation: "morph-shape 8s ease-in-out infinite",
 					}}

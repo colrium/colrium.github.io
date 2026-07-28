@@ -107,7 +107,7 @@ export default function FeaturedProjects() {
 					{projects.map((project, i) => (
 						<Reveal key={project.title} delay={i * 80} direction="up" duration={600}>
 						<article
-							className="flex min-h-[360px] flex-col justify-between rounded-xl border border-accent/20 p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card"
+							className="flex min-h-90 h-full flex-col justify-between rounded-xl border border-accent/20 p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card"
 						>
 							<div>
 								<div className="mb-8 flex items-center justify-between gap-4">
@@ -131,7 +131,7 @@ export default function FeaturedProjects() {
 									{project.stack.map((item) => (
 										<span
 											key={item}
-											className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface transition-colors duration-300 group-hover/card:border-accent/30 group-hover/card:text-accent/80"
+											className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface transition-colors duration-300 group-hover/card:border-accent/30 group-hover/card:text-primary/80"
 										>
 											{item}
 										</span>

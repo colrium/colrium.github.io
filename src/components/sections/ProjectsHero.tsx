@@ -14,7 +14,7 @@ export default function ProjectsHero() {
 						width="512"
 						height="512"
 						viewBox="0 0 512 512"
-						className="h-32 w-32 md:w-60 md:h-60 text-on-surface"
+						className="h-32 w-32 md:w-60 md:h-60 text-accent"
 						fill="currentColor"
 						xmlSpace="preserve"
 					>

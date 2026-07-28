@@ -40,7 +40,7 @@ export default function ImpactHero() {
 							suffix="%"
 							className="text-9xl font-bold text-primary leading-none select-none"
 						/>
-						<span className="text-md text-accent tracking-widest uppercase mt-2">
+						<span className="text-md text-secondary tracking-widest uppercase mt-2">
 							CSAT
 						</span>
 					</div>
