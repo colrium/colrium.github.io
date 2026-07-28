@@ -13,7 +13,7 @@ export class Particle {
 		this.lastPos = new Vec2(pos.x, pos.y);
 	}
 
-	/** Default draw — small dot. Override via Composite.drawParticles. */
+	/** Default draw - small dot. Override via Composite.drawParticles. */
 	draw(ctx: CanvasRenderingContext2D): void {
 		ctx.beginPath();
 		ctx.arc(this.pos.x, this.pos.y, 2, 0, 2 * Math.PI);

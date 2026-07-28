@@ -77,7 +77,7 @@ export class Simulation {
 	// ── Physics step ───────────────────────────────────────────────────────
 
 	frame(steps: number): void {
-		// Verlet integration — velocity is implicit: pos - lastPos
+		// Verlet integration - velocity is implicit: pos - lastPos
 		for (const composite of this.composites) {
 			for (const p of composite.particles) {
 				const velocity = p.pos.sub(p.lastPos).scale(FRICTION);
@@ -292,7 +292,7 @@ export class Simulation {
 			seg3: new Set(),
 		};
 
-		// Build 4 pairs of legs (8 legs total — right + left per pair)
+		// Build 4 pairs of legs (8 legs total - right + left per pair)
 		for (let i = 0; i < 4; i++) {
 			const lateral = (i - 1.5) * 3 * s;
 
@@ -409,7 +409,7 @@ export class Simulation {
 		return spider;
 	}
 
-	// ── Crawl — move one foot to a new web node ────────────────────────────
+	// ── Crawl - move one foot to a new web node ────────────────────────────
 
 	crawl(legIndex: number): void {
 		const STEP_RADIUS_MIN = 35 * this.spiderScale;

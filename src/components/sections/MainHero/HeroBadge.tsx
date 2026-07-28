@@ -34,13 +34,13 @@ export function HeroBadge({ icon, label, onToggleEasterEgg }: HeroBadgeProps) {
           {label}
         </span>
       </button>
-      <span
+      {/* <span
         className={`absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest text-accent/40 transition-all duration-500 whitespace-nowrap ${
           hint ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
         }`}
       >
         click 3x
-      </span>
+      </span> */}
     </div>
   );
 }

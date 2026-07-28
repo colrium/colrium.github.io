@@ -3,6 +3,13 @@ import MainHero from "@/components/sections/MainHero";
 import AirHockey from "@/components/ui/AirHockey";
 import SpiderWeb from "@/components/ui/SpiderWeb";
 import { useGameMode } from "@/lib/contexts/GameModeContext";
+import ValueSection from "@/components/sections/ValueSection";
+import Process from "@/components/sections/Process";
+import Engagements from "@/components/sections/Engagements";
+import ImpactHighlights from "@/components/sections/ImpactHighlights";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import Testimonials from "@/components/sections/Testimonials";
+import CTASection from "@/components/sections/CTASection";
 
 export default function Home() {
 	const { gameMode, setGameMode } = useGameMode();
@@ -30,9 +37,16 @@ export default function Home() {
 							setGameMode((prev) => !prev);
 						}}
 						statsLabel="Years of Experience"
-						// description="Remote-native polyglot engineer with 9+ years designing and owning system architecture, from spec to shipping through scalable, secure implementation. Skilled at evaluating tradeoffs across stacks, structuring solutions for maintainability at scale, and integrating up-to-date workflows to boost delivery velocity. Drives technical excellence end-to-end, aligning architectural decisions with business objectives."
 						description="I build systems that scale. Polyglot engineer with 9+ years across web, mobile, and backend, turning specs into shipped, secure software."
 					/>
+
+					<ValueSection />
+					<Process />
+					<Engagements />
+					{/* <ImpactHighlights /> */}
+					{/* <FeaturedProjects /> */}
+					<Testimonials />
+					<CTASection />
 				</main>
 			) : (
 				<AirHockey onCloseGame={() => setGameMode(false)} />

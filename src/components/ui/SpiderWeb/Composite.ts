@@ -34,7 +34,7 @@ export interface LegSegmentSets {
 	seg1: Set<DistanceConstraint>; // hip → knee    (thickest)
 	seg2: Set<DistanceConstraint>; // knee → shin
 	seg3: Set<DistanceConstraint>; // shin → ankle  (thinnest body segment)
-	// seg4 = foot tether to web — rendered as hairlines, not stored separately
+	// seg4 = foot tether to web - rendered as hairlines, not stored separately
 }
 
 export class SpiderComposite extends Composite {

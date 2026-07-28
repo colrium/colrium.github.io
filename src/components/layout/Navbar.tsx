@@ -113,7 +113,7 @@ export default function Navbar() {
 						</span>
 					</Link>
 
-					{/* Center links — md+ only */}
+					{/* Center links - md+ only */}
 					<ul
 						className={`hidden md:flex items-center transition-all duration-500 ${scrolled ? "gap-0.5" : "gap-1"}`}
 					>

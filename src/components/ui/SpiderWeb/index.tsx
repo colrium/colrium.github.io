@@ -233,7 +233,7 @@ export default function SpiderWeb({
 				ctx.fill();
 			}
 
-			// Leg segments — color and thickness taper from hip to foot
+			// Leg segments - color and thickness taper from hip to foot
 			for (let i = 3; i < composite.constraints.length; i++) {
 				const c = composite.constraints[i];
 				if (!(c instanceof DistanceConstraint)) continue;

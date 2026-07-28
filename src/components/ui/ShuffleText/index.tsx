@@ -137,7 +137,7 @@ export default function ShuffleText<T extends AnyTag = "span">({
 		duration,
 	]);
 
-	// ── 3. IntersectionObserver — start only when element enters viewport ──
+	// ── 3. IntersectionObserver - start only when element enters viewport ──
 	useEffect(() => {
 		if (!isMounted || !autoPlay || !ref.current) return;
 
@@ -149,7 +149,7 @@ export default function ShuffleText<T extends AnyTag = "span">({
 				if (entry.isIntersecting && !hasPlayedRef.current) {
 					hasPlayedRef.current = true;
 					shuffleRef.current?.start();
-					// Stop observing after first play — remove if you want
+					// Stop observing after first play - remove if you want
 					// the effect to replay every time it re-enters the viewport.
 					observer.unobserve(el);
 				}
