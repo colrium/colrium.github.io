@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Epilogue } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import PageLayout from "@/components/layout/PageLayout";
 import "./globals.css";
 import PageLoader from "@/components/layout/PageLoader";
 import { GameModeProvider } from "@/lib/contexts/GameModeContext";
@@ -74,12 +73,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-	showNavbar = true,
-	showFooter = true,
 }: Readonly<{
 	children: React.ReactNode;
-	showNavbar?: boolean;
-    showFooter?: boolean;
 }>) {
 	return (
 		<html
@@ -89,9 +84,7 @@ export default function RootLayout({
 			<body className="min-h-full flex flex-col bg-surface-tint ">
 				<GameModeProvider>
 					<PageLoader />
-					{showNavbar && <Navbar />}
-					{children}
-					{showFooter && <Footer />}
+					<PageLayout>{children}</PageLayout>
 				</GameModeProvider>
 			</body>
 		</html>
