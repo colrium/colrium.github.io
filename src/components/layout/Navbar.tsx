@@ -8,10 +8,10 @@ import { useGameMode } from "@/lib/contexts/GameModeContext";
 
 const NAV_LINKS = [
 	{ label: "Skills", href: "/skills" },
-    { label: "Projects", href: "/projects" },
+	{ label: "Impact", href: "/impact" },
 	{ label: "Experience", href: "/experience" },
-    { label: "Impact", href: "/impact" },
-    { label: "Contact", href: "/contact" },
+	{ label: "Projects", href: "/projects" },
+	{ label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
