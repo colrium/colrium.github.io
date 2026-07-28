@@ -42,8 +42,8 @@
 }
 
 [data-theme="light"] {
-    --surface: #ffffff;
-    --surface-tint: #f5f5f0;
+    --surface: #F7F4EE;
+    --surface-tint: #e7e4de;
     --on-surface: #1a1a1a;
     --on-surface-mute: #6b6b6b;
 }
