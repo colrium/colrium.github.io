@@ -94,7 +94,7 @@ export default function FeaturedProjects() {
 							id="featured-projects-heading"
 							className="mt-8 text-3xl font-semibold tracking-tight text-on-surface sm:text-4xl md:text-5xl"
 						>
-							Practical systems shipped across organizations, sports, health, treansport, finance, and climate sectors.
+							Practical systems shipped across organizations, sports, health, transport, finance, and climate sectors.
 						</h2>
 					</div>
 					<p className="max-w-md text-sm leading-7 text-on-surface/70 md:text-base">
