@@ -52,7 +52,7 @@ export default function ImpactHighlights() {
 					</p>
 				</div>
 
-				<div className="mt-12 grid overflow-hidden rounded-xl border border-on-surface/10 bg-on-surface/10 sm:grid-cols-2 lg:grid-cols-4">
+				<div className="mt-12 grid overflow-hidden rounded-xl border border-primary/10 bg-surface sm:grid-cols-2 lg:grid-cols-4">
 					{highlights.map((item, i) => (
 						<Reveal key={item.label} delay={i * 100} direction="up" duration={600}>
 						<article className="p-6">

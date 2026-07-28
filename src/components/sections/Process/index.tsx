@@ -47,7 +47,7 @@ export default function Process() {
 					</h2>
 				</div>
 
-				<div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-on-surface/10 bg-on-surface/10 md:grid-cols-2 lg:grid-cols-4">
+				<div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-primary/10 bg-surface md:grid-cols-2 lg:grid-cols-4">
 					{steps.map((step, i) => (
 						<Reveal key={step.number} delay={i * 120} direction="up" duration={600}>
 						<article
