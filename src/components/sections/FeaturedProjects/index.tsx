@@ -1,6 +1,6 @@
 import Reveal from "@/components/ui/Reveal";
 
-const projects = [
+	const projects = [
 	{
 		title: "Grand Master Ledger",
 		type: "Chess Analysis Platform",
@@ -9,6 +9,7 @@ const projects = [
 		stack: ["Python", "Next.js", "Node.js", "Stockfish", "API Integration"],
 		outcome:
 			"Provides players with data-driven insights into their gameplay and targeted improvement strategies across multiple platforms.",
+		github: "https://github.com/colrium/gm-ledger",
 	},
 	{
 		title: "Creuse",
@@ -25,6 +26,7 @@ const projects = [
 		],
 		outcome:
 			"Delivered a functional ride-hailing platform tailored to local market needs and user workflows.",
+		github: "https://github.com/colrium/creuse-user",
 	},
 	{
 		title: "CAT (Connect Assure Technology)",
@@ -63,6 +65,7 @@ const projects = [
 		stack: ["Web", "Mobile", "Databases", "Automation"],
 		outcome:
 			"Shipped to roughly 30 clients and tracks more than 1 million assets.",
+		github: "https://github.com/colrium/fixedassets-legacy",
 	},
 	{
 		title: "ECO Calc",
@@ -72,6 +75,7 @@ const projects = [
 		stack: ["Prototyping", "Data Modeling", "Product Design", "Reporting"],
 		outcome:
 			"Explored climate-accounting workflows through a practical calculator interface.",
+		github: "https://github.com/colrium/co2-calc-fe",
     },
 
     
@@ -120,6 +124,25 @@ export default function FeaturedProjects() {
 										<span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
 											{project.type}
 										</span>
+										{project.github && (
+											<a
+												href={project.github}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 text-on-surface/50 hover:text-primary"
+												aria-label={`${project.title} repository`}
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="20"
+													height="20"
+													fill="currentColor"
+													viewBox="0 0 24 24"
+												>
+													<path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+												</svg>
+											</a>
+										)}
 									</div>
 									<h3 className="text-2xl font-semibold text-on-surface">
 										{project.title}
