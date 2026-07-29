@@ -25,11 +25,11 @@ export default function Home() {
 							<div className="flex items-center gap-4 h-full my-16">
 								<SpiderWeb
 									className="w-70 h-70 md:w-80 md:h-80 lg:w-120 lg:h-120"
-									onSpiderOffWeb={(isOffWeb) => {
-										if (isOffWeb) {
-											setGameMode(true);
-										}
-									}}
+									// onSpiderOffWeb={(isOffWeb) => {
+									// 	if (isOffWeb) {
+									// 		setGameMode(true);
+									// 	}
+									// }}
 								/>
 							</div>
 						}
