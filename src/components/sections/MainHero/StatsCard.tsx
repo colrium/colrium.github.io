@@ -1,5 +1,5 @@
 import React from 'react';
-import { GlassCard } from './GlassCard';
+import Card from '../../ui/Card';
 import { IconButton } from './IconButton';
 
 interface StatsCardProps {
@@ -20,7 +20,7 @@ export function StatsCard({
   href
 }: StatsCardProps) {
   return (
-    <GlassCard className="p-4 md:p-6 lg:p-8 hidden md:flex md:flex-col gap-4 min-w-40 md:min-w-50">
+    <Card className="p-4 md:p-6 lg:p-8 hidden md:flex md:flex-col gap-4 min-w-40 md:min-w-50">
       <div>
         <div className="text-3xl md:text-4xl font-normal text-secondary tracking-tight">
           {value}
@@ -38,6 +38,6 @@ export function StatsCard({
         href={href}
         className="self-start"
       />
-    </GlassCard>
+    </Card>
   );
 }

@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui/Card";
 import Reveal from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ export default function CTASection() {
 		>
 			<div className="mx-auto w-full max-w-4xl px-6 md:px-10">
 				<Reveal direction="up" duration={800}>
-					<div className="relative overflow-hidden rounded-3xl border border-accent/20  p-10 md:p-16 text-center">
+					<Card className="relative overflow-hidden p-10 md:p-16 text-center">
 						<span
 							className="absolute right-5 top-5 text-[280px] font-display text-accent/10 pointer-events-none select-none leading-none"
 							aria-hidden="true"
@@ -47,12 +48,12 @@ export default function CTASection() {
 							</Link>
 							<Link
 								href="/experience"
-								className="inline-flex items-center gap-2 rounded-full bg-surface  px-8 py-3 shadow-lg text-sm font-semibold text-on-surface transition-all duration-300 hover:border-accent/40 hover:text-accent"
+								className="inline-flex items-center gap-2 rounded-full bg-secondary  px-8 py-3 shadow-lg text-sm font-semibold text-surface transition-all duration-300 hover:border-accent/40 hover:text-accent"
 							>
 								View Full Experience
 							</Link>
 						</div>
-					</div>
+					</Card>
 				</Reveal>
 			</div>
 		</section>

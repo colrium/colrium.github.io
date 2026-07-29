@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import Reveal from "@/components/ui/Reveal";
 
 const engagements = [
@@ -60,7 +61,7 @@ export default function Engagements() {
 							direction="up"
 							duration={600}
 						>
-							<article className="rounded-3xl border border-accent/10 bg-surface p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)] hover:border-accent/20">
+							<Card component="article" className="p-6">
 								<span
 									className="material-symbols-outlined text-primary"
 									aria-hidden="true"
@@ -73,7 +74,7 @@ export default function Engagements() {
 								<p className="mt-4 text-sm leading-7 text-on-surface/70">
 									{item.copy}
 								</p>
-							</article>
+							</Card>
 						</Reveal>
 					))}
 				</div>

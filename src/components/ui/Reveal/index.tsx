@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "@/lib/hooks/useInView";
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 
 interface RevealProps {
 	children: ReactNode;
@@ -18,7 +18,8 @@ export default function Reveal({
 	direction = "up",
 	duration = 700,
 }: RevealProps) {
-	const { ref, inView } = useInView({ threshold: 0.05 });
+    const ref = useRef<HTMLDivElement | null>(null);
+	const inView = useInView(ref, { threshold: 0.05 });
 
 	const getTransform = () => {
 		if (inView) return "translate(0,0)";

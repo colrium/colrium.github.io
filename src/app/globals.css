@@ -100,7 +100,7 @@ body {
 }
 
 .font-display {
-    font-family: var(--font-epilogue), 'Epilogue', Georgia, serif !important;
+    font-family: var(--font-display), serif !important;
 }
 
 section.panel .layer-bg {

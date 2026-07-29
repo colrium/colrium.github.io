@@ -11,50 +11,12 @@ export default function ContactHero() {
 					}}
 				/>
 			</div>
-			<div className="absolute inset-0 flex items-center justify-center">
-				<div
-					className="absolute w-lg h-128 rounded-full border border-accent/15"
-					style={{ animation: "pulse-scale 4s ease-in-out infinite" }}
-				/>
-				<div
-					className="absolute w-[24rem] h-96 rounded-full border border-primary/15"
-					style={{
-						animation: "pulse-scale 4s ease-in-out infinite",
-						animationDelay: "1s",
-					}}
-				/>
-				<div
-					className="absolute w-[16rem] h-64 rounded-full border border-secondary/15"
-					style={{
-						animation: "pulse-scale 4s ease-in-out infinite",
-						animationDelay: "2s",
-					}}
-				/>
-			</div>
+			
 
-			{/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
-				{[...Array(12)].map((_, i) => (
-					<span
-						key={i}
-						className="absolute w-1 h-1 rounded-full"
-						style={{
-							background: i % 3 === 0
-								? "var(--accent)"
-								: i % 3 === 1
-									? "var(--primary)"
-									: "var(--secondary)",
-							top: `${20 + (i * 7) % 60}%`,
-							left: `${10 + (i * 11) % 80}%`,
-							opacity: 0.4,
-							animation: `float-up ${3 + (i % 3) * 1.5}s ease-in-out infinite`,
-							animationDelay: `${i * 0.4}s`,
-						}}
-					/>
-				))}
-			</div> */}
+			
 
 			<div className="relative z-10 flex flex-col items-center text-center px-6">
-				<span className="inline-flex rounded-full  border border-secondary/20 px-4 py-2 text-sm text-on-surface mb-6">
+				<span className="inline-flex rounded-full bg-surface  border border-secondary/20 px-4 py-2 text-sm text-on-surface mb-6">
 					Get in Touch
 				</span>
 				<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-on-surface tracking-tight leading-[1.05] max-w-3xl">

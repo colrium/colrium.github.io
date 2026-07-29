@@ -13,31 +13,28 @@ const milestones = [
 
 export default function ExperienceHero() {
 	return (
-		<div className="relative w-full min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-surface">
-			<div className="flex flex-col relative items-center justify-center gap-12 md:gap-16">
-				<div
-					className="w-80 h-80  bg-surface-tint relative flex items-center justify-center "
-					style={{
-						animation: "morph-shape 8s ease-in-out infinite",
-					}}
-				>
-					<div className="flex flex-col items-center">
-						<CountUp
-							from={0}
-							to={9}
-							suffix="+"
-							className="text-9xl font-bold text-secondary leading-none select-none"
-						/>
-						<span className="text-sm text-on-surface-mute tracking-widest uppercase mt-2">
-							Years
-						</span>
-					</div>
-				</div>
-
-				<div className="relative z-10 flex flex-col items-center text-center px-6">
-					<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface mb-6">
-						Experience
+		<div className="relative w-full min-h-[80vh] md:min-h-[90vh] py-16 pt-48 md:pt-24 flex flex-col items-center justify-center overflow-hidden">
+			<div
+				className="w-80 h-80 bg-surface my-8 flex items-center justify-center "
+				style={{
+					animation: "morph-shape 8s ease-in-out infinite",
+				}}
+			>
+				<div className="flex flex-col items-center">
+					<CountUp
+						from={0}
+						to={9}
+						suffix="+"
+						className="text-9xl font-bold text-secondary leading-none select-none"
+					/>
+					<span className="text-sm text-on-surface-mute tracking-widest uppercase mt-2">
+						Years
 					</span>
+				</div>
+			</div>
+			<div className="flex flex-col relative items-center justify-center gap-12 md:gap-16 ">
+				<div className="relative z-10 flex flex-col items-center text-center px-6">
+					
 					<ShuffleText
 						component="h1"
 						className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-on-surface tracking-tight leading-[1.05] max-w-4xl"

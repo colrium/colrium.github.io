@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import Reveal from "@/components/ui/Reveal";
 
 const valueProps = [
@@ -56,7 +57,10 @@ export default function ValueSection() {
 							direction="up"
 							duration={600}
 						>
-							<article className="flex h-full flex-col rounded-3xl border border-accent/10 bg-surface p-8 transition-all duration-400 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)]">
+							<Card
+								component={"article"}
+								className="flex h-full flex-col p-8"
+							>
 								<span
 									className="material-symbols-outlined text-4xl text-primary"
 									aria-hidden="true"
@@ -69,7 +73,7 @@ export default function ValueSection() {
 								<p className="mt-4 text-sm leading-7 text-on-surface/70">
 									{item.description}
 								</p>
-							</article>
+							</Card>
 						</Reveal>
 					))}
 				</div>

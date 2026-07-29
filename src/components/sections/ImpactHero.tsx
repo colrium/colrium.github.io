@@ -16,7 +16,7 @@ const bars = [
 
 export default function ImpactHero() {
 	return (
-		<div className="relative w-full min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-surface-tint">
+		<div className="relative w-full min-h-[80vh] md:min-h-[90vh] py-8 pt-48 md:pt-24 flex items-center justify-center overflow-hidden">
 			<div className="absolute inset-0 flex items-center justify-center">
 				<div
 					className="absolute w-120 h-120 opacity-[0.03]"
@@ -29,9 +29,6 @@ export default function ImpactHero() {
 			</div>
 
 			<div className="relative z-10 flex flex-col items-center text-center px-6 py-8">
-				<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface mb-6">
-					Impact
-				</span>
 				<div className="flex flex-col md:flex-row gap-16 my-8 items-center">
 					<div className="flex flex-col gap-4 my-6 items-center">
 						<CountUp
@@ -40,14 +37,16 @@ export default function ImpactHero() {
 							suffix="%"
 							className="text-9xl font-bold text-primary leading-none select-none"
 						/>
-						<span className="text-md text-secondary tracking-widest uppercase mt-2">
+						<span className="text-xl text-secondary tracking-widest uppercase mt-2">
 							CSAT
 						</span>
 					</div>
 				</div>
-
+				<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface mb-6">
+					Impact
+				</span>
 				<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-on-surface tracking-tight leading-[1.05] max-w-4xl">
-					Numbers That <span className="text-accent">Speak</span> to
+					Numbers That <span className="text-primary">Speak</span> to
 					Reliable Delivery
 				</h1>
 				<p className="mt-6 text-base md:text-lg text-on-surface/60 max-w-xl leading-relaxed">

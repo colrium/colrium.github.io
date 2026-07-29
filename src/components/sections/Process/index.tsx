@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import Reveal from "@/components/ui/Reveal";
 
 const steps = [
@@ -47,7 +48,7 @@ export default function Process() {
 					</h2>
 				</div>
 
-				<div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-accent/10 bg-surface md:grid-cols-2 lg:grid-cols-4">
+				<Card className="mt-14 grid gap-px overflow-hidden  md:grid-cols-2 lg:grid-cols-4">
 					{steps.map((step, i) => (
 						<Reveal
 							key={step.number}
@@ -56,7 +57,7 @@ export default function Process() {
 							duration={600}
 						>
 							<article className="min-h-70 p-6">
-								<p className="font-display text-6xl text-secondary/30">
+								<p className="text-2xl font-bold text-secondary">
 									{step.number}
 								</p>
 								<h3 className="mt-8 text-xl font-semibold text-on-surface">
@@ -68,7 +69,7 @@ export default function Process() {
 							</article>
 						</Reveal>
 					))}
-				</div>
+				</Card>
 			</div>
 		</section>
 	);

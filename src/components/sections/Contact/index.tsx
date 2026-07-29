@@ -69,7 +69,7 @@ export default function Contact() {
 						>
 							<a
 								href={link.href}
-								className="group flex items-center justify-between gap-4 rounded-3xl border border-accent/10 bg-surface-tint p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-[0_0_20px_rgba(255,153,28,0.06)]"
+								className="group flex items-center justify-between gap-4 rounded-3xl border border-accent/10 bg-surface p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-[0_0_20px_rgba(255,153,28,0.06)]"
 							>
 								<span>
 									<span className="block text-sm font-semibold uppercase tracking-[0.18em] text-accent">

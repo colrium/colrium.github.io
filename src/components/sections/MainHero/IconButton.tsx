@@ -48,7 +48,7 @@ export function IconButton({
 			className={`${baseClasses} ${variantClasses[variant]} ${className}`}
 		>
 			<div className="bg-surface/20 p-2 md:p-1 rounded-full flex items-center justify-center">
-				<span className="material-symbols-outlined text-sm md:text-sm">
+				<span className="material-symbols-outlined text-xs! md:text-sm!">
 					{icon}
 				</span>
 			</div>

@@ -2,11 +2,8 @@
 
 import { useEffect, useState, useRef } from "react";
 import ShuffleText from "../ui/ShuffleText";
-import useOnNavigate from "@/lib/hooks/useOnNavigate";
 
 export default function PageLoader() {
-    const fetchloading = useOnNavigate();
-	console.log("fetchloading", fetchloading);
 	const [progress, setProgress] = useState(0);
 	const [exiting, setExiting] = useState(false);
 	const [gone, setGone] = useState(false);
@@ -101,9 +98,9 @@ export default function PageLoader() {
 	return (
 		<div
 			ref={overlayRef}
-			className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center select-none transition-opacity duration-700
+			className={`fixed inset-0 z-9999 flex flex-col items-center justify-center select-none transition-opacity duration-700 bg-surface-tint
         ${exiting ? "opacity-0 pointer-events-none" : "opacity-100"}`}
-			style={{ backgroundColor: "var(--surface-tint)" }}
+			// style={{ backgroundColor: "var(--surface-tint)" }}
 		>
 			<div className="flex flex-col items-center gap-10">
 				<ShuffleText
@@ -121,10 +118,9 @@ export default function PageLoader() {
 					}}
 				>
 					<div
-						className="h-full rounded-full transition-[width] duration-150 ease-out"
+						className="h-full rounded-full transition-[width] duration-150 ease-out bg-accent"
 						style={{
 							width: `${progress}%`,
-							backgroundColor: "var(--accent)",
 						}}
 					/>
 				</div>

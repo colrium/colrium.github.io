@@ -1,5 +1,6 @@
 "use client";
 
+import Card from "@/components/ui/Card";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 
@@ -60,7 +61,7 @@ export default function ProjectSlider() {
 					</p>
 				</div>
 
-				<div className="relative overflow-hidden rounded-3xl border border-accent/20 bg-surface">
+				<Card className="relative overflow-hidden">
 					<div className="relative aspect-video w-full">
 						{slides.map((slide, i) => (
 							<div
@@ -103,7 +104,7 @@ export default function ProjectSlider() {
 							/>
 						))}
 					</div>
-				</div>
+				</Card>
 			</div>
 		</section>
 	);

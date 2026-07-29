@@ -1,3 +1,4 @@
+import Card from "@/components/ui/Card";
 import Reveal from "@/components/ui/Reveal";
 
 	const projects = [
@@ -118,7 +119,10 @@ export default function FeaturedProjects() {
 							direction="up"
 							duration={600}
 						>
-							<article className="flex min-h-90 h-full flex-col justify-between rounded-3xl border  bg-surface border-accent/20 p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card">
+							<Card
+								component={"article"}
+								className="flex min-h-90 h-full flex-col justify-between p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card"
+							>
 								<div>
 									<div className="mb-8 flex items-center justify-between gap-4">
 										<span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
@@ -167,7 +171,7 @@ export default function FeaturedProjects() {
 										))}
 									</div>
 								</div>
-							</article>
+							</Card>
 						</Reveal>
 					))}
 				</div>

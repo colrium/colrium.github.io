@@ -34,7 +34,7 @@ export default function Home() {
 							</div>
 						}
 						onToggleEasterEgg={() => {
-							// setGameMode((prev) => !prev);
+							setGameMode((prev) => !prev);
 						}}
 						statsLabel="Years of Experience"
 						description="I build systems that scale. Polyglot engineer with 9+ years across web, mobile, and backend, turning specs into shipped, secure software."

@@ -4,6 +4,7 @@ import Devices from '@/components/ui/Devices';
 import ShuffleText from '@/components/ui/ShuffleText';
 import Reveal from '@/components/ui/Reveal';
 import React from 'react';
+import Card from '@/components/ui/Card';
 
 const skillsData = {
 	tag: 'Skills & Stack',
@@ -46,7 +47,7 @@ const skillsData = {
 
 function CategoryCard({ label, items }: { label: string; items: string[] }) {
 	return (
-		<div className="rounded-2xl border border-accent/10 bg-surface p-6 shadow-sm h-full">
+		<Card className="p-6 h-full">
 			<h4 className="text-lg font-semibold text-on-surface-mute mb-3">{label}</h4>
 			<ul className="flex flex-col gap-2">
 				{items.map((it) => (
@@ -55,7 +56,7 @@ function CategoryCard({ label, items }: { label: string; items: string[] }) {
 					</li>
 				))}
 			</ul>
-		</div>
+		</Card>
 	);
 }
 
@@ -68,7 +69,7 @@ export default function Skills() {
 		>
 			<div className="mx-auto w-full max-w-7xl px-6 md:px-10 flex flex-col items-center gap-16  p-10 md:p-16">
 				<div className="w-full items-center justify-center flex flex-col gap-6 md:gap-8">
-					<div className="w-full my-4">
+					<div className="w-full my-2">
 						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
 					</div>
 					<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface">

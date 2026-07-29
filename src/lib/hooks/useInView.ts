@@ -8,12 +8,14 @@ interface UseInViewOptions {
 	once?: boolean;
 }
 
-export function useInView({
-	threshold = 0.1,
-	rootMargin = "0px 0px -60px 0px",
-	once = true,
-}: UseInViewOptions = {}) {
-	const ref = useRef<HTMLDivElement>(null);
+export function useInView(
+	ref: React.RefObject<HTMLElement | null>,
+	{
+		threshold = 0.1,
+		rootMargin = "0px 0px -60px 0px",
+		once = true,
+	}: UseInViewOptions = {},
+) {
 	const [inView, setInView] = useState(false);
 
 	useEffect(() => {
@@ -29,12 +31,12 @@ export function useInView({
 					setInView(false);
 				}
 			},
-			{ threshold, rootMargin }
+			{ threshold, rootMargin },
 		);
 
 		observer.observe(el);
 		return () => observer.disconnect();
-	}, [threshold, rootMargin, once]);
+	}, [threshold, rootMargin, once, ref]);
 
-	return { ref, inView };
+	return inView;
 }

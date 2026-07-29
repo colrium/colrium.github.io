@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui/Card";
 import Reveal from "@/components/ui/Reveal";
 
 const testimonials = [
@@ -55,7 +56,7 @@ export default function Testimonials() {
 							direction="up"
 							duration={600}
 						>
-							<blockquote className="flex h-full flex-col justify-between rounded-3xl  bg-surface border border-accent/10  p-8 transition-all duration-400 hover:-translate-y-1 hover:border-accent/20">
+							<Card component={'blockquote'} className="flex h-full flex-col justify-between">
 								<p className="text-sm leading-7 text-on-surface/70 italic">
 									&ldquo;{item.quote}&rdquo;
 								</p>
@@ -67,7 +68,7 @@ export default function Testimonials() {
 										{item.role}
 									</span>
 								</footer>
-							</blockquote>
+							</Card>
 						</Reveal>
 					))}
 				</div>

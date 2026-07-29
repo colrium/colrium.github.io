@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs */
 "use client";
 
 import { useEffect, useRef, useCallback, useState } from "react";
@@ -1514,6 +1515,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 					)}
 
 					{/* Pause overlay */}
+					
 					{paused && s.gameState !== "over" && (
 						<div className="absolute inset-0 z-20 flex items-center justify-center rounded-xl bg-black/50 backdrop-blur-[2px]">
 							<span className="text-2xl font-bold tracking-[0.3em] text-white/70">
