@@ -30,13 +30,13 @@ export function IconButton({
 			"bg-accent text-surface pl-1.5 pr-5 py-1.5 hover:bg-accent-dark",
 	};
 
-	return href? (
+	return href ? (
 		<Link
 			href={href}
 			className={`${baseClasses} ${variantClasses[variant]} ${className}`}
 		>
-			<div className=" p-1 md:p-0 rounded-full flex items-center justify-center">
-				<span className="material-symbols-outlined text-surface text-xs">
+			<div className=" p-0.5  md:px-2 rounded-full flex items-center justify-center">
+				<span className="material-symbols-outlined text-surface text-sm md:text-sm">
 					{icon}
 				</span>
 			</div>

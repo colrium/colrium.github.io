@@ -48,13 +48,7 @@
     --on-surface-mute: #6b6b6b;
 }
 
-body.dark {
-    /* Dark Theme */
-    --surface: #000000;  
-    --surface-tint: #1c1c1c;
-    --on-surface: #f1f1f1;
-    --on-surface-mute: #7a7a7a;
-}
+
 
 @theme inline {
     --color-primary: var(--primary);
