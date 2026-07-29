@@ -121,7 +121,7 @@ export default function FeaturedProjects() {
 						>
 							<Card
 								component={"article"}
-								className="flex min-h-90 h-full flex-col justify-between p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card"
+								className="flex min-h-90 h-full flex-col justify-between p-6 transition-all duration-400 hover:border-accent/50 group/card"
 							>
 								<div>
 									<div className="mb-8 flex items-center justify-between gap-4">

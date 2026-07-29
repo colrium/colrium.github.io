@@ -39,16 +39,16 @@ export default function CTASection() {
 								className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-semibold text-surface shadow-lg transition-all duration-300 hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(255,153,28,0.3)]"
 							>
 								Get in Touch
-								{/* <span
+								<span
 									className="material-symbols-outlined text-sm"
 									aria-hidden="true"
 								>
 									arrow_forward
-								</span> */}
+								</span>
 							</Link>
 							<Link
 								href="/experience"
-								className="inline-flex items-center gap-2 rounded-full bg-secondary  px-8 py-3 shadow-lg text-sm font-semibold text-surface transition-all duration-300 hover:border-accent/40 hover:text-accent"
+								className="inline-flex items-center gap-2 rounded-full bg-secondary  px-8 py-3 shadow-lg text-sm font-semibold text-surface transition-all duration-250 hover:bg-surface hover:text-on-surface hover:border-on-surface/10"
 							>
 								View Full Experience
 							</Link>
