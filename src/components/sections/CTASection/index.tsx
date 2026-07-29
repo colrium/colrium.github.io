@@ -13,7 +13,7 @@ export default function CTASection() {
 				<Reveal direction="up" duration={800}>
 					<Card className="relative overflow-hidden p-10 md:p-16 text-center">
 						<span
-							className="absolute right-5 top-5 text-[280px] font-display text-accent/10 pointer-events-none select-none leading-none"
+							className="hidden md:absolute right-4 top-4 text-[280px] font-display text-on-surface-mute opacity-10 pointer-events-none select-none leading-none"
 							aria-hidden="true"
 						>
 							?
@@ -36,21 +36,27 @@ export default function CTASection() {
 						<div className="relative mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
 							<Link
 								href="/contact"
-								className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-semibold text-surface shadow-lg transition-all duration-300 hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(255,153,28,0.3)]"
+								className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-semibold text-surface shadow-lg transition-all duration-250 border border-accent/20 hover:bg-transparent hover:text-accent hover:border-accent/50 hover:shadow-none"
 							>
-								Get in Touch
+								<span>Get in Touch</span>
 								<span
-									className="material-symbols-outlined text-sm"
+									className="material-symbols-outlined text-sm!"
 									aria-hidden="true"
 								>
-									arrow_forward
+									chat_bubble
 								</span>
 							</Link>
 							<Link
 								href="/experience"
-								className="inline-flex items-center gap-2 rounded-full bg-secondary  px-8 py-3 shadow-lg text-sm font-semibold text-surface transition-all duration-250 hover:bg-surface hover:text-on-surface hover:border-on-surface/10"
+								className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-secondary  px-8 py-3 shadow-lg text-sm font-semibold text-surface transition-all duration-250 border border-secondary/20 hover:bg-transparent hover:text-secondary hover:border-secondary/50 hover:shadow-none"
 							>
-								View Full Experience
+								<span>View Full Experience</span>
+								<span
+									className="material-symbols-outlined text-sm!"
+									aria-hidden="true"
+								>
+									lab_profile
+								</span>
 							</Link>
 						</div>
 					</Card>
