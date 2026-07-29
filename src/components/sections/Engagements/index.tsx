@@ -31,12 +31,12 @@ export default function Engagements() {
 	return (
 		<section
 			id="engagements"
-			className="w-full bg-surface py-16 md:py-24"
+			className="w-full py-16 md:py-24"
 			aria-labelledby="engagements-heading"
 		>
 			<div className="mx-auto grid w-full max-w-7xl gap-12 px-6 md:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 				<div>
-					<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
+					<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 bg-surface text-sm text-on-surface">
 						Best Fit
 					</span>
 					<h2
@@ -55,7 +55,7 @@ export default function Engagements() {
 					{engagements.map((item, i) => (
 						<Reveal key={item.title} delay={i * 100} direction="up" duration={600}>
 						<article
-							className="rounded-lg border border-on-surface/10 bg-surface-tint p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)] hover:border-accent/20"
+							className="rounded-3xl border border-accent/10 bg-surface p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)] hover:border-accent/20"
 						>
 							<span
 								className="material-symbols-outlined text-accent"

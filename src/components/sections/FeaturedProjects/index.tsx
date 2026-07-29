@@ -87,58 +87,64 @@ export default function FeaturedProjects() {
 			<div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 md:px-10">
 				<div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
 					<div className="max-w-2xl">
-						<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">                            
+						<span className="inline-flex rounded-full bg-surface border border-accent/20 px-4 py-2 text-sm text-on-surface">
 							Selected Work
 						</span>
 						<h2
 							id="featured-projects-heading"
 							className="mt-8 text-3xl font-semibold tracking-tight text-on-surface sm:text-4xl md:text-5xl"
 						>
-							Practical systems shipped across organizations, sports, health, transport, finance, and climate sectors.
+							Practical systems shipped across organizations,
+							sports, health, transport, finance, and climate
+							sectors.
 						</h2>
 					</div>
 					<p className="max-w-md text-sm leading-7 text-on-surface/70 md:text-base">
-						A few examples from product work and personal experiments,
-						grounded in real users, real constraints, and measurable outcomes.
+						A few examples from product work and personal
+						experiments, grounded in real users, real constraints,
+						and measurable outcomes.
 					</p>
 				</div>
 
 				<div className="grid gap-4 lg:grid-cols-3">
 					{projects.map((project, i) => (
-						<Reveal key={project.title} delay={i * 80} direction="up" duration={600}>
-						<article
-							className="flex min-h-90 h-full flex-col justify-between rounded-xl border border-accent/20 p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card"
+						<Reveal
+							key={project.title}
+							delay={i * 80}
+							direction="up"
+							duration={600}
 						>
-							<div>
-								<div className="mb-8 flex items-center justify-between gap-4">
-									<span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-										{project.type}
-									</span>
-								</div>
-								<h3 className="text-2xl font-semibold text-on-surface">
-									{project.title}
-								</h3>
-								<p className="mt-5 text-sm leading-7 text-on-surface/70">
-									{project.description}
-								</p>
-							</div>
-
-							<div className="mt-10">
-								<p className="border-l border-secondary pl-4 text-sm leading-6 text-on-surface">
-									{project.outcome}
-								</p>
-								<div className="mt-6 flex flex-wrap gap-2">
-									{project.stack.map((item) => (
-										<span
-											key={item}
-											className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface transition-colors duration-300 group-hover/card:border-accent/30 group-hover/card:text-primary/80"
-										>
-											{item}
+							<article className="flex min-h-90 h-full flex-col justify-between rounded-3xl border  bg-surface border-accent/20 p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.08)] hover:border-accent/50 group/card">
+								<div>
+									<div className="mb-8 flex items-center justify-between gap-4">
+										<span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+											{project.type}
 										</span>
-									))}
+									</div>
+									<h3 className="text-2xl font-semibold text-on-surface">
+										{project.title}
+									</h3>
+									<p className="mt-5 text-sm leading-7 text-on-surface/70">
+										{project.description}
+									</p>
 								</div>
-							</div>
-						</article>
+
+								<div className="mt-10">
+									<p className="border-l border-secondary pl-4 text-sm leading-6 text-on-surface">
+										{project.outcome}
+									</p>
+									<div className="mt-6 flex flex-wrap gap-2">
+										{project.stack.map((item) => (
+											<span
+												key={item}
+												className="rounded-full border border-on-surface/15 px-3 py-1 text-xs text-on-surface transition-colors duration-300 group-hover/card:border-accent/30 group-hover/card:text-primary/80"
+											>
+												{item}
+											</span>
+										))}
+									</div>
+								</div>
+							</article>
 						</Reveal>
 					))}
 				</div>

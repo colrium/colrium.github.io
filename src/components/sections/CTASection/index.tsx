@@ -10,14 +10,14 @@ export default function CTASection() {
 		>
 			<div className="mx-auto w-full max-w-4xl px-6 md:px-10">
 				<Reveal direction="up" duration={800}>
-					<div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-surface-tint p-10 md:p-16 text-center">
+					<div className="relative overflow-hidden rounded-3xl border border-accent/20 bg-surface p-10 md:p-16 text-center">
 						<span
-							className="absolute -right-20 -top-20 text-[280px] font-display text-accent/5 pointer-events-none select-none leading-none"
+							className="absolute right-5 top-5 text-[280px] font-display text-accent/10 pointer-events-none select-none leading-none"
 							aria-hidden="true"
 						>
 							?
 						</span>
-						<span className="relative inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
+						<span className="relative inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm bg-surface-tint text-on-surface">
 							Let&apos;s Build
 						</span>
 						<h2

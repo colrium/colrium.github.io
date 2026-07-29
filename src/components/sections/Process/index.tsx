@@ -36,7 +36,7 @@ export default function Process() {
 		>
 			<div className="mx-auto w-full max-w-7xl px-6 md:px-10">
 				<div className="max-w-3xl">
-					<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
+					<span className="inline-flex rounded-full border border-accent/20 bg-surface px-4 py-2 text-sm text-on-surface">
 						How I Work
 					</span>
 					<h2
@@ -47,22 +47,25 @@ export default function Process() {
 					</h2>
 				</div>
 
-				<div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-primary/10 bg-surface md:grid-cols-2 lg:grid-cols-4">
+				<div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-accent/10 bg-surface md:grid-cols-2 lg:grid-cols-4">
 					{steps.map((step, i) => (
-						<Reveal key={step.number} delay={i * 120} direction="up" duration={600}>
-						<article
-							className="min-h-[280px] p-6"
+						<Reveal
+							key={step.number}
+							delay={i * 120}
+							direction="up"
+							duration={600}
 						>
-							<p className="font-display text-6xl text-accent/30">
-								{step.number}
-							</p>
-							<h3 className="mt-8 text-xl font-semibold text-on-surface">
-								{step.title}
-							</h3>
-							<p className="mt-4 text-sm leading-7 text-on-surface/70">
-								{step.copy}
-							</p>
-						</article>
+							<article className="min-h-70 p-6">
+								<p className="font-display text-6xl text-accent/30">
+									{step.number}
+								</p>
+								<h3 className="mt-8 text-xl font-semibold text-on-surface">
+									{step.title}
+								</h3>
+								<p className="mt-4 text-sm leading-7 text-on-surface/70">
+									{step.copy}
+								</p>
+							</article>
 						</Reveal>
 					))}
 				</div>

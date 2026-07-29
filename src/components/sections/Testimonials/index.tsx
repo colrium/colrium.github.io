@@ -42,8 +42,8 @@ export default function Testimonials() {
 						</h2>
 					</div>
 					<p className="max-w-md text-sm leading-7 text-on-surface/70 md:text-base">
-						The best signal of what it is like to work with someone comes
-						from the people who have done it.
+						The best signal of what it is like to work with someone
+						comes from the people who have done it.
 					</p>
 				</div>
 
@@ -55,7 +55,7 @@ export default function Testimonials() {
 							direction="up"
 							duration={600}
 						>
-							<blockquote className="flex h-full flex-col justify-between rounded-xl border border-on-surface/10 bg-surface-tint p-8 transition-all duration-400 hover:-translate-y-1 hover:border-accent/20">
+							<blockquote className="flex h-full flex-col justify-between rounded-3xl  bg-surface border border-accent/10  p-8 transition-all duration-400 hover:-translate-y-1 hover:border-accent/20">
 								<p className="text-sm leading-7 text-on-surface/70 italic">
 									&ldquo;{item.quote}&rdquo;
 								</p>
