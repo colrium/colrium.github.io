@@ -46,7 +46,7 @@ const skillsData = {
 
 function CategoryCard({ label, items }: { label: string; items: string[] }) {
 	return (
-		<div className="rounded-2xl border border-accent/10 bg-surface-container p-6 shadow-sm h-full">
+		<div className="rounded-2xl border border-accent/10 bg-surface p-6 shadow-sm h-full">
 			<h4 className="text-lg font-semibold text-on-surface-mute mb-3">{label}</h4>
 			<ul className="flex flex-col gap-2">
 				{items.map((it) => (
@@ -71,7 +71,7 @@ export default function Skills() {
 					<div className="w-full my-4">
 						<Devices className="text-[56px] md:text-[64px] xl:text-[72px]" />
 					</div>
-					<span className="inline-flex items-center rounded-full border border-accent/20 px-4 py-2 text-sm font-semibold text-secondary">
+					<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface">
 						{skillsData.tag}
 					</span>
 					<ShuffleText

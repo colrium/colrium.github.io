@@ -31,7 +31,7 @@ export default function ValueSection() {
 			<div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 md:px-10">
 				<div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
 					<div className="max-w-2xl">
-						<span className="inline-flex rounded-full border border-accent/20  bg-surface px-4 py-2 text-sm text-on-surface">
+						<span className="inline-flex rounded-full border border-secondary/20  bg-surface px-4 py-2 text-sm text-on-surface">
 							What You Get
 						</span>
 						<h2
@@ -42,9 +42,9 @@ export default function ValueSection() {
 						</h2>
 					</div>
 					<p className="max-w-md text-sm leading-7 text-on-surface/70 md:text-base">
-						Hiring a contractor is a bet on delivery. Here is what that bet
-						actually buys you - clarity, ownership, and momentum that
-						compounds.
+						Hiring a contractor is a bet on delivery. Here is what
+						that bet actually buys you - clarity, ownership, and
+						momentum that compounds.
 					</p>
 				</div>
 
@@ -58,7 +58,7 @@ export default function ValueSection() {
 						>
 							<article className="flex h-full flex-col rounded-3xl border border-accent/10 bg-surface p-8 transition-all duration-400 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)]">
 								<span
-									className="material-symbols-outlined text-4xl text-accent"
+									className="material-symbols-outlined text-4xl text-primary"
 									aria-hidden="true"
 								>
 									{item.icon.trim()}

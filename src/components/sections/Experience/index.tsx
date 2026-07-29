@@ -75,24 +75,26 @@ export default function Experience() {
 		>
 			<div className="mx-auto grid w-full max-w-7xl gap-12 px-6 md:px-10 lg:grid-cols-[0.9fr_1.1fr]">
 				<div>
-					<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
+					<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface">
 						Experience
 					</span>
 					<h2
 						id="experience-heading"
 						className="mt-8 text-3xl font-semibold tracking-tight text-on-surface sm:text-4xl md:text-5xl"
 					>
-						Nine-plus years turning user requirements into shipped software.
+						Nine-plus years turning user requirements into shipped
+						software.
 					</h2>
 					<p className="mt-6 max-w-xl text-base leading-8 text-on-surface/70">
-						From client platforms and SaaS support to remote product teams,
-						technical leadership, mobile apps, and AI-assisted automation.
+						From client platforms and SaaS support to remote product
+						teams, technical leadership, mobile apps, and
+						AI-assisted automation.
 					</p>
 					<div className="mt-10 flex flex-wrap gap-3">
 						{strengths.map((strength) => (
 							<span
 								key={strength}
-								className="rounded-full bg-surface-tint px-4 py-2 text-sm text-on-surface-mute"
+								className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface"
 							>
 								{strength}
 							</span>
@@ -104,16 +106,18 @@ export default function Experience() {
 					{roles.map((role) => (
 						<article
 							key={`${role.period}-${role.title}`}
-							className="grid gap-5 border-b border-on-surface/10 py-8 md:grid-cols-[160px_1fr]"
+							className="grid gap-5 border-b border-accent/10 py-8 md:grid-cols-[160px_1fr]"
 						>
-							<p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+							<p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
 								{role.period}
 							</p>
 							<div>
 								<h3 className="text-2xl font-semibold text-on-surface">
 									{role.title}
 								</h3>
-								<p className="mt-2 text-sm text-primary">{role.context}</p>
+								<p className="mt-2 text-sm text-primary">
+									{role.context}
+								</p>
 								<p className="mt-4 text-sm leading-7 text-on-surface/70">
 									{role.details}
 								</p>

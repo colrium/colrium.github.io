@@ -36,7 +36,7 @@ export default function Engagements() {
 		>
 			<div className="mx-auto grid w-full max-w-7xl gap-12 px-6 md:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 				<div>
-					<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 bg-surface text-sm text-on-surface">
+					<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface">
 						Best Fit
 					</span>
 					<h2
@@ -46,30 +46,34 @@ export default function Engagements() {
 						Where I can plug in and create momentum.
 					</h2>
 					<p className="mt-6 text-base leading-8 text-on-surface/70">
-						Useful for recruiters, founders, and teams who need to quickly
-						understand the kind of work that matches my background.
+						Useful for recruiters, founders, and teams who need to
+						quickly understand the kind of work that matches my
+						background.
 					</p>
 				</div>
 
 				<div className="grid gap-4 sm:grid-cols-2">
 					{engagements.map((item, i) => (
-						<Reveal key={item.title} delay={i * 100} direction="up" duration={600}>
-						<article
-							className="rounded-3xl border border-accent/10 bg-surface p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)] hover:border-accent/20"
+						<Reveal
+							key={item.title}
+							delay={i * 100}
+							direction="up"
+							duration={600}
 						>
-							<span
-								className="material-symbols-outlined text-accent"
-								aria-hidden="true"
-							>
-								{item.icon}
-							</span>
-							<h3 className="mt-8 text-xl font-semibold text-on-surface">
-								{item.title}
-							</h3>
-							<p className="mt-4 text-sm leading-7 text-on-surface/70">
-								{item.copy}
-							</p>
-						</article>
+							<article className="rounded-3xl border border-accent/10 bg-surface p-6 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(255,153,28,0.06)] hover:border-accent/20">
+								<span
+									className="material-symbols-outlined text-primary"
+									aria-hidden="true"
+								>
+									{item.icon}
+								</span>
+								<h3 className="mt-8 text-xl font-semibold text-on-surface">
+									{item.title}
+								</h3>
+								<p className="mt-4 text-sm leading-7 text-on-surface/70">
+									{item.copy}
+								</p>
+							</article>
 						</Reveal>
 					))}
 				</div>

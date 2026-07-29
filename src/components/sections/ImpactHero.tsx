@@ -29,7 +29,7 @@ export default function ImpactHero() {
 			</div>
 
 			<div className="relative z-10 flex flex-col items-center text-center px-6 py-8">
-				<span className="inline-flex rounded-full border border-accent/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-6">
+				<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface mb-6">
 					Impact
 				</span>
 				<div className="flex flex-col md:flex-row gap-16 my-8 items-center">
@@ -45,7 +45,7 @@ export default function ImpactHero() {
 						</span>
 					</div>
 				</div>
-                    
+
 				<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-on-surface tracking-tight leading-[1.05] max-w-4xl">
 					Numbers That <span className="text-accent">Speak</span> to
 					Reliable Delivery

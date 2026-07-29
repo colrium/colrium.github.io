@@ -55,7 +55,7 @@ export default function CraftAesthetics() {
 					)}
 
 					<div className="px-8">
-						<span className="inline-flex rounded-full bg-transparent px-4 py-2 text-sm  text-on-surface border border-accent/20">
+						<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface">
 							Craft & Aesthetics
 						</span>
 						<ShuffleText
@@ -94,7 +94,7 @@ export default function CraftAesthetics() {
 							{tools.map((tool) => (
 								<span
 									key={tool}
-									className="rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface/75 font-sm "
+									className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface"
 								>
 									{tool}
 								</span>

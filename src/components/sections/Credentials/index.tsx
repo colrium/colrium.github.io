@@ -24,7 +24,7 @@ export default function Credentials() {
 			<div className="mx-auto grid w-full max-w-7xl gap-6 px-6 md:px-10 lg:grid-cols-2">
 				<Reveal direction="up" duration={600} className="h-full">
 					<div className="rounded-lg border border-on-surface/10 bg-surface p-6 md:p-8">
-						<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
+						<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface">
 							Credentials
 						</span>
 						<h2

@@ -31,7 +31,7 @@ export default function Testimonials() {
 			<div className="mx-auto w-full max-w-7xl px-6 md:px-10">
 				<div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
 					<div className="max-w-2xl">
-						<span className="inline-flex rounded-full border border-accent/20 px-4 py-2 text-sm text-on-surface">
+						<span className="inline-flex rounded-full border border-secondary/20 px-4 py-2 text-sm bg-surface text-on-surface">
 							What People Say
 						</span>
 						<h2

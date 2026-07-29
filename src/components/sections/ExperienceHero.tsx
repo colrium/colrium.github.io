@@ -35,7 +35,7 @@ export default function ExperienceHero() {
 				</div>
 
 				<div className="relative z-10 flex flex-col items-center text-center px-6">
-					<span className="inline-flex rounded-full border border-secondary/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-6">
+					<span className="inline-flex rounded-full bg-surface border border-secondary/20 px-4 py-2 text-sm text-on-surface mb-6">
 						Experience
 					</span>
 					<ShuffleText
@@ -56,7 +56,7 @@ export default function ExperienceHero() {
 						{milestones.map((m, i) => (
 							<div
 								key={m.year}
-								className="absolute -top-1 -translate-x-1/2 flex flex-col items-center gap-1"
+								className="absolute -top-0.5 -translate-x-1/2 flex flex-col items-center gap-1"
 								style={{ left: `${i * 25}%` }}
 							>
 								<div className="w-1.5 h-1.5 rounded-full bg-secondary" />
