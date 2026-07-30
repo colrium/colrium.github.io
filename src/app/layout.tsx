@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Epilogue } from "next/font/google";
 import PageLayout from "@/components/layout/PageLayout";
+import "@mdi/font/css/materialdesignicons.min.css";
 import "./globals.css";
 import PageLoader from "@/components/layout/PageLoader";
 import { GameModeProvider } from "@/lib/contexts/GameModeContext";

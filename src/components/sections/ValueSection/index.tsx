@@ -3,19 +3,19 @@ import Reveal from "@/components/ui/Reveal";
 
 const valueProps = [
 	{
-		icon: " rocket_launch",
+		icon: "rocket-launch-outline",
 		title: "Ship With Certainty",
 		description:
 			"You get a software engineer who treats requirements as a conversation, not a handoff. I clarify ambiguity early, prototype fast, and deliver maintainable systems - not just working code.",
 	},
 	{
-		icon: " account_tree",
+		icon: "ray-start-end",
 		title: "End-to-End Ownership",
 		description:
 			"From spec to deployment, I own the full lifecycle. Architecture, security, testing, documentation, and mentoring - you don't need a team of specialists when one engineer brings the whole stack.",
 	},
 	{
-		icon: " sync_alt",
+		icon: "sync",
 		title: "Adapt Quickly, Deliver Faster",
 		description:
 			"Nine years across web, mobile, backend, and AI automation means I adapt to your stack, not the other way around. Less ramp-up time, more shipping momentum from day one.",
@@ -62,11 +62,9 @@ export default function ValueSection() {
 								className="flex h-full flex-col p-8"
 							>
 								<span
-									className="material-symbols-outlined text-4xl text-primary"
+									className={`mdi mdi-${item.icon} text-4xl text-primary`}
 									aria-hidden="true"
-								>
-									{item.icon.trim()}
-								</span>
+								/>
 								<h3 className="mt-8 text-xl font-semibold text-on-surface">
 									{item.title}
 								</h3>

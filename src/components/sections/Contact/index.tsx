@@ -5,31 +5,31 @@ const contactLinks = [
 		label: "Email",
 		value: "colrium@gmail.com",
 		href: "mailto:colrium@gmail.com",
-		icon: "mail",
+		icon: "gmail",
 	},
 	{
 		label: "Phone",
 		value: "+254 724 146 857",
 		href: "tel:+254724146857",
-		icon: "call",
+		icon: "phone",
 	},
 	{
 		label: "GitHub",
 		value: "github.com/colrium",
 		href: "https://github.com/colrium",
-		icon: "code",
+		icon: "github",
 	},
 	{
 		label: "LinkedIn",
 		value: "linkedin.com/in/colrium",
 		href: "https://www.linkedin.com/in/colrium",
-		icon: "badge",
+		icon: "linkedin",
 	},
 	{
 		label: "Resume",
 		value: "Download CV",
 		href: "/Software-Engineer-Collins-Riungu-resume.pdf",
-		icon: "description",
+		icon: "download",
 	},
 ];
 
@@ -80,11 +80,8 @@ export default function Contact() {
 									</span>
 								</span>
 								<span
-									className="material-symbols-outlined text-primary transition group-hover:translate-x-1"
-									aria-hidden="true"
-								>
-									{link.icon}
-								</span>
+									className={`mdi mdi-${link.icon} text-xl text-primary transition group-hover:translate-x-1`}
+								/>
 							</a>
 						</Reveal>
 					))}

@@ -36,9 +36,7 @@ export function IconButton({
 			className={`${baseClasses} ${variantClasses[variant]} ${className}`}
 		>
 			<div className=" p-0.5  md:px-2 rounded-full flex items-center justify-center">
-				<span className="material-symbols-outlined text-surface text-sm md:text-sm">
-					{icon}
-				</span>
+				<span className={`mdi mdi-${icon} text-xs! md:text-sm!`} />
 			</div>
 			{label && <span className="text-sm font-medium">{label}</span>}
 		</Link>
@@ -48,9 +46,7 @@ export function IconButton({
 			className={`${baseClasses} ${variantClasses[variant]} ${className}`}
 		>
 			<div className="bg-surface/20 p-2 md:p-1 rounded-full flex items-center justify-center">
-				<span className="material-symbols-outlined text-xs! md:text-sm!">
-					{icon}
-				</span>
+				<span className={`mdi mdi-${icon} text-xs! md:text-sm!`} />
 			</div>
 			{label && <span className="text-sm font-medium">{label}</span>}
 		</button>

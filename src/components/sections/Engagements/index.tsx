@@ -4,27 +4,23 @@ import Reveal from "@/components/ui/Reveal";
 const engagements = [
 	{
 		title: "Remote Product Engineering",
-		icon: "terminal",
-		copy:
-			"Feature delivery, refactoring, code review, API work, and frontend systems inside distributed teams.",
+		icon: "remote-desktop",
+		copy: "Feature delivery, refactoring, code review, API work, and frontend systems inside distributed teams.",
 	},
 	{
 		title: "AI Automation Contracts",
-		icon: "auto_awesome",
-		copy:
-			"Short, focused automation builds for documentation, testing, prototyping, search, and productivity workflows.",
+		icon: "auto-fix",
+		copy: "Short, focused automation builds for documentation, testing, prototyping, search, and productivity workflows.",
 	},
 	{
 		title: "Mobile and Field Tools",
-		icon: "smartphone",
-		copy:
-			"React Native, Android, and iOS delivery for teams that need reliable mobile workflows in production.",
+		icon: "cellphone",
+		copy: "React Native, Android, and iOS delivery for teams that need reliable mobile workflows in production.",
 	},
 	{
 		title: "Technical Leadership",
-		icon: "hub",
-		copy:
-			"Architecture notes, migration planning, mentoring, delivery hygiene, and maintainable team practices.",
+		icon: "hub-outline",
+		copy: "Architecture notes, migration planning, mentoring, delivery hygiene, and maintainable team practices.",
 	},
 ];
 
@@ -63,11 +59,9 @@ export default function Engagements() {
 						>
 							<Card component="article" className="p-6">
 								<span
-									className="material-symbols-outlined text-primary"
+									className={`mdi mdi-${item.icon} text-primary`}
 									aria-hidden="true"
-								>
-									{item.icon}
-								</span>
+								/>
 								<h3 className="mt-8 text-xl font-semibold text-on-surface">
 									{item.title}
 								</h3>

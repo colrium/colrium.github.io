@@ -54,9 +54,7 @@ export function DocFooter({
 						<span className="text-sm font-medium">
 							{description}
 						</span>
-						{/* <span className="material-symbols-outlined text-xs group-hover:translate-x-0.5 transition-transform">
-							chevron_right
-						</span> */}
+						
 					</div>
 				</div>
 				<Image  className="w-12 h-12 bg-surface rounded-full shadow-sm" src="/media/dp.png" alt="Avatar" width={48} height={48} />

@@ -228,7 +228,7 @@ export default function MainHero({
 	videosrc,
 	tagline,
 	badgeLabel = "SWE",
-	badgeIcon = "code",
+	badgeIcon = "code-tags",
 	title = "Fluid Asset Streams",
 	description = "Polyglot engineer with an unreasonable fondness for clean architecture. Based in Nairobi, fully remote-native, and always building something worth shipping.",
 	statsValue = "9+",

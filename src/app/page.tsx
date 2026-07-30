@@ -44,7 +44,7 @@ export default function Home() {
 					<Process />
 					<Engagements />
 					{/* <ImpactHighlights /> */}
-					<FeaturedProjects />
+					<FeaturedProjects minimal />
 					<Testimonials />
 					<CTASection />
 				</main>

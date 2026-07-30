@@ -27,9 +27,7 @@ export function HeroBadge({ icon, label, onToggleEasterEgg }: HeroBadgeProps) {
         onMouseLeave={() => setHint(false)}
         className="flex items-center gap-2 px-4 py-2 rounded-full bg-transparent backdrop-blur-md border border-accent/20 mx-auto w-fit shadow-sm cursor-pointer transition-all duration-500 hover:border-accent/60 hover:shadow-[0_0_20px_rgba(255,153,28,0.15)] animate-hero-badge-pulse"
       >
-        <span className="material-symbols-outlined text-sm text-accent">
-          {icon}
-        </span>
+        <span className={`mdi mdi-${icon} text-sm text-accent`} /> 
         <span className="text-sm font-thin text-on-surface">
           {label}
         </span>

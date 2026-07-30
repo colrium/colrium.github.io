@@ -25,9 +25,7 @@ export default function Error({ error, unstable_retry }: ErrorProps) {
 					onClick={() => unstable_retry()}
 					className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-on-surface transition hover:bg-accent-dark active:scale-95"
 				>
-					<span className="material-symbols-outlined text-base">
-						refresh
-					</span>
+					<span className="mdi min-refresh text-base" />
 					Try again
 				</button>
 			}

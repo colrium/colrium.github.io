@@ -40,11 +40,9 @@ export default function CTASection() {
 							>
 								<span>Get in Touch</span>
 								<span
-									className="material-symbols-outlined text-sm!"
+									className="mdi mdi-message-outline text-sm"
 									aria-hidden="true"
-								>
-									chat_bubble
-								</span>
+								/>
 							</Link>
 							<Link
 								href="/experience"
@@ -52,11 +50,9 @@ export default function CTASection() {
 							>
 								<span>View Full Experience</span>
 								<span
-									className="material-symbols-outlined text-sm!"
+									className="mdi mdi-badge-account-outline text-sm"
 									aria-hidden="true"
-								>
-									lab_profile
-								</span>
+								/>
 							</Link>
 						</div>
 					</Card>

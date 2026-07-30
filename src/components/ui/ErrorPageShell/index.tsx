@@ -51,9 +51,7 @@ export default function ErrorPageShell({
 							href={secondaryHref}
 							className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-on-surface/10 px-5 text-sm font-semibold text-on-surface/80 transition hover:border-primary/40 hover:text-primary"
 						>
-							<span className="material-symbols-outlined text-base">
-								home
-							</span>
+							<span className="mdi mdi-home text-base" />
 							{secondaryLabel}
 						</Link>
 					</div>
