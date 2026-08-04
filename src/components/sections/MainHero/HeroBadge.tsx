@@ -57,10 +57,10 @@ export function HeroBadge({
 				<div className="fixed inset-0 flex items-center justify-center pointer-events-none z-[9999]">
 					<span
 						key={count + "-" + visible}
-						className={`text-[12rem] font-extrabold text-accent drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-600 ease-out ${
+						className={`text-[12rem] font-extrabold text-accent drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-1000 ease-out ${
 							visible
 								? "opacity-100 scale-100"
-								: "opacity-0 scale-50"
+								: "opacity-0 scale-10"
 						}`}
 					>
 						{count}
