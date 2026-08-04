@@ -491,14 +491,14 @@ section.panel .layer-bg {
 }
 
 .device_shadow_a,
-.device_shadow_b {
-    background-color: var(--device-screen-color);
+.device_shadow_b {    
     filter: blur(0.375em);
     bottom: 0;
     height: 0.25em;
 }
 
 .device_shadow_a {
+    background-color: var(--color-accent);
     animation-name: device-shadow-a-anim;
     opacity: 0.5;
     left: 1em;
@@ -507,14 +507,13 @@ section.panel .layer-bg {
 
 .device_shadow_b {
     animation-name: device-shadow-b-anim;
+    background-color: var(--device-screen-color);
     opacity: 0.75;
     left: 0;
     width: 4em;
 }
-
 /* Animations */
 @keyframes device-screen {
-
     from,
     to {
         animation-timing-function: cubic-bezier(0.33, 0, 0.67, 0);
@@ -608,7 +607,6 @@ section.panel .layer-bg {
         visibility: visible;
     }
 
-    /* Smart-phone next */
     50%,
     67.5% {
         animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
@@ -621,15 +619,16 @@ section.panel .layer-bg {
     67.6% {
         animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
         left: 0.775em;
-        width: 0.0;
-            height: 0;
+        width: 0;
+        height: 0;
         transform: translateY(-0.15em);
         visibility: hidden;
     }
+
     to {
         animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
         left: 0.875em;
-        width: 0.0;
+        width: 0;
         height: 0;
         transform: translateY(0);
         visibility: hidden;
@@ -642,6 +641,7 @@ section.panel .layer-bg {
         transform: translate(0, 0.375em);
         visibility: hidden;
     }
+
     62.5% {
         animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
         transform: translate(0.375em, 0.375em);
@@ -654,18 +654,18 @@ section.panel .layer-bg {
         transform: translate(0.375em, 0);
         visibility: visible;
     }
+
     87.1% {
         visibility: hidden;
     }
+
     to {
         transform: translate(0, 0.25em);
         visibility: hidden;
     }
-
 }
 
 @keyframes device-monitor-stand-y-anim {
-
     from,
     to {
         animation-timing-function: cubic-bezier(0.33, 0, 0.67, 0);
@@ -696,7 +696,6 @@ section.panel .layer-bg {
 }
 
 @keyframes device-monitor-stand-x-anim {
-
     from,
     to {
         animation-timing-function: cubic-bezier(0.33, 0, 0.67, 0);
@@ -720,7 +719,6 @@ section.panel .layer-bg {
         width: 2em;
         transform: translateY(0.75em);
         visibility: hidden;
-        width: 2em;
     }
 
     87.5% {
@@ -788,22 +786,102 @@ section.panel .layer-bg {
     }
 }
 
+/* Realigned to the same 12.5% grid as device-screen / shadow-b */
 @keyframes device-shadow-a-anim {
     from {
-        animation-timing-function: cubic-bezier(0.33, 0, 0.67, 0);
         filter: blur(0.375em);
+        opacity: 0.5;
+        left: 1em;
+        width: 2em;
+    }
+
+    12.5% {
+        filter: blur(0.1875em);
+        opacity: 0.1;
+        left: 1em;
+        width: 2em;
+    }
+
+    25% {
+        filter: blur(0.375em);
+        opacity: 0.5;
+        left: 1em;
+        width: 2em;
+    }
+
+    37.5% {
+        filter: blur(0.1875em);
+        opacity: 0.2;
+        left: 0;
+        width: 4em;
+    }
+
+    50%,
+    62.5% {
+        filter: blur(0.1875em);
+        opacity: 0.2;
+        left: 1em;
+        width: 2em;
+    }
+
+    75%,
+    87.5% {
+        filter: blur(0.375em);
+        opacity: 0.7;
+        left: 1em;
+        width: 2em;
+    }
+
+    to {
+        filter: blur(0.375em);
+        opacity: 0.5;
+        left: 1em;
+        width: 2em;
+    }
+}
+
+@keyframes device-shadow-b-anim {
+    from {
+        animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
+        filter: blur(0.1875em);
+        opacity: 0.1;
     }
 
     12.5% {
         animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
         filter: blur(0.1875em);
+        opacity: 0.2;
+    }
+
+    25% {
+        animation-timing-function: cubic-bezier(0.33, 0, 0.67, 0);
+        filter: blur(0.375em);
         opacity: 0.5;
     }
 
-    25%,
+    37.5% {
+        animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
+        filter: blur(0.1875em);
+        opacity: 0.2;
+        left: 0;
+        width: 4em;
+    }
+
+    50%,
+    75% {
+        filter: blur(0.175em);
+        opacity: 0.2;
+        left: 1em;
+        width: 2em;
+    }
+
+    62.5%,
+    87.5%,
     to {
         filter: blur(0.375em);
-        opacity: 0;
+        opacity: 0.5;
+        left: 1em;
+        width: 2em;
     }
 }
 
@@ -871,49 +949,4 @@ section.panel .layer-bg {
 }
 .animate-hero-badge-pulse {
 	animation: hero-badge-pulse 3s ease-in-out infinite;
-}
-
-@keyframes device-shadow-b-anim {
-
-    from,
-    12.5% {
-        animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
-        background-color: var(--device-color);
-        filter: blur(0.1875em);
-        opacity: 0;
-    }
-
-    25% {
-        animation-timing-function: cubic-bezier(0.33, 0, 0.67, 0);
-        background-color: var(--device-color);
-        filter: blur(0.375em);
-        opacity: 0.5;
-    }
-
-    37.5% {
-        animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
-        filter: blur(0.1875em);
-        opacity: 0.5;
-        left: 0;
-        width: 4em;
-    }
-
-    50%,
-    75%,
-    to {
-        animation-timing-function: cubic-bezier(0.33, 0, 0.67, 0);
-        filter: blur(0.375em);
-        opacity: 0.5;
-        left: 1em;
-        width: 2em;
-    }
-
-    62.5%,
-    87.5% {
-        animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
-        filter: blur(0.1875em);
-        opacity: 0.5;
-        left: 1em;
-        width: 2em;
-    }
 }

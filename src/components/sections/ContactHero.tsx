@@ -5,7 +5,7 @@ export default function ContactHero() {
 		<div className="relative w-full min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden ">
 			<div className="absolute left-[30%] top-1/3 hidden md:block">
 				<div
-					className="w-[30dvw] h-[30dvw] opacity-50 bg-surface rounded-full"
+					className="w-[20dvw] h-[20dvw] opacity-50 bg-surface rounded-full"
 					style={{
 						animation: "morph-shape 8s ease-in-out infinite",
 					}}

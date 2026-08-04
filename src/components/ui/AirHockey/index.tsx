@@ -1472,10 +1472,10 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 				<div className="relative w-full max-w-[760px] aspect-[760/520] mx-auto touch-none">
 
 					{/* Mobile score overlay */}
-					<div className="lg:hidden absolute top-1 left-1 right-1 flex justify-between items-center px-2 py-1 z-10 bg-black/40 rounded">
-						<span className="font-bold text-xs tracking-widest" style={{color: "#029bc9"}}>YOU {uiScore.p}</span>
-						<span className="text-[8px] tracking-widest text-white/40 uppercase">FIRST TO 7</span>
-						<span className="font-bold text-xs tracking-widest" style={{color: "#FF991C"}}>{uiScore.cpu} CPU</span>
+					<div className="lg:hidden absolute top-1 left-1 right-1 flex justify-between items-center px-2 py-1 z-10 bg-surface/40 rounded">
+						<span className="font-bold text-xs tracking-widest text-primary">YOU {uiScore.p}</span>
+						<span className="text-[8px] tracking-widest text-on-surface/40 uppercase">FIRST TO 7</span>
+						<span className="font-bold text-xs tracking-widest text-accent">{uiScore.cpu} CPU</span>
 					</div>
 
 					<canvas
@@ -1491,7 +1491,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 									s.paused = !s.paused;
 									setPaused(s.paused);
 								}}
-								className="absolute top-2 right-12 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-white/70 hover:bg-white/20 hover:text-white text-sm cursor-pointer"
+								className="absolute top-2 right-12 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-surface/20 text-yellow-500/70 hover:bg-surface/50 hover:text-yellow-500 text-sm cursor-pointer"
 							>
 								{paused ? (
 									<svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 ml-0.5">
@@ -1506,7 +1506,7 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 							{onCloseGame && (
 								<button
 									onClick={onCloseGame}
-									className="absolute top-2 right-3 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-white/70 hover:bg-white/20 hover:text-white text-sm cursor-pointer"
+									className="absolute top-2 right-3 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-surface/20 text-red-500/70 hover:bg-surface/50 hover:text-red-500 text-sm cursor-pointer"
 								>
 									✕
 								</button>
@@ -1517,8 +1517,8 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 					{/* Pause overlay */}
 					
 					{paused && s.gameState !== "over" && (
-						<div className="absolute inset-0 z-20 flex items-center justify-center rounded-xl bg-black/50 backdrop-blur-[2px]">
-							<span className="text-2xl font-bold tracking-[0.3em] text-white/70">
+						<div className="absolute inset-0 z-20 flex items-center justify-center rounded-xl bg-surface/50 backdrop-blur-[2px]">
+							<span className="text-2xl font-bold tracking-[0.3em] text-on-surface/70">
 								PAUSED
 							</span>
 						</div>
@@ -1559,13 +1559,13 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
                                 <div className="flex items-center justify-center gap-6">
                                 <button
 									onClick={startGame}
-									className="px-11 py-3 rounded-full text-sm tracking-widest cursor-pointer border border-primary/25 text-primary hover:bg-primary hover:text-black"
+									className="px-11 py-3 rounded-full text-sm tracking-widest cursor-pointer border border-primary/25 text-primary hover:bg-primary hover:text-surface"
 								>
 									Play Again
 								</button>
                                 {onCloseGame && <button
                                     onClick={onCloseGame}
-                                    className="px-11 py-3 rounded-full text-sm tracking-widest cursor-pointer border border-red-700/25 text-red-700 hover:bg-red-700 hover:text-white "
+                                    className="px-11 py-3 rounded-full text-sm tracking-widest cursor-pointer border border-red-700/25 text-red-700 hover:bg-red-700 hover:text-on-surface "
                                 >
                                     Close Game
                                 </button>}
@@ -1636,12 +1636,12 @@ function StatPanel({
             >
                 {score}
             </div>
-            <div className="w-full h-px bg-white/7 my-1.5" />
+            <div className="w-full h-px bg-surface/7 my-1.5" />
             <StatRow label="STREAK" val={streak} />
             <StatRow label="TOP SPEED" val={speed} />
             <StatRow label="POWER HITS" val={power} />
             <div className="w-full h-px bg-secondary/7 my-1.5" />
-            <div className=" font-medium text-xs tracking-widest text-white/20 text-center uppercase mt-0.5">
+            <div className=" font-medium text-xs tracking-widest text-on-surface/20 text-center uppercase mt-0.5">
                 FIRST TO 7 WINS
             </div>
         </div>
@@ -1651,10 +1651,10 @@ function StatPanel({
 function StatRow({ label, val }: { label: string; val: number }) {
     return (
         <div className="w-full flex justify-between items-center mb-2">
-            <span className=" font-medium text-xs tracking-[1.5px] text-white/30 uppercase">
+            <span className=" font-medium text-xs tracking-[1.5px] text-on-surface/30 uppercase">
                 {label}
             </span>
-            <span className=" font-bold text-xs text-white/75">
+            <span className=" font-bold text-xs text-on-surface/75">
                 {val}
             </span>
         </div>
