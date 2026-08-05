@@ -4,10 +4,10 @@
     --primary: #029bc9;    
     --secondary: #49a100;    
     --accent: #FF991C;
-    --surface: #040615;  
-    --surface-tint: #070922;
-    --on-surface: #f1f1f1;
-    --on-surface-mute: #7a7a7a;
+    --surface: #F7F4EE;
+        --surface-tint: #e7e4de;
+        --on-surface: #1a1a1a;
+        --on-surface-mute: #6b6b6b;
     --primary-light: color-mix(in srgb, var(--primary), white 20%);
         --primary-dark: color-mix(in srgb, var(--primary), black 20%);
     --secondary-light: color-mix(in srgb, var(--secondary), white 20%);
@@ -22,29 +22,28 @@
     --device-screen-color: var(--surface);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
-        /* Dark Theme */
         --surface: #040615;  
         --surface-tint: #070922;
         --on-surface: #f1f1f1;
         --on-surface-mute: #7a7a7a;
     }
-}
+} */
 
 :root,
-[data-theme="dark"] {
-    --surface: #040615;  
-    --surface-tint: #070922;
-    --on-surface: #f1f1f1;
-    --on-surface-mute: #7a7a7a;
-}
-
 [data-theme="light"] {
     --surface: #F7F4EE;
     --surface-tint: #e7e4de;
     --on-surface: #1a1a1a;
     --on-surface-mute: #6b6b6b;
+}
+
+[data-theme="dark"] {
+    --surface: #040615;  
+    --surface-tint: #070922;
+    --on-surface: #f1f1f1;
+    --on-surface-mute: #7a7a7a;
 }
 
 
@@ -949,4 +948,33 @@ section.panel .layer-bg {
 }
 .animate-hero-badge-pulse {
 	animation: hero-badge-pulse 3s ease-in-out infinite;
+}
+
+.countdown-number {
+    animation-name: countdown-cycle;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes countdown-cycle {
+    0% {
+        transform: scale(1.9);
+        opacity: 0.2;
+    }
+        20% {
+            transform: scale(1.25);
+            opacity: 0.8;
+        }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+        70% {
+            transform: scale(0.75);
+            opacity: 0.5;
+        }
+
+    100% {
+        transform: scale(0.1);
+        opacity: 0.1;
+    } 
 }
