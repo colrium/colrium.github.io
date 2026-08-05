@@ -191,6 +191,25 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
         return s.audioCtx;
     }, []);
 
+    function getThemeColor(name: string, fallback: string) {
+        const value = getComputedStyle(document.documentElement)
+            .getPropertyValue(name)
+            .trim();
+        return value || fallback;
+    }
+
+    function hexToRgba(hex: string, alpha: number) {
+        const shorthand = /^#([0-9a-f])([0-9a-f])([0-9a-f])$/i;
+        const normalized = hex.replace(
+            shorthand,
+            (_, r, g, b) => `#${r}${r}${g}${g}${b}${b}`,
+        );
+        const r = parseInt(normalized.slice(1, 3), 16);
+        const g = parseInt(normalized.slice(3, 5), 16);
+        const b = parseInt(normalized.slice(5, 7), 16);
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
     function mkNoise(ctx: AudioContext, dur: number) {
         const b = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
         const d = b.getChannelData(0);
@@ -800,11 +819,33 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             return g;
         }
 
+        function getThemeColors() {
+            return {
+                surface: getThemeColor("--color-surface", "#0a1a2e"),
+                surfaceLight: getThemeColor("--color-surface-light", "#e7e4de"),
+                surfaceDark: getThemeColor("--color-surface-dark", "#071422"),
+                primary: getThemeColor("--color-primary", "#029bc9"),
+                primaryLight: getThemeColor("--color-primary-light", "#4af"),
+                primaryDark: getThemeColor("--color-primary-dark", "#0d3f5e"),
+                accent: getThemeColor("--color-accent", "#FF991C"),
+                accentLight: getThemeColor("--color-accent-light", "#ffc940"),
+                accentDark: getThemeColor("--color-accent-dark", "#c4710e"),
+                secondary: getThemeColor("--color-secondary", "#49a100"),
+                secondaryLight: getThemeColor("--color-secondary-light", "#75b627"),
+                secondaryDark: getThemeColor("--color-secondary-dark", "#326e00"),
+                onSurface: getThemeColor("--color-on-surface", "#ffffff"),
+                onSurfaceMute: getThemeColor("--color-on-surface-mute", "#6b6b6b"),
+            };
+        }
+
+        let theme = getThemeColors();
+
         function drawTable() {
             const tx = TABLE_X,
                 ty = TABLE_Y,
                 tw = TABLE_W,
                 th = TABLE_H;
+            
             G.save();
             G.shadowColor = "rgba(0,180,255,0.2)";
             G.shadowBlur = 28;
@@ -815,16 +856,16 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.stroke();
             G.restore();
             G.fillStyle = lgrad(tx, ty, tx, ty + th, [
-                [0, "#0a1a2e"],
-                [0.5, "#071422"],
-                [1, "#0a1a2e"],
+                [0, theme.surface],
+                [0.5, theme.surfaceLight],
+                [1, theme.surface],
             ]);
             G.beginPath();
             G.roundRect(tx, ty, tw, th, 10);
             G.fill();
             G.save();
             G.globalAlpha = 0.055;
-            G.fillStyle = "#4af";
+            G.fillStyle = theme.accentLight;
             for (let gx = tx + 18; gx < tx + tw - 10; gx += 18)
                 for (let gy = ty + 18; gy < ty + th - 10; gy += 18) {
                     G.beginPath();
@@ -859,31 +900,6 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
             G.arc(CX, CY, 5, 0, Math.PI * 2);
             G.fill();
             G.restore();
-            G.fillStyle = lgrad(0, ty, 0, ty + 12, [
-                [0, "#1a4a6e"],
-                [0.6, "#0e2a40"],
-                [1, "#0a1a2e"],
-            ]);
-            G.fillRect(tx, ty, tw, 8);
-            G.fillStyle = lgrad(0, ty + th - 8, 0, ty + th, [
-                [0, "#0a1a2e"],
-                [0.4, "#0e2a40"],
-                [1, "#1a4a6e"],
-            ]);
-            G.fillRect(tx, ty + th - 8, tw, 8);
-            G.save();
-            G.shadowColor = "#029bc9";
-            G.shadowBlur = 10;
-            G.strokeStyle = "rgba(0,212,255,0.7)";
-            G.lineWidth = 2;
-            G.beginPath();
-            G.moveTo(tx + 2, ty + 2);
-            G.lineTo(tx + tw - 2, ty + 2);
-            G.stroke();
-            G.beginPath();
-            G.moveTo(tx + 2, ty + th - 2);
-            G.lineTo(tx + tw - 2, ty + th - 2);
-            G.stroke();
             G.restore();
             // left goal
             G.save();
@@ -1292,8 +1308,9 @@ export default function AirHockey({ onCloseGame }: AirHockeyProps) {
 
         function loop() {
             s.tick++;
+            theme = getThemeColors();
             G.clearRect(0, 0, W, H);
-            G.fillStyle = "#04060a";
+            G.fillStyle = theme.surfaceLight;
             G.fillRect(0, 0, W, H);
             if (s.sloMo) s.sloMoAlpha = Math.min(s.sloMoAlpha + 0.055, 1);
             else s.sloMoAlpha = Math.max(s.sloMoAlpha - 0.07, 0);
