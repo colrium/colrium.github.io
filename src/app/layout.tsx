@@ -8,8 +8,6 @@ import PageLoader from "@/components/layout/PageLoader";
 import { GameModeProvider } from "@/lib/contexts/GameModeContext";
 import { ThemeProvider } from "@/lib/contexts/ThemeContext";
 
-export const dynamic = "force-dynamic";
-
 const googleSansFlex = localFont({
 	src: [
 		{

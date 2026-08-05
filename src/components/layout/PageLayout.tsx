@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -19,7 +20,11 @@ export default function PageLayout({
 
 	return (
 		<>
-			{showNavbar && <Navbar />}
+			{showNavbar && (
+				<Suspense fallback={null}>
+					<Navbar />
+				</Suspense>
+			)}
 			{children}
 			{showFooter && <Footer />}
 		</>
