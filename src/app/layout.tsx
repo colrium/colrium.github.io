@@ -7,7 +7,7 @@ import "./globals.css";
 import PageLoader from "@/components/layout/PageLoader";
 import { GameModeProvider } from "@/lib/contexts/GameModeContext";
 import { ThemeProvider } from "@/lib/contexts/ThemeContext";
-
+import { Analytics } from "@vercel/analytics/next";
 const googleSansFlex = localFont({
 	src: [
 		{
@@ -83,10 +83,11 @@ export default function RootLayout({
 		>
 			<body className="min-h-full flex flex-col bg-surface-tint ">
 				<ThemeProvider>
-				<GameModeProvider>
-					<PageLoader />
-					<PageLayout>{children}</PageLayout>
-				</GameModeProvider>
+					<GameModeProvider>
+						<PageLoader />
+						<PageLayout>{children}</PageLayout>
+						<Analytics />
+					</GameModeProvider>
 				</ThemeProvider>
 			</body>
 		</html>
