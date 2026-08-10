@@ -18,8 +18,8 @@ export default function Home() {
 			{!gameMode ? (
 				<main className="flex flex-1 w-full flex-col items-center justify-between sm:items-start">
 					<MainHero
-						title="The Web Guy"
-						badgeLabel="Software Engineer"
+						title="Software Engineer"
+						badgeLabel="The Web Guy"
 						statsValue="9+"
 						accessory={
 							<div className="flex items-center gap-4 h-full my-16">
